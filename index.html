@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Little Cup Damage Calculator</h1>
+
+<p>Attackers:</p>
+<img src="063.png" onclick="attackerAbra()">
+<img src="246.png" onclick="attackerLarvitar()">
+<p>Opponents:</p>
+<img src="191.png" onclick="targetSunkern()">
+<img src="007.png" onclick="targetSquirtle()">
+<img src="056.png" onclick="targetMankey()">
+<img src="175.png" onclick="targetTogepi()">
+<img src="218.png" onclick="targetSlugma()">
+<img src="138.png" onclick="targetOmanyte()">
+
+<p id="demo"></p>
+
+<script>
+function calculator(lvl,atk,bp,def,stab,type) {
+	var inter1 = Math.floor(lvl*0.4 + 2);
+	var inter2 = Math.floor(inter1*atk*bp/50);
+	var inter3 = Math.floor((inter2/def)+2);
+	var inter4 = Math.floor(inter3*1.5);
+	var inter5 = Math.floor(inter4*type);
+	var inter6 = Math.floor(inter5*217/255);
+
+	document.getElementById("demo").innerHTML = attacker + "'s " + movename + " will do " + inter6 + " to " + inter5 + " damage to " + defender + ".";
+}
+
+var attacker = "Abra";
+var movename = "Psychic";
+var movetype = "Psychic";
+var Level = 5;
+var Attack = 16;
+var Power = 90;
+var SameType = 1.5;
+var category = "Special";
+
+var defender = "Sunkern";
+var Defense = 8;
+var Effectiveness = 1;
+
+function attackerAbra(){
+	attacker = "Abra";
+	movename = "Psychic";
+	movetype = "Psychic";
+	Level = 5;
+	Attack = 16;
+	Power = 90;
+	SameType = 1.5;
+	category = "Special";
+	typeCheck();
+	psCheck();
+	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+}
+
+function attackerLarvitar(){
+	attacker = "Larvitar";
+	movename = "Rock Slide";
+	movetype = "Rock";
+	Level = 5;
+	Attack = 12;
+	Power = 75;
+	SameType = 1.5;
+	category = "Physical";
+	typeCheck();
+	psCheck();
+	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+}
+
+function targetSquirtle(){
+	defender = "Squirtle";
+	typeCheck();
+	psCheck();
+	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+}
+
+function targetSunkern(){
+	defender = "Sunkern";
+	typeCheck();
+	psCheck();
+	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+}
+
+function targetMankey(){
+	defender = "Mankey";
+	typeCheck();
+	psCheck();
+	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+}
+
+function targetTogepi(){
+	defender = "Togepi";
+	typeCheck();
+	psCheck();
+	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+}
+
+function targetSlugma(){
+	defender = "Slugma";
+	typeCheck();
+	psCheck();
+	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+}
+
+function targetOmanyte(){
+	defender = "Omanyte";
+	typeCheck();
+	psCheck();
+	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+}
+
+function typeCheck(){
+	if(movetype == "Psychic"){
+		if (defender == "Mankey") {
+			Effectiveness = 2;
+		}
+		if (defender == "Sunkern") {
+			Effectiveness = 1;
+		}
+		if (defender == "Squirtle") {
+			Effectiveness = 1;
+		}
+		if (defender == "Togepi") {
+			Effectiveness = 1;
+		}
+		if (defender == "Slugma") {
+			Effectiveness = 1;
+		}
+		if (defender == "Omanyte") {
+			Effectiveness = 1;
+		}
+	}
+	if(movetype == "Rock"){
+		if (defender == "Mankey") {
+			Effectiveness = 0.5;
+		}
+		if (defender == "Sunkern") {
+			Effectiveness = 1;
+		}
+		if (defender == "Squirtle") {
+			Effectiveness = 1;
+		}
+		if (defender == "Togepi") {
+			Effectiveness = 1;
+		}
+		if (defender == "Slugma") {
+			Effectiveness = 2;
+		}
+		if (defender == "Omanyte") {
+			Effectiveness = 1;
+		}
+	}
+
+}
+
+function psCheck(){
+	if(movetype == "Psychic"){
+		category = "Special";
+		if (defender == "Mankey") {
+			Defense = 9;
+		}
+		if (defender == "Sunkern") {
+			Defense = 8;
+		}
+		if (defender == "Squirtle") {
+			Defense = 11;
+		}
+		if (defender == "Togepi") {
+			Defense = 11;
+		}
+		if (defender == "Slugma") {
+			Defense = 9;
+		}
+		if (defender == "Omanyte") {
+			Defense = 10;
+		}
+	}
+	if(movetype == "Rock"){
+		category = "Physical";
+		if (defender == "Mankey") {
+			Defense = 8;
+		}
+		if (defender == "Sunkern") {
+			Defense = 8;
+		}
+		if (defender == "Squirtle") {
+			Defense = 11;
+		}
+		if (defender == "Togepi") {
+			Defense = 11;
+		}
+		if (defender == "Slugma") {
+			Defense = 9;
+		}
+		if (defender == "Omanyte") {
+			Defense = 15;
+		}
+	}
+}
+
+calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+
+</script>
+
+</body>
+</html>
