@@ -31,20 +31,20 @@ table, th, td {
   <tr> 
   	<td> <img src="191.png"> </td>
     <td> 19 HP </td>
-    <td> <p id="dmgSunkern1"></p> </td> 
-    <td> <p id="dmgSunkern2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSunkern1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSunkern2"></p> </td> 
   </tr>  
   <tr> 
     <td> <img src="007.png"> </td>
   	<td> 19 HP </td>
-    <td> <p id="dmgSquirtle1"></p> </td> 
-    <td> <p id="dmgSquirtle2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSquirtle1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSquirtle2"></p> </td> 
   </tr> 
   <tr> 
     <td> <img src="056.png"> </td>
     <td> 20 HP </td>
-    <td> <p id="dmgMankey1"></p> </td> 
-    <td> <p id="dmgMankey2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgMankey1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgMankey2"></p> </td> 
   </tr> 
 </table>
 
@@ -75,7 +75,7 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	var inter5 = Math.floor(inter4*type);
 	var inter6 = Math.floor(inter5*217/255);
 
-	document.getElementById(location).innerHTML = attacker + "'s " + movename + ": " + inter6 + " - " + inter5;
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
 }
 
 function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
@@ -103,7 +103,7 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 	var inter5 = Math.floor(inter4*type);
 	var inter6 = Math.floor(inter5*217/255);
 
-	document.getElementById(location).innerHTML = attacker + "'s " + movename + ": " + inter6 + " - " + inter5;
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
 }
 
 function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
@@ -131,7 +131,7 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 	var inter5 = Math.floor(inter4*type);
 	var inter6 = Math.floor(inter5*217/255);
 
-	document.getElementById(location).innerHTML = attacker + "'s " + movename + ": " + inter6 + " - " + inter5;
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
 }
 
 function attackerAbra(){
