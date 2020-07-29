@@ -4,30 +4,46 @@
 
 <h1>Little Cup Damage Calculator</h1>
 
-<p>Attackers:</p>
-<img src="063.png" onclick="attackerAbra()">
-<img src="246.png" onclick="attackerLarvitar()">
-<p>Opponents:</p>
+
+
+
 
 
 <table> 
+
   <tr> 
-    <td> <img src="191.png"> </td>
-    <td> <p id="dmgSunkern"></p> </td> 
+    <td> </td>
+    <td> </td>
+    <td> <img src="063.png" onclick="attackerAbra()"> </td>
+    <td> <img src="246.png" onclick="attackerLarvitar()"> </td>
+  </tr>  
+
+  <tr> 
+    <td> Opponents: </td>
   </tr>  
   <tr> 
+    <td> 19 HP </td>
+    <td> <img src="191.png"> </td>
+    <td> <p id="dmgSunkern1"></p> </td> 
+    <td> <p id="dmgSunkern2"></p> </td> 
+  </tr>  
+  <tr> 
+  	<td> 19 HP </td>
     <td> <img src="007.png"> </td>
-    <td> <p id="dmgSquirtle"></p> </td> 
+    <td> <p id="dmgSquirtle1"></p> </td> 
+    <td> <p id="dmgSquirtle2"></p> </td> 
   </tr> 
   <tr> 
+  	<td> 20 HP </td>
     <td> <img src="056.png"> </td>
-    <td> <p id="dmgMankey"></p> </td> 
+    <td> <p id="dmgMankey1"></p> </td> 
+    <td> <p id="dmgMankey2"></p> </td> 
   </tr> 
 </table>
 
 <script>
 
-function calcSunkern(lvl,atk,bp,stab,movetype,category) {
+function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	if (category == "Physical")
 	{
 		def = 8;
@@ -52,10 +68,10 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category) {
 	var inter5 = Math.floor(inter4*type);
 	var inter6 = Math.floor(inter5*217/255);
 
-	document.getElementById("dmgSunkern").innerHTML = attacker + "'s " + movename + " will do " + inter6 + " to " + inter5 + " damage to Sunkern.";
+	document.getElementById(location).innerHTML = attacker + "'s " + movename + ": " + inter6 + " - " + inter5;
 }
 
-function calcSquirtle(lvl,atk,bp,stab,movetype,category) {
+function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 	if (category == "Physical")
 	{
 		def = 11;
@@ -80,10 +96,10 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category) {
 	var inter5 = Math.floor(inter4*type);
 	var inter6 = Math.floor(inter5*217/255);
 
-	document.getElementById("dmgSquirtle").innerHTML = attacker + "'s " + movename + " will do " + inter6 + " to " + inter5 + " damage to Squirtle.";
+	document.getElementById(location).innerHTML = attacker + "'s " + movename + ": " + inter6 + " - " + inter5;
 }
 
-function calcMankey(lvl,atk,bp,stab,movetype,category) {
+function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 	if (category == "Physical")
 	{
 		def = 8;
@@ -108,7 +124,7 @@ function calcMankey(lvl,atk,bp,stab,movetype,category) {
 	var inter5 = Math.floor(inter4*type);
 	var inter6 = Math.floor(inter5*217/255);
 
-	document.getElementById("dmgMankey").innerHTML = attacker + "'s " + movename + " will do " + inter6 + " to " + inter5 + " damage to Mankey.";
+	document.getElementById(location).innerHTML = attacker + "'s " + movename + ": " + inter6 + " - " + inter5;
 }
 
 function attackerAbra(){
@@ -120,9 +136,9 @@ function attackerAbra(){
 	Power = 90;
 	SameType = 1.5;
 	category = "Special";
-	calcSunkern(Level,Attack,Power,SameType,movetype,category);
-	calcSquirtle(Level,Attack,Power,SameType,movetype,category);
-	calcMankey(Level,Attack,Power,SameType,movetype,category);
+	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern1");
+	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgMankey1");
+	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle1");
 }
 
 function attackerLarvitar(){
@@ -134,9 +150,9 @@ function attackerLarvitar(){
 	Power = 75;
 	SameType = 1.5;
 	category = "Physical";
-	calcSunkern(Level,Attack,Power,SameType,movetype,category);
-	calcSquirtle(Level,Attack,Power,SameType,movetype,category);
-	calcMankey(Level,Attack,Power,SameType,movetype,category);
+	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern2");
+	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle2");
+	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey2");
 }
 
 
