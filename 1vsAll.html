@@ -9,17 +9,33 @@
 <img src="246.png" onclick="attackerLarvitar()">
 <p>Opponents:</p>
 <img src="191.png" onclick="targetSunkern()">
+<p id="dmgSunkern"></p>
 <img src="007.png" onclick="targetSquirtle()">
+<p id="dmgSquirtle"></p>
 <img src="056.png" onclick="targetMankey()">
+<p id="dmgMankey"></p>
 
-
-
-<p id="resultSunkern"></p>
-<p id="resultSquirtle"></p>
-<p id="resultMankey"></p>
 
 <script>
-function calculator(lvl,atk,bp,def,stab,type,location) {
+
+function calcSunkern(lvl,atk,bp,stab,movetype,category) {
+	if (category == "Physical")
+	{
+		def = 8;
+	}
+	if (category == "Special")
+	{
+		def = 8;
+	}
+
+	if (movetype == "Rock")
+	{
+		type = 1;
+	}
+	if (movetype == "Psychic")
+	{
+		type = 1;
+	}
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -27,21 +43,64 @@ function calculator(lvl,atk,bp,def,stab,type,location) {
 	var inter5 = Math.floor(inter4*type);
 	var inter6 = Math.floor(inter5*217/255);
 
-	document.getElementById(location).innerHTML = attacker + "'s " + movename + " will do " + inter6 + " to " + inter5 + " damage to " + defender + ".";
+	document.getElementById("dmgSunkern").innerHTML = attacker + "'s " + movename + " will do " + inter6 + " to " + inter5 + " damage to Sunkern.";
 }
 
-var attacker = "Abra";
-var movename = "Psychic";
-var movetype = "Psychic";
-var Level = 5;
-var Attack = 16;
-var Power = 90;
-var SameType = 1.5;
-var category = "Special";
+function calcSquirtle(lvl,atk,bp,stab,movetype,category) {
+	if (category == "Physical")
+	{
+		def = 11;
+	}
+	if (category == "Special")
+	{
+		def = 11;
+	}
 
-var defender = "Sunkern";
-var Defense = 8;
-var Effectiveness = 1;
+	if (movetype == "Rock")
+	{
+		type = 1;
+	}
+	if (movetype == "Psychic")
+	{
+		type = 1;
+	}
+	var inter1 = Math.floor(lvl*0.4 + 2);
+	var inter2 = Math.floor(inter1*atk*bp/50);
+	var inter3 = Math.floor((inter2/def)+2);
+	var inter4 = Math.floor(inter3*1.5);
+	var inter5 = Math.floor(inter4*type);
+	var inter6 = Math.floor(inter5*217/255);
+
+	document.getElementById("dmgSquirtle").innerHTML = attacker + "'s " + movename + " will do " + inter6 + " to " + inter5 + " damage to Squirtle.";
+}
+
+function calcMankey(lvl,atk,bp,stab,movetype,category) {
+	if (category == "Physical")
+	{
+		def = 8;
+	}
+	if (category == "Special")
+	{
+		def = 9;
+	}
+
+	if (movetype == "Rock")
+	{
+		type = 0.5;
+	}
+	if (movetype == "Psychic")
+	{
+		type = 2;
+	}
+	var inter1 = Math.floor(lvl*0.4 + 2);
+	var inter2 = Math.floor(inter1*atk*bp/50);
+	var inter3 = Math.floor((inter2/def)+2);
+	var inter4 = Math.floor(inter3*1.5);
+	var inter5 = Math.floor(inter4*type);
+	var inter6 = Math.floor(inter5*217/255);
+
+	document.getElementById("dmgMankey").innerHTML = attacker + "'s " + movename + " will do " + inter6 + " to " + inter5 + " damage to Mankey.";
+}
 
 function attackerAbra(){
 	attacker = "Abra";
@@ -52,9 +111,9 @@ function attackerAbra(){
 	Power = 90;
 	SameType = 1.5;
 	category = "Special";
-	typeCheck();
-	psCheck();
-	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+	calcSunkern(Level,Attack,Power,SameType,movetype,category);
+	calcSquirtle(Level,Attack,Power,SameType,movetype,category);
+	calcMankey(Level,Attack,Power,SameType,movetype,category);
 }
 
 function attackerLarvitar(){
@@ -66,91 +125,12 @@ function attackerLarvitar(){
 	Power = 75;
 	SameType = 1.5;
 	category = "Physical";
-	typeCheck();
-	psCheck();
-	calculator(Level,Attack,Power,Defense,SameType,Effectiveness);
+	calcSunkern(Level,Attack,Power,SameType,movetype,category);
+	calcSquirtle(Level,Attack,Power,SameType,movetype,category);
+	calcMankey(Level,Attack,Power,SameType,movetype,category);
 }
 
-function targetSquirtle(){
-	defender = "Squirtle";
-	Defense = 11;
-	typeCheck();
-	psCheck();
-	calculator(Level,Attack,Power,Defense,SameType,Effectiveness,resultSquirtle);
-}
 
-function targetSunkern(){
-	defender = "Sunkern";
-	Defense = 8;
-	typeCheck();
-	psCheck();
-	calculator(Level,Attack,Power,Defense,SameType,Effectiveness,resultSunkern);
-}
-
-function targetMankey(){
-	defender = "Mankey";
-	Defense = 9;
-	typeCheck();
-	psCheck();
-	calculator(Level,Attack,Power,Defense,SameType,Effectiveness,resultMankey);
-}
-
-function typeCheck(){
-	if(movetype == "Psychic"){
-		if (defender == "Mankey") {
-			Effectiveness = 2;
-		}
-		if (defender == "Sunkern") {
-			Effectiveness = 1;
-		}
-		if (defender == "Squirtle") {
-			Effectiveness = 1;
-		}
-	}
-	if(movetype == "Rock"){
-		if (defender == "Mankey") {
-			Effectiveness = 0.5;
-		}
-		if (defender == "Sunkern") {
-			Effectiveness = 1;
-		}
-		if (defender == "Squirtle") {
-			Effectiveness = 1;
-		}
-	}
-
-}
-
-function psCheck(){
-	if(movetype == "Psychic"){
-		category = "Special";
-		if (defender == "Mankey") {
-			Defense = 9;
-		}
-		if (defender == "Sunkern") {
-			Defense = 8;
-		}
-		if (defender == "Squirtle") {
-			Defense = 11;
-		}
-	}
-	if(movetype == "Rock"){
-		category = "Physical";
-		if (defender == "Mankey") {
-			Defense = 8;
-		}
-		if (defender == "Sunkern") {
-			Defense = 8;
-		}
-		if (defender == "Squirtle") {
-			Defense = 11;
-		}
-	}
-}
-
-targetMankey();
-targetSunkern();
-targetSquirtle();
 
 </script>
 
