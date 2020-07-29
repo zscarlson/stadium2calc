@@ -25,10 +25,12 @@ table, th, td {
     <td style="text-align:center"> <img src="246.png" onclick="attackerLarvitar()"> </td>
     <td style="text-align:center"> <img src="116.png" onclick="attackerHorsea()"> </td>
     <td style="text-align:center"> <img src="056.png" onclick="attackerMankey()"> </td>
+    <td style="text-align:center"> <img src="100.png" onclick="attackerVoltorb()"> </td>
+    <td style="text-align:center"> <img src="231.png" onclick="attackerPhanpy()"> </td>
   </tr>  
 
   <tr> 
-    <td colspan="6"> Opponents: </td>
+    <td colspan="8"> VS Camper Bernie's Pokemon: </td>
   </tr>  
   <tr> 
   	<td> <img src="191.png"> </td>
@@ -37,6 +39,8 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgSunkern2"></p> </td> 
     <td style="text-align:center"> <p id="dmgSunkern3"></p> </td> 
     <td style="text-align:center"> <p id="dmgSunkern4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSunkern5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSunkern6"></p> </td> 
   </tr>  
   <tr> 
     <td> <img src="007.png"> </td>
@@ -45,6 +49,8 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgSquirtle2"></p> </td> 
     <td style="text-align:center"> <p id="dmgSquirtle3"></p> </td> 
     <td style="text-align:center"> <p id="dmgSquirtle4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSquirtle5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSquirtle6"></p> </td> 
   </tr> 
   <tr> 
     <td> <img src="056.png"> </td>
@@ -53,7 +59,39 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgMankey2"></p> </td> 
     <td style="text-align:center"> <p id="dmgMankey3"></p> </td> 
     <td style="text-align:center"> <p id="dmgMankey4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgMankey5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgMankey6"></p> </td> 
   </tr> 
+  <tr> 
+  	<td> <img src="175.png"> </td>
+    <td> 19 HP </td>
+    <td style="text-align:center"> <p id="dmgTogepi1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgTogepi2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgTogepi3"></p> </td> 
+    <td style="text-align:center"> <p id="dmgTogepi4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgTogepi5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgTogepi6"></p> </td> 
+  </tr>  
+  <tr> 
+  	<td> <img src="138.png"> </td>
+    <td> 19 HP </td>
+    <td style="text-align:center"> <p id="dmgOmanyte1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgOmanyte2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgOmanyte3"></p> </td> 
+    <td style="text-align:center"> <p id="dmgOmanyte4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgOmanyte5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgOmanyte6"></p> </td> 
+  </tr>  
+  <tr> 
+  	<td> <img src="218.png"> </td>
+    <td> 20 HP </td>
+    <td style="text-align:center"> <p id="dmgSlugma1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSlugma2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSlugma3"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSlugma4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSlugma5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSlugma6"></p> </td> 
+  </tr>  
 </table>
 
 <script>
@@ -83,6 +121,14 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	if (movetype == "Fighting")
 	{
 		type = 1;
+	}	
+	if (movetype == "Electric")
+	{
+		type = 0.5;
+	}	
+	if (movetype == "Ground")
+	{
+		type = 0.5;
 	}		
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
@@ -117,6 +163,14 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 		type = 0.5;
 	}	
 	if (movetype == "Fighting")
+	{
+		type = 1;
+	}	
+	if (movetype == "Electric")
+	{
+		type = 2;
+	}
+	if (movetype == "Ground")
 	{
 		type = 1;
 	}	
@@ -155,7 +209,147 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 	if (movetype == "Fighting")
 	{
 		type = 1;
-	}		
+	}	
+	if (movetype == "Electric")
+	{
+		type = 1;
+	}	
+	if (movetype == "Ground")
+	{
+		type = 1;
+	}	
+	var inter1 = Math.floor(lvl*0.4 + 2);
+	var inter2 = Math.floor(inter1*atk*bp/50);
+	var inter3 = Math.floor((inter2/def)+2);
+	var inter4 = Math.floor(inter3*1.5);
+	var inter5 = Math.floor(inter4*type);
+	var inter6 = Math.floor(inter5*217/255);
+
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
+}
+
+function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
+	if (category == "Physical")
+	{
+		def = 11;
+	}
+	if (category == "Special")
+	{
+		def = 11;
+	}
+
+	if (movetype == "Rock")
+	{
+		type = 1;
+	}
+	if (movetype == "Psychic")
+	{
+		type = 1;
+	}
+	if (movetype == "Water")
+	{
+		type = 1;
+	}
+	if (movetype == "Fighting")
+	{
+		type = 2;
+	}	
+	if (movetype == "Electric")
+	{
+		type = 1;
+	}	
+	if (movetype == "Ground")
+	{
+		type = 1;
+	}	
+	var inter1 = Math.floor(lvl*0.4 + 2);
+	var inter2 = Math.floor(inter1*atk*bp/50);
+	var inter3 = Math.floor((inter2/def)+2);
+	var inter4 = Math.floor(inter3*1.5);
+	var inter5 = Math.floor(inter4*type);
+	var inter6 = Math.floor(inter5*217/255);
+
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
+}
+
+function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
+	if (category == "Physical")
+	{
+		def = 15;
+	}
+	if (category == "Special")
+	{
+		def = 10;
+	}
+
+	if (movetype == "Rock")
+	{
+		type = 1;
+	}
+	if (movetype == "Psychic")
+	{
+		type = 1;
+	}
+	if (movetype == "Water")
+	{
+		type = 1;
+	}
+	if (movetype == "Fighting")
+	{
+		type = 2;
+	}	
+	if (movetype == "Electric")
+	{
+		type = 2;
+	}	
+	if (movetype == "Ground")
+	{
+		type = 2;
+	}	
+	var inter1 = Math.floor(lvl*0.4 + 2);
+	var inter2 = Math.floor(inter1*atk*bp/50);
+	var inter3 = Math.floor((inter2/def)+2);
+	var inter4 = Math.floor(inter3*1.5);
+	var inter5 = Math.floor(inter4*type);
+	var inter6 = Math.floor(inter5*217/255);
+
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
+}
+
+function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
+	if (category == "Physical")
+	{
+		def = 9;
+	}
+	if (category == "Special")
+	{
+		def = 9;
+	}
+
+	if (movetype == "Rock")
+	{
+		type = 2;
+	}
+	if (movetype == "Psychic")
+	{
+		type = 1;
+	}
+	if (movetype == "Water")
+	{
+		type = 2;
+	}
+	if (movetype == "Fighting")
+	{
+		type = 1;
+	}	
+	if (movetype == "Electric")
+	{
+		type = 1;
+	}	
+	if (movetype == "Ground")
+	{
+		type = 2;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -178,6 +372,9 @@ function attackerAbra(){
 	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern1");
 	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle1");
 	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey1");
+	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi1");
+	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte1");
+	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma1");
 }
 
 function attackerLarvitar(){
@@ -192,6 +389,9 @@ function attackerLarvitar(){
 	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern2");
 	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle2");
 	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey2");
+	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi2");
+	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte2");
+	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma2");
 }
 
 function attackerHorsea(){
@@ -206,6 +406,9 @@ function attackerHorsea(){
 	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern3");
 	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle3");
 	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey3");
+	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi3");
+	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte3");
+	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma3");
 }
 
 function attackerMankey(){
@@ -220,6 +423,43 @@ function attackerMankey(){
 	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern4");
 	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle4");
 	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey4");
+	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi4");
+	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte4");
+	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma4");
+}
+
+function attackerVoltorb(){
+	attacker = "Voltorb";
+	movename = "Thunder";
+	movetype = "Electric";
+	Level = 5;
+	Attack = 10;
+	Power = 120;
+	SameType = 1.5;
+	category = "Special";
+	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern5");
+	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle5");
+	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey5");
+	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi5");
+	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte5");
+	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma5");
+}
+
+function attackerPhanpy(){
+	attacker = "Phanpy";
+	movename = "Earthquake";
+	movetype = "Ground";
+	Level = 5;
+	Attack = 11;
+	Power = 100;
+	SameType = 1.5;
+	category = "Physical";
+	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern6");
+	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle6");
+	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey6");
+	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi6");
+	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte6");
+	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma6");
 }
 
 
