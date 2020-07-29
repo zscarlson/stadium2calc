@@ -24,6 +24,7 @@ table, th, td {
     <td style="text-align:center"> <img src="063.png" onclick="attackerAbra()"> </td>
     <td style="text-align:center"> <img src="246.png" onclick="attackerLarvitar()"> </td>
     <td style="text-align:center"> <img src="116.png" onclick="attackerHorsea()"> </td>
+    <td style="text-align:center"> <img src="056.png" onclick="attackerMankey()"> </td>
   </tr>  
 
   <tr> 
@@ -35,6 +36,7 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgSunkern1"></p> </td> 
     <td style="text-align:center"> <p id="dmgSunkern2"></p> </td> 
     <td style="text-align:center"> <p id="dmgSunkern3"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSunkern4"></p> </td> 
   </tr>  
   <tr> 
     <td> <img src="007.png"> </td>
@@ -42,6 +44,7 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgSquirtle1"></p> </td> 
     <td style="text-align:center"> <p id="dmgSquirtle2"></p> </td> 
     <td style="text-align:center"> <p id="dmgSquirtle3"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSquirtle4"></p> </td> 
   </tr> 
   <tr> 
     <td> <img src="056.png"> </td>
@@ -49,6 +52,7 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgMankey1"></p> </td> 
     <td style="text-align:center"> <p id="dmgMankey2"></p> </td> 
     <td style="text-align:center"> <p id="dmgMankey3"></p> </td> 
+    <td style="text-align:center"> <p id="dmgMankey4"></p> </td> 
   </tr> 
 </table>
 
@@ -75,7 +79,11 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	if (movetype == "Water")
 	{
 		type = 0.5;
-	}	
+	}
+	if (movetype == "Fighting")
+	{
+		type = 1;
+	}		
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -108,6 +116,10 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 0.5;
 	}	
+	if (movetype == "Fighting")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -139,7 +151,11 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 	if (movetype == "Water")
 	{
 		type = 1;
-	}	
+	}
+	if (movetype == "Fighting")
+	{
+		type = 1;
+	}		
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -190,6 +206,20 @@ function attackerHorsea(){
 	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern3");
 	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle3");
 	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey3");
+}
+
+function attackerMankey(){
+	attacker = "Mankey";
+	movename = "Cross Chop";
+	movetype = "Fighting";
+	Level = 5;
+	Attack = 13;
+	Power = 100;
+	SameType = 1.5;
+	category = "Physical";
+	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern4");
+	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle4");
+	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey4");
 }
 
 
