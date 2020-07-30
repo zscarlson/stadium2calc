@@ -15,7 +15,6 @@ table, th, td {
 
 
 
-
 <table> 
 
   <tr> 
@@ -23,7 +22,8 @@ table, th, td {
     <td> </td>
     <td style="text-align:center"> <img src="063.png" onclick="attackerAbra()"> </td>
     <td style="text-align:center"> <img src="246.png" onclick="attackerLarvitar()"> </td>
-    <td style="text-align:center"> <img src="116.png" onclick="attackerHorsea()"> </td>
+    <td style="text-align:center"> <img src="116.png" onclick="attackerHorsea()">
+    	<img src="084.png" onclick="attackerDoduo()"> </td>
     <td style="text-align:center"> <img src="056.png" onclick="attackerMankey()"> </td>
     <td style="text-align:center"> <img src="100.png" onclick="attackerVoltorb()"> </td>
     <td style="text-align:center"> <img src="231.png" onclick="attackerPhanpy()"> </td>
@@ -130,6 +130,10 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 0.5;
 	}		
+	if (movetype == "Normal")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -171,6 +175,10 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 		type = 2;
 	}
 	if (movetype == "Ground")
+	{
+		type = 1;
+	}	
+	if (movetype == "Normal")
 	{
 		type = 1;
 	}	
@@ -218,6 +226,10 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 1;
 	}	
+	if (movetype == "Normal")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -259,6 +271,10 @@ function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
 		type = 1;
 	}	
 	if (movetype == "Ground")
+	{
+		type = 1;
+	}	
+	if (movetype == "Normal")
 	{
 		type = 1;
 	}	
@@ -306,6 +322,10 @@ function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 2;
 	}	
+	if (movetype == "Normal")
+	{
+		type = 0.5;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -350,6 +370,10 @@ function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 2;
 	}	
+	if (movetype == "Normal")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -369,12 +393,7 @@ function attackerAbra(){
 	Power = 90;
 	SameType = 1.5;
 	category = "Special";
-	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern1");
-	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle1");
-	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey1");
-	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi1");
-	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte1");
-	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma1");
+	calcSlot1(Level,Attack,Power,SameType,movetype,category);
 }
 
 function attackerLarvitar(){
@@ -386,12 +405,7 @@ function attackerLarvitar(){
 	Power = 75;
 	SameType = 1.5;
 	category = "Physical";
-	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern2");
-	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle2");
-	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey2");
-	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi2");
-	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte2");
-	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma2");
+	calcSlot2(Level,Attack,Power,SameType,movetype,category);
 }
 
 function attackerHorsea(){
@@ -403,12 +417,19 @@ function attackerHorsea(){
 	Power = 120;
 	SameType = 1.5;
 	category = "Special";
-	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern3");
-	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle3");
-	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey3");
-	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi3");
-	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte3");
-	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma3");
+	calcSlot3(Level,Attack,Power,SameType,movetype,category);
+}
+
+function attackerDoduo(){
+	attacker = "Doduo";
+	movename = "Tri Attack";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 14;
+	Power = 80;
+	SameType = 1.5;
+	category = "Physical";
+	calcSlot3(Level,Attack,Power,SameType,movetype,category);
 }
 
 function attackerMankey(){
@@ -420,12 +441,7 @@ function attackerMankey(){
 	Power = 100;
 	SameType = 1.5;
 	category = "Physical";
-	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern4");
-	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle4");
-	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey4");
-	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi4");
-	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte4");
-	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma4");
+	calcSlot4(Level,Attack,Power,SameType,movetype,category);
 }
 
 function attackerVoltorb(){
@@ -437,12 +453,7 @@ function attackerVoltorb(){
 	Power = 120;
 	SameType = 1.5;
 	category = "Special";
-	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern5");
-	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle5");
-	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey5");
-	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi5");
-	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte5");
-	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma5");
+	calcSlot5(Level,Attack,Power,SameType,movetype,category);
 }
 
 function attackerPhanpy(){
@@ -454,12 +465,61 @@ function attackerPhanpy(){
 	Power = 100;
 	SameType = 1.5;
 	category = "Physical";
-	calcSunkern(Level,Attack,Power,SameType,movetype,category,"dmgSunkern6");
-	calcSquirtle(Level,Attack,Power,SameType,movetype,category,"dmgSquirtle6");
-	calcMankey(Level,Attack,Power,SameType,movetype,category,"dmgMankey6");
-	calcTogepi(Level,Attack,Power,SameType,movetype,category,"dmgTogepi6");
-	calcOmanyte(Level,Attack,Power,SameType,movetype,category,"dmgOmanyte6");
-	calcSlugma(Level,Attack,Power,SameType,movetype,category,"dmgSlugma6");
+	calcSlot6(Level,Attack,Power,SameType,movetype,category);
+}
+
+function calcSlot1(lvl,atk,bp,stab,movetype,category){
+	calcSunkern(lvl,atk,bp,stab,movetype,category,"dmgSunkern1");
+	calcSquirtle(lvl,atk,bp,stab,movetype,category,"dmgSquirtle1");
+	calcMankey(lvl,atk,bp,stab,movetype,category,"dmgMankey1");
+	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi1");
+	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte1");
+	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma1");
+}
+
+function calcSlot2(lvl,atk,bp,stab,movetype,category){
+	calcSunkern(lvl,atk,bp,stab,movetype,category,"dmgSunkern2");
+	calcSquirtle(lvl,atk,bp,stab,movetype,category,"dmgSquirtle2");
+	calcMankey(lvl,atk,bp,stab,movetype,category,"dmgMankey2");
+	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi2");
+	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte2");
+	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma2");
+}
+
+function calcSlot3(lvl,atk,bp,stab,movetype,category){
+	calcSunkern(lvl,atk,bp,stab,movetype,category,"dmgSunkern3");
+	calcSquirtle(lvl,atk,bp,stab,movetype,category,"dmgSquirtle3");
+	calcMankey(lvl,atk,bp,stab,movetype,category,"dmgMankey3");
+	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi3");
+	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte3");
+	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma3");
+}
+
+function calcSlot4(lvl,atk,bp,stab,movetype,category){
+	calcSunkern(lvl,atk,bp,stab,movetype,category,"dmgSunkern4");
+	calcSquirtle(lvl,atk,bp,stab,movetype,category,"dmgSquirtle4");
+	calcMankey(lvl,atk,bp,stab,movetype,category,"dmgMankey4");
+	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi4");
+	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte4");
+	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma4");
+}
+
+function calcSlot5(lvl,atk,bp,stab,movetype,category){
+	calcSunkern(lvl,atk,bp,stab,movetype,category,"dmgSunkern5");
+	calcSquirtle(lvl,atk,bp,stab,movetype,category,"dmgSquirtle5");
+	calcMankey(lvl,atk,bp,stab,movetype,category,"dmgMankey5");
+	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi5");
+	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte5");
+	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma5");
+}
+
+function calcSlot6(lvl,atk,bp,stab,movetype,category){
+	calcSunkern(lvl,atk,bp,stab,movetype,category,"dmgSunkern6");
+	calcSquirtle(lvl,atk,bp,stab,movetype,category,"dmgSquirtle6");
+	calcMankey(lvl,atk,bp,stab,movetype,category,"dmgMankey6");
+	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi6");
+	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte6");
+	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma6");
 }
 
 
