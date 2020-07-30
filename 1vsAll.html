@@ -23,72 +23,84 @@ table, th, td {
   	<img src="Ani063MS.png" onclick="attackerAbra(1)">
   	<img src="Ani116MS.png" onclick="attackerHorsea(1)">
   	<img src="Ani056MS.png" onclick="attackerMankey(1)">
-  	<img src="Ani084MS.png" onclick="attackerDoduo(1)">
   	<br>
+  	<img src="Ani084MS.png" onclick="attackerDoduo(1)">
   	<img src="Ani100MS.png" onclick="attackerVoltorb(1)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(1)">
+  	<br>
   	<img src="Ani246MS.png" onclick="attackerLarvitar(1)">
   	<img src="Ani077MS.png" onclick="attackerPonyta(1)">
+  	<img src="Ani147MS.png" onclick="attackerDratini(1)">
   	</td>
 
   	<td style="text-align:center"> 
   	<img src="Ani063MS.png" onclick="attackerAbra(2)">
   	<img src="Ani116MS.png" onclick="attackerHorsea(2)">
   	<img src="Ani056MS.png" onclick="attackerMankey(2)">
-  	<img src="Ani084MS.png" onclick="attackerDoduo(2)">
   	<br>
+  	<img src="Ani084MS.png" onclick="attackerDoduo(2)">
   	<img src="Ani100MS.png" onclick="attackerVoltorb(2)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(2)">
+  	<br>
   	<img src="Ani246MS.png" onclick="attackerLarvitar(2)">
   	<img src="Ani077MS.png" onclick="attackerPonyta(2)">
+  	<img src="Ani147MS.png" onclick="attackerDratini(2)">
   	</td>
 
    	<td style="text-align:center"> 
   	<img src="Ani063MS.png" onclick="attackerAbra(3)">
   	<img src="Ani116MS.png" onclick="attackerHorsea(3)">
   	<img src="Ani056MS.png" onclick="attackerMankey(3)">
-  	<img src="Ani084MS.png" onclick="attackerDoduo(3)">
   	<br>
+  	<img src="Ani084MS.png" onclick="attackerDoduo(3)">
   	<img src="Ani100MS.png" onclick="attackerVoltorb(3)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(3)">
+  	<br>
   	<img src="Ani246MS.png" onclick="attackerLarvitar(3)">
   	<img src="Ani077MS.png" onclick="attackerPonyta(3)">
+  	<img src="Ani147MS.png" onclick="attackerDratini(3)">
   	</td>
   	
    	<td style="text-align:center"> 
   	<img src="Ani063MS.png" onclick="attackerAbra(4)">
   	<img src="Ani116MS.png" onclick="attackerHorsea(4)">
   	<img src="Ani056MS.png" onclick="attackerMankey(4)">
-  	<img src="Ani084MS.png" onclick="attackerDoduo(4)">
   	<br>
+  	<img src="Ani084MS.png" onclick="attackerDoduo(4)">
   	<img src="Ani100MS.png" onclick="attackerVoltorb(4)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(4)">
+  	<br>
   	<img src="Ani246MS.png" onclick="attackerLarvitar(4)">
   	<img src="Ani077MS.png" onclick="attackerPonyta(4)">
+  	<img src="Ani147MS.png" onclick="attackerDratini(4)">
   	</td>
 
    	<td style="text-align:center"> 
   	<img src="Ani063MS.png" onclick="attackerAbra(5)">
   	<img src="Ani116MS.png" onclick="attackerHorsea(5)">
   	<img src="Ani056MS.png" onclick="attackerMankey(5)">
-  	<img src="Ani084MS.png" onclick="attackerDoduo(5)">
   	<br>
+  	<img src="Ani084MS.png" onclick="attackerDoduo(5)">
   	<img src="Ani100MS.png" onclick="attackerVoltorb(5)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(5)">
+  	<br>
   	<img src="Ani246MS.png" onclick="attackerLarvitar(5)">
   	<img src="Ani077MS.png" onclick="attackerPonyta(5)">
+  	<img src="Ani147MS.png" onclick="attackerDratini(5)">
   	</td> 	
 
   	<td style="text-align:center"> 
   	<img src="Ani063MS.png" onclick="attackerAbra(6)">
   	<img src="Ani116MS.png" onclick="attackerHorsea(6)">
   	<img src="Ani056MS.png" onclick="attackerMankey(6)">
-  	<img src="Ani084MS.png" onclick="attackerDoduo(6)">
   	<br>
+  	<img src="Ani084MS.png" onclick="attackerDoduo(6)">
   	<img src="Ani100MS.png" onclick="attackerVoltorb(6)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(6)">
+  	<br>
   	<img src="Ani246MS.png" onclick="attackerLarvitar(6)">
   	<img src="Ani077MS.png" onclick="attackerPonyta(6)">
+  	<img src="Ani147MS.png" onclick="attackerDratini(6)">
   	</td>
 
   </tr> 
@@ -212,6 +224,10 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 2;
 	}	
+	if (movetype == "Dragon")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -264,6 +280,10 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 0.5;
 	}	
+	if (movetype == "Dragon")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -313,6 +333,10 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 		type = 1;
 	}	
 	if (movetype == "Fire")
+	{
+		type = 1;
+	}	
+	if (movetype == "Dragon")
 	{
 		type = 1;
 	}	
@@ -368,6 +392,10 @@ function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 1;
 	}	
+	if (movetype == "Dragon")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -420,6 +448,10 @@ function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 0.25;
 	}	
+	if (movetype == "Dragon")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -471,6 +503,10 @@ function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
 	if (movetype == "Fire")
 	{
 		type = 0.5;
+	}	
+	if (movetype == "Dragon")
+	{
+		type = 1;
 	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
@@ -576,6 +612,18 @@ function attackerPonyta(slot){
 	SameType = 1.5;
 	category = "Special";
 	slotpicker(slot,"077.png")
+}
+
+function attackerDratini(slot){
+	attacker = "Dratini";
+	movename = "Outrage";
+	movetype = "Dragon";
+	Level = 5;
+	Attack = 10;
+	Power = 90;
+	SameType = 1.5;
+	category = "Special";
+	slotpicker(slot,"147.png")
 }
 
 function calcSlot1(lvl,atk,bp,stab,movetype,category){
