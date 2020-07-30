@@ -28,6 +28,7 @@ table, th, td {
   	<img src="Ani100MS.png" onclick="attackerVoltorb(1)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(1)">
   	<img src="Ani246MS.png" onclick="attackerLarvitar(1)">
+  	<img src="Ani077MS.png" onclick="attackerPonyta(1)">
   	</td>
 
   	<td style="text-align:center"> 
@@ -39,6 +40,7 @@ table, th, td {
   	<img src="Ani100MS.png" onclick="attackerVoltorb(2)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(2)">
   	<img src="Ani246MS.png" onclick="attackerLarvitar(2)">
+  	<img src="Ani077MS.png" onclick="attackerPonyta(2)">
   	</td>
 
    	<td style="text-align:center"> 
@@ -50,6 +52,7 @@ table, th, td {
   	<img src="Ani100MS.png" onclick="attackerVoltorb(3)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(3)">
   	<img src="Ani246MS.png" onclick="attackerLarvitar(3)">
+  	<img src="Ani077MS.png" onclick="attackerPonyta(3)">
   	</td>
   	
    	<td style="text-align:center"> 
@@ -61,6 +64,7 @@ table, th, td {
   	<img src="Ani100MS.png" onclick="attackerVoltorb(4)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(4)">
   	<img src="Ani246MS.png" onclick="attackerLarvitar(4)">
+  	<img src="Ani077MS.png" onclick="attackerPonyta(4)">
   	</td>
 
    	<td style="text-align:center"> 
@@ -72,6 +76,7 @@ table, th, td {
   	<img src="Ani100MS.png" onclick="attackerVoltorb(5)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(5)">
   	<img src="Ani246MS.png" onclick="attackerLarvitar(5)">
+  	<img src="Ani077MS.png" onclick="attackerPonyta(5)">
   	</td> 	
 
   	<td style="text-align:center"> 
@@ -83,6 +88,7 @@ table, th, td {
   	<img src="Ani100MS.png" onclick="attackerVoltorb(6)">
   	<img src="Ani231MS.png" onclick="attackerPhanpy(6)">
   	<img src="Ani246MS.png" onclick="attackerLarvitar(6)">
+  	<img src="Ani077MS.png" onclick="attackerPonyta(6)">
   	</td>
 
   </tr> 
@@ -202,6 +208,10 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 1;
 	}	
+	if (movetype == "Fire")
+	{
+		type = 2;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -250,6 +260,10 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 1;
 	}	
+	if (movetype == "Fire")
+	{
+		type = 0.5;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -295,6 +309,10 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 		type = 1;
 	}	
 	if (movetype == "Normal")
+	{
+		type = 1;
+	}	
+	if (movetype == "Fire")
 	{
 		type = 1;
 	}	
@@ -346,6 +364,10 @@ function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 1;
 	}	
+	if (movetype == "Fire")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -394,6 +416,10 @@ function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 0.5;
 	}	
+	if (movetype == "Fire")
+	{
+		type = 0.25;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -441,6 +467,10 @@ function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
 	if (movetype == "Normal")
 	{
 		type = 1;
+	}	
+	if (movetype == "Fire")
+	{
+		type = 0.5;
 	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
@@ -534,6 +564,18 @@ function attackerPhanpy(slot){
 	SameType = 1.5;
 	category = "Physical";
 	slotpicker(slot,"231.png")
+}
+
+function attackerPonyta(slot){
+	attacker = "Ponyta";
+	movename = "Fire Blast";
+	movetype = "Fire";
+	Level = 5;
+	Attack = 11;
+	Power = 120;
+	SameType = 1.5;
+	category = "Special";
+	slotpicker(slot,"077.png")
 }
 
 function calcSlot1(lvl,atk,bp,stab,movetype,category){
