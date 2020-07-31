@@ -244,9 +244,11 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	var inter4 = Math.floor(inter3*stab);
 	var maxroll = Math.floor(inter4*type);
 	var minroll = Math.floor(maxroll*217/255);
-	if (minroll == 0){
+	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+
+	damageColor(19, location, minroll, maxroll);
 
 	if (moveindex == 1){
 		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
@@ -333,9 +335,11 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 	var inter4 = Math.floor(inter3*stab);
 	var maxroll = Math.floor(inter4*type);
 	var minroll = Math.floor(maxroll*217/255);
-	if (minroll == 0){
+	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+
+	damageColor(19, location, minroll, maxroll);
 
 	if (moveindex == 1){
 		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
@@ -344,6 +348,7 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 	if (moveindex == 2){
 		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
 	}
+
 }
 
 function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
@@ -422,9 +427,10 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 	var inter4 = Math.floor(inter3*stab);
 	var maxroll = Math.floor(inter4*type);
 	var minroll = Math.floor(maxroll*217/255);
-	if (minroll == 0){
+	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+	damageColor(20, location, minroll, maxroll);
 
 	if (moveindex == 1){
 		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
@@ -511,9 +517,11 @@ function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
 	var inter4 = Math.floor(inter3*stab);
 	var maxroll = Math.floor(inter4*type);
 	var minroll = Math.floor(maxroll*217/255);
-	if (minroll == 0){
+	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+
+	damageColor(19, location, minroll, maxroll);
 
 	if (moveindex == 1){
 		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
@@ -600,9 +608,10 @@ function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
 	var inter4 = Math.floor(inter3*stab);
 	var maxroll = Math.floor(inter4*type);
 	var minroll = Math.floor(maxroll*217/255);
-	if (minroll == 0){
+	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+	damageColor(19, location, minroll, maxroll);
 
 	if (moveindex == 1){
 		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
@@ -689,9 +698,10 @@ function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
 	var inter4 = Math.floor(inter3*stab);
 	var maxroll = Math.floor(inter4*type);
 	var minroll = Math.floor(maxroll*217/255);
-	if (minroll == 0){
+	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+	damageColor(20, location, minroll, maxroll);
 
 	if (moveindex == 1){
 		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
@@ -826,7 +836,7 @@ function attackerVoltorb(){
 	slot = findEmptySlot();
 	slotpicker(slot,"100.png")
 
-	moveindex = 1;
+	moveindex = 2;
 	movename = "Rollout";
 	movetype = "Rock";
 	Attack = 8;
@@ -1478,6 +1488,31 @@ function calcB(slot){
 		calcSlot1b(Level,Attack,Power,SameType,movetype,category);
 	}
 	
+}
+
+function damageColor(fullhp,location,minroll,maxroll){
+	halfhp = Math.ceil(fullhp/2);
+	thirdhp = Math.ceil(fullhp/3);
+	fourthhp = Math.ceil(fullhp/4);
+
+		document.getElementById(location).style="color:red;"
+	if (maxroll >= halfhp){
+		document.getElementById(location).style="color:orange;"
+	}
+	if (minroll >= halfhp){
+		document.getElementById(location).style="color:gold;"
+	}
+	if (maxroll >= fullhp){
+		document.getElementById(location).style="color:green;"
+	}
+	if (minroll >= fullhp){
+		document.getElementById(location).style="color:blue;"
+	}
+	// GUARANTEED OHKO: darkgreen = min roll above max hp
+	// POSSIBLE OHKO: lightgreen = min roll below max hp, max roll above max hp
+	// GUARANTEED 2HKO: yellow = min roll above half hp, max roll below max hp
+	// POSSIBLE 2HKO: orange = min roll below half hp, max roll above half hp
+	// ANYTHING LESS = RED
 }
 
 // function slotsort(){
