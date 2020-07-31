@@ -28,9 +28,10 @@ table, th, td {
   	<img src="Ani016MS.png" onclick="attackerPidgey()">
   	<img src="Ani019MS.png" onclick="attackerRattata()">
   	<img src="Ani021MS.png" onclick="attackerSpearow()">
+  	<img src="Ani027MS.png" onclick="attackerSandshrew()">
   	<img src="Ani043MS.png" onclick="attackerOddish()">
-  	<img src="Ani056MS.png" onclick="attackerMankey()">
   	<br>
+  	<img src="Ani056MS.png" onclick="attackerMankey()">
   	<img src="Ani063MS.png" onclick="attackerAbra()">
   	<img src="Ani069MS.png" onclick="attackerBellsprout()">
   	<img src="Ani077MS.png" onclick="attackerPonyta()">
@@ -38,10 +39,11 @@ table, th, td {
   	<img src="Ani084MS.png" onclick="attackerDoduo()">
   	<img src="Ani092MS.png" onclick="attackerGastly()">
   	<img src="Ani100MS.png" onclick="attackerVoltorb()">
+  	<img src="Ani113MS.png" onclick="attackerChansey()">
   	<img src="Ani116MS.png" onclick="attackerHorsea()">
+  	<br>
   	<img src="Ani123MS.png" onclick="attackerScyther()">
   	<img src="Ani147MS.png" onclick="attackerDratini()">
-  	<br>
   	<img src="Ani158MS.png" onclick="attackerTotodile()">
   	<img src="Ani172MS.png" onclick="attackerPichu()">
   	<img src="Ani179MS.png" onclick="attackerMareep()">
@@ -55,7 +57,7 @@ table, th, td {
   </tr> 
 
   <tr> 
-    <td colspan="2", style="text-align:center"> (HINT: Click on a <br> Pokemon to change <br>it back into Ditto) </td>
+    <td colspan="2", style="text-align:center"> TIP: Click on a <br> Pokemon to change <br>it back into Ditto </td>
     <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite1", onclick="clearSlot(1)"></td>
     <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite2", onclick="clearSlot(2)"></td>
     <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite3", onclick="clearSlot(3)"></td>
@@ -991,6 +993,32 @@ function attackerRattata(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"019.png")
+}
+
+function attackerSandshrew(){
+	attacker = "Sandshrew";
+	movename = "Dig";
+	movetype = "Ground";
+	Level = 5;
+	Attack = 13;
+	Power = 60;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"027.png")
+}
+
+function attackerChansey(){
+	attacker = "Chansey";
+	movename = "Egg Bomb";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 5;
+	Power = 100;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"113.png")
 }
 
 function calcSlot1(lvl,atk,bp,stab,movetype,category){
