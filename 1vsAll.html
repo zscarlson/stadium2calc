@@ -226,7 +226,7 @@ table, th, td {
   <tr> 
     <td colspan="8"> VS Stacy's Pokemon: </td>
   </tr>  
-    <tr> 
+  <tr> 
   	<td style="text-align:center"> <img src="174.png"> </td>
     <td style="text-align:center"> 24 HP </td>
     <td style="text-align:center"> <p id="dmgIgglybuff1"></p> <p id="dmgIgglybuff1b"></p> </td> 
@@ -235,6 +235,16 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgIgglybuff4"></p> <p id="dmgIgglybuff4b"></p> </td> 
     <td style="text-align:center"> <p id="dmgIgglybuff5"></p> <p id="dmgIgglybuff5b"></p> </td> 
     <td style="text-align:center"> <p id="dmgIgglybuff6"></p> <p id="dmgIgglybuff6b"></p> </td> 
+  </tr>  
+  <tr> 
+  	<td style="text-align:center"> <img src="209.png"> </td>
+    <td style="text-align:center"> 21 HP </td>
+    <td style="text-align:center"> <p id="dmgSnubbull1"></p> <p id="dmgSnubbull1b"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSnubbull2"></p> <p id="dmgSnubbull2b"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSnubbull3"></p> <p id="dmgSnubbull3b"></p> </td>
+    <td style="text-align:center"> <p id="dmgSnubbull4"></p> <p id="dmgSnubbull4b"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSnubbull5"></p> <p id="dmgSnubbull5b"></p> </td> 
+    <td style="text-align:center"> <p id="dmgSnubbull6"></p> <p id="dmgSnubbull6b"></p> </td> 
   </tr>  
 
 </table>
@@ -1014,6 +1024,122 @@ function calcIgglybuff(lvl,atk,bp,stab,movetype,category,location) {
 		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
 	}
 }
+
+function calcSnubbull(lvl,atk,bp,stab,movetype,category,location) {
+	if (category == "Physical")
+	{
+		def = 10;
+	}
+	if (category == "Special")
+	{
+		def = 9;
+	}
+
+	if (movetype == "Rock")
+	{
+		type = 1;
+	}
+	if (movetype == "Psychic")
+	{
+		type = 1;
+	}
+	if (movetype == "Water")
+	{
+		type = 1;
+	}
+	if (movetype == "Fighting")
+	{
+		type = 2;
+	}	
+	if (movetype == "Electric")
+	{
+		type = 1;
+	}	
+	if (movetype == "Ground")
+	{
+		type = 1;
+	}	
+	if (movetype == "Normal")
+	{
+		type = 1;
+	}	
+	if (movetype == "Fire")
+	{
+		type = 1;
+	}	
+	if (movetype == "Dragon")
+	{
+		type = 1;
+	}	
+	if (movetype == "Dark")
+	{
+		type = 1;
+	}	
+	if (movetype == "Ghost")
+	{
+		type = 0;
+	}	
+	if (movetype == "Poison")
+	{
+		type = 1;
+	}	
+	if (movetype == "Ice")
+	{
+		type = 1;
+	}	
+	if (movetype == "Grass")
+	{
+		type = 1;
+	}	
+	if (movetype == "Flying")
+	{
+		type = 1;
+	}	
+	if (movetype == "Steel")
+	{
+		type = 1;
+	}	
+	if (movetype == "Bug")
+	{
+		type = 1;
+	}	
+	var inter1 = Math.floor(lvl*0.4 + 2);
+	var inter2 = Math.floor(inter1*atk*bp/50);
+	var inter3 = Math.floor((inter2/def)+2);
+	var inter4 = Math.floor(inter3*stab);
+	var maxroll = Math.floor(inter4*type);
+	var minroll = Math.floor(maxroll*217/255);
+	if (minroll == 0 & type != 0){
+		minroll = 1;
+	}
+
+	if (multihit == 5)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*5;
+		}
+	if (multihit == 2)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*2;
+		}
+
+	damageColor(21, location, minroll, maxroll);
+
+	if (moveindex == 1){
+		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+	
+	if (moveindex == 2){
+		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+}
+
+
+
+
+
+
 
 function attackerAbra(){
 	attacker = "Abra";
@@ -2964,6 +3090,7 @@ function calcSlot1(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte1");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma1");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff1");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull1");
 }
 
 function calcSlot2(lvl,atk,bp,stab,movetype,category){
@@ -2974,6 +3101,7 @@ function calcSlot2(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte2");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma2");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff2");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull2");
 }
 
 function calcSlot3(lvl,atk,bp,stab,movetype,category){
@@ -2984,6 +3112,7 @@ function calcSlot3(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte3");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma3");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff3");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull3");
 }
 
 function calcSlot4(lvl,atk,bp,stab,movetype,category){
@@ -2994,6 +3123,7 @@ function calcSlot4(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte4");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma4");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff4");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull4");
 }
 
 function calcSlot5(lvl,atk,bp,stab,movetype,category){
@@ -3004,6 +3134,7 @@ function calcSlot5(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte5");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma5");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff5");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull5");
 }
 
 function calcSlot6(lvl,atk,bp,stab,movetype,category){
@@ -3014,6 +3145,7 @@ function calcSlot6(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte6");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma6");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff6");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull6");
 }
 
 function calcSlot1b(lvl,atk,bp,stab,movetype,category){
@@ -3024,6 +3156,7 @@ function calcSlot1b(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte1b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma1b");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff1b");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull1b");
 }
 
 function calcSlot2b(lvl,atk,bp,stab,movetype,category){
@@ -3034,6 +3167,7 @@ function calcSlot2b(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte2b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma2b");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff2b");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull2b");
 }
 
 function calcSlot3b(lvl,atk,bp,stab,movetype,category){
@@ -3044,6 +3178,7 @@ function calcSlot3b(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte3b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma3b");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff3b");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull3b");
 }
 
 function calcSlot4b(lvl,atk,bp,stab,movetype,category){
@@ -3054,6 +3189,7 @@ function calcSlot4b(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte4b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma4b");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff4b");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull4b");
 }
 
 function calcSlot5b(lvl,atk,bp,stab,movetype,category){
@@ -3064,6 +3200,7 @@ function calcSlot5b(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte5b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma5b");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff5b");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull5b");
 }
 
 function calcSlot6b(lvl,atk,bp,stab,movetype,category){
@@ -3074,6 +3211,7 @@ function calcSlot6b(lvl,atk,bp,stab,movetype,category){
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte6b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma6b");
 	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff6b");
+	calcSnubbull(lvl,atk,bp,stab,movetype,category,"dmgSnubbull6b");
 }
 
 function slotpicker(slot,sprite){
@@ -3158,6 +3296,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte1').innerHTML = "";
 		document.getElementById('dmgTogepi1').innerHTML = "";
 		document.getElementById('dmgIgglybuff1').innerHTML = "";
+		document.getElementById('dmgSnubbull1').innerHTML = "";
 
 		document.getElementById('dmgSunkern1b').innerHTML = "";
 		document.getElementById('dmgSquirtle1b').innerHTML = "";
@@ -3166,6 +3305,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte1b').innerHTML = "";
 		document.getElementById('dmgTogepi1b').innerHTML = "";
 		document.getElementById('dmgIgglybuff1b').innerHTML = "";
+		document.getElementById('dmgSnubbull1b').innerHTML = "";
 	}
 	if (slot == 2){
 		slot2occupied = 0;
@@ -3177,6 +3317,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte2').innerHTML = "";
 		document.getElementById('dmgTogepi2').innerHTML = "";
 		document.getElementById('dmgIgglybuff2').innerHTML = "";
+		document.getElementById('dmgSnubbull2').innerHTML = "";
 
 		document.getElementById('dmgSunkern2b').innerHTML = "";
 		document.getElementById('dmgSquirtle2b').innerHTML = "";
@@ -3185,6 +3326,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte2b').innerHTML = "";
 		document.getElementById('dmgTogepi2b').innerHTML = "";
 		document.getElementById('dmgIgglybuff2b').innerHTML = "";
+		document.getElementById('dmgSnubbull2b').innerHTML = "";
 	}
 	if (slot == 3){
 		slot3occupied = 0;
@@ -3196,6 +3338,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte3').innerHTML = "";
 		document.getElementById('dmgTogepi3').innerHTML = "";
 		document.getElementById('dmgIgglybuff3').innerHTML = "";
+		document.getElementById('dmgSnubbull3').innerHTML = "";
 
 		document.getElementById('dmgSunkern3b').innerHTML = "";
 		document.getElementById('dmgSquirtle3b').innerHTML = "";
@@ -3204,6 +3347,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte3b').innerHTML = "";
 		document.getElementById('dmgTogepi3b').innerHTML = "";
 		document.getElementById('dmgIgglybuff3b').innerHTML = "";
+		document.getElementById('dmgSnubbull3b').innerHTML = "";
 	}
 	if (slot == 4){
 		slot4occupied = 0;
@@ -3215,6 +3359,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte4').innerHTML = "";
 		document.getElementById('dmgTogepi4').innerHTML = "";
 		document.getElementById('dmgIgglybuff4').innerHTML = "";
+		document.getElementById('dmgSnubbull4').innerHTML = "";
 
 		document.getElementById('dmgSunkern4b').innerHTML = "";
 		document.getElementById('dmgSquirtle4b').innerHTML = "";
@@ -3223,6 +3368,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte4b').innerHTML = "";
 		document.getElementById('dmgTogepi4b').innerHTML = "";
 		document.getElementById('dmgIgglybuff4b').innerHTML = "";
+		document.getElementById('dmgSnubbull4b').innerHTML = "";
 	}
 	if (slot == 5){
 		slot5occupied = 0;
@@ -3234,6 +3380,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte5').innerHTML = "";
 		document.getElementById('dmgTogepi5').innerHTML = "";
 		document.getElementById('dmgIgglybuff5').innerHTML = "";
+		document.getElementById('dmgSnubbull5').innerHTML = "";
 
 		document.getElementById('dmgSunkern5b').innerHTML = "";
 		document.getElementById('dmgSquirtle5b').innerHTML = "";
@@ -3242,6 +3389,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte5b').innerHTML = "";
 		document.getElementById('dmgTogepi5b').innerHTML = "";
 		document.getElementById('dmgIgglybuff5b').innerHTML = "";
+		document.getElementById('dmgSnubbull5b').innerHTML = "";
 	}
 	if (slot == 6){
 		slot6occupied = 0;
@@ -3253,6 +3401,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte6').innerHTML = "";
 		document.getElementById('dmgTogepi6').innerHTML = "";
 		document.getElementById('dmgIgglybuff6').innerHTML = "";
+		document.getElementById('dmgSnubbull6').innerHTML = "";
 
 		document.getElementById('dmgSunkern6b').innerHTML = "";
 		document.getElementById('dmgSquirtle6b').innerHTML = "";
@@ -3261,6 +3410,7 @@ function clearSlot(slot){
 		document.getElementById('dmgOmanyte6b').innerHTML = "";
 		document.getElementById('dmgTogepi6b').innerHTML = "";
 		document.getElementById('dmgIgglybuff6b').innerHTML = "";
+		document.getElementById('dmgSnubbull6b').innerHTML = "";
 	}
 }
 
