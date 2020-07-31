@@ -64,7 +64,7 @@ table, th, td {
   </tr>  
 
   <tr> 
-    <td colspan="8"> VS Camper Bernie's Pokemon: </td>
+    <td colspan="8"> VS Bernie's Pokemon: </td>
   </tr>  
   <tr> 
   	<td style="text-align:center"> <img src="191.png"> </td>
@@ -162,6 +162,20 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgSlugma6"></p>
     <p id="dmgSlugma6b"></p> </td> 
   </tr>  
+  <tr> 
+    <td colspan="8"> VS Stacy's Pokemon: </td>
+  </tr>  
+    <tr> 
+  	<td style="text-align:center"> <img src="174.png"> </td>
+    <td style="text-align:center"> 24 HP </td>
+    <td style="text-align:center"> <p id="dmgIgglybuff1"></p> <p id="dmgIgglybuff1b"></p> </td> 
+    <td style="text-align:center"> <p id="dmgIgglybuff2"></p> <p id="dmgIgglybuff2b"></p> </td> 
+    <td style="text-align:center"> <p id="dmgIgglybuff3"></p> <p id="dmgIgglybuff3b"></p> </td>
+    <td style="text-align:center"> <p id="dmgIgglybuff4"></p> <p id="dmgIgglybuff4b"></p> </td> 
+    <td style="text-align:center"> <p id="dmgIgglybuff5"></p> <p id="dmgIgglybuff5b"></p> </td> 
+    <td style="text-align:center"> <p id="dmgIgglybuff6"></p> <p id="dmgIgglybuff6b"></p> </td> 
+  </tr>  
+
 </table>
 
 <script>
@@ -712,6 +726,96 @@ function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
 	}
 }
 
+function calcIgglybuff(lvl,atk,bp,stab,movetype,category,location) {
+	if (category == "Physical")
+	{
+		def = 6;
+	}
+	if (category == "Special")
+	{
+		def = 7;
+	}
+
+	if (movetype == "Rock")
+	{
+		type = 1;
+	}
+	if (movetype == "Psychic")
+	{
+		type = 1;
+	}
+	if (movetype == "Water")
+	{
+		type = 1;
+	}
+	if (movetype == "Fighting")
+	{
+		type = 2;
+	}	
+	if (movetype == "Electric")
+	{
+		type = 1;
+	}	
+	if (movetype == "Ground")
+	{
+		type = 1;
+	}	
+	if (movetype == "Normal")
+	{
+		type = 1;
+	}	
+	if (movetype == "Fire")
+	{
+		type = 1;
+	}	
+	if (movetype == "Dragon")
+	{
+		type = 1;
+	}	
+	if (movetype == "Dark")
+	{
+		type = 1;
+	}	
+	if (movetype == "Ghost")
+	{
+		type = 0;
+	}	
+	if (movetype == "Poison")
+	{
+		type = 1;
+	}	
+	if (movetype == "Ice")
+	{
+		type = 1;
+	}	
+	if (movetype == "Grass")
+	{
+		type = 1;
+	}	
+	if (movetype == "Flying")
+	{
+		type = 1;
+	}	
+	var inter1 = Math.floor(lvl*0.4 + 2);
+	var inter2 = Math.floor(inter1*atk*bp/50);
+	var inter3 = Math.floor((inter2/def)+2);
+	var inter4 = Math.floor(inter3*stab);
+	var maxroll = Math.floor(inter4*type);
+	var minroll = Math.floor(maxroll*217/255);
+	if (minroll == 0 & type != 0){
+		minroll = 1;
+	}
+	damageColor(24, location, minroll, maxroll);
+
+	if (moveindex == 1){
+		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+	
+	if (moveindex == 2){
+		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+}
+
 function attackerAbra(){
 	attacker = "Abra";
 	moveindex = 1;
@@ -1197,6 +1301,7 @@ function calcSlot1(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi1");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte1");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma1");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff1");
 }
 
 function calcSlot2(lvl,atk,bp,stab,movetype,category){
@@ -1206,6 +1311,7 @@ function calcSlot2(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi2");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte2");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma2");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff2");
 }
 
 function calcSlot3(lvl,atk,bp,stab,movetype,category){
@@ -1215,6 +1321,7 @@ function calcSlot3(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi3");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte3");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma3");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff3");
 }
 
 function calcSlot4(lvl,atk,bp,stab,movetype,category){
@@ -1224,6 +1331,7 @@ function calcSlot4(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi4");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte4");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma4");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff4");
 }
 
 function calcSlot5(lvl,atk,bp,stab,movetype,category){
@@ -1233,6 +1341,7 @@ function calcSlot5(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi5");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte5");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma5");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff5");
 }
 
 function calcSlot6(lvl,atk,bp,stab,movetype,category){
@@ -1242,6 +1351,7 @@ function calcSlot6(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi6");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte6");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma6");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff6");
 }
 
 function calcSlot1b(lvl,atk,bp,stab,movetype,category){
@@ -1251,6 +1361,7 @@ function calcSlot1b(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi1b");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte1b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma1b");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff1b");
 }
 
 function calcSlot2b(lvl,atk,bp,stab,movetype,category){
@@ -1260,6 +1371,7 @@ function calcSlot2b(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi2b");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte2b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma2b");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff2b");
 }
 
 function calcSlot3b(lvl,atk,bp,stab,movetype,category){
@@ -1269,6 +1381,7 @@ function calcSlot3b(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi3b");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte3b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma3b");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff3b");
 }
 
 function calcSlot4b(lvl,atk,bp,stab,movetype,category){
@@ -1278,6 +1391,7 @@ function calcSlot4b(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi4b");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte4b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma4b");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff4b");
 }
 
 function calcSlot5b(lvl,atk,bp,stab,movetype,category){
@@ -1287,6 +1401,7 @@ function calcSlot5b(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi5b");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte5b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma5b");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff5b");
 }
 
 function calcSlot6b(lvl,atk,bp,stab,movetype,category){
@@ -1296,6 +1411,7 @@ function calcSlot6b(lvl,atk,bp,stab,movetype,category){
 	calcTogepi(lvl,atk,bp,stab,movetype,category,"dmgTogepi6b");
 	calcOmanyte(lvl,atk,bp,stab,movetype,category,"dmgOmanyte6b");
 	calcSlugma(lvl,atk,bp,stab,movetype,category,"dmgSlugma6b");
+	calcIgglybuff(lvl,atk,bp,stab,movetype,category,"dmgIgglybuff6b");
 }
 
 function slotpicker(slot,sprite){
@@ -1379,12 +1495,15 @@ function clearSlot(slot){
 		document.getElementById('dmgSlugma1').innerHTML = "";
 		document.getElementById('dmgOmanyte1').innerHTML = "";
 		document.getElementById('dmgTogepi1').innerHTML = "";
+		document.getElementById('dmgIgglybuff1').innerHTML = "";
+
 		document.getElementById('dmgSunkern1b').innerHTML = "";
 		document.getElementById('dmgSquirtle1b').innerHTML = "";
 		document.getElementById('dmgMankey1b').innerHTML = "";
 		document.getElementById('dmgSlugma1b').innerHTML = "";
 		document.getElementById('dmgOmanyte1b').innerHTML = "";
 		document.getElementById('dmgTogepi1b').innerHTML = "";
+		document.getElementById('dmgIgglybuff1b').innerHTML = "";
 	}
 	if (slot == 2){
 		slot2occupied = 0;
@@ -1395,12 +1514,15 @@ function clearSlot(slot){
 		document.getElementById('dmgSlugma2').innerHTML = "";
 		document.getElementById('dmgOmanyte2').innerHTML = "";
 		document.getElementById('dmgTogepi2').innerHTML = "";
+		document.getElementById('dmgIgglybuff2').innerHTML = "";
+
 		document.getElementById('dmgSunkern2b').innerHTML = "";
 		document.getElementById('dmgSquirtle2b').innerHTML = "";
 		document.getElementById('dmgMankey2b').innerHTML = "";
 		document.getElementById('dmgSlugma2b').innerHTML = "";
 		document.getElementById('dmgOmanyte2b').innerHTML = "";
 		document.getElementById('dmgTogepi2b').innerHTML = "";
+		document.getElementById('dmgIgglybuff2b').innerHTML = "";
 	}
 	if (slot == 3){
 		slot3occupied = 0;
@@ -1411,12 +1533,15 @@ function clearSlot(slot){
 		document.getElementById('dmgSlugma3').innerHTML = "";
 		document.getElementById('dmgOmanyte3').innerHTML = "";
 		document.getElementById('dmgTogepi3').innerHTML = "";
+		document.getElementById('dmgIgglybuff3').innerHTML = "";
+
 		document.getElementById('dmgSunkern3b').innerHTML = "";
 		document.getElementById('dmgSquirtle3b').innerHTML = "";
 		document.getElementById('dmgMankey3b').innerHTML = "";
 		document.getElementById('dmgSlugma3b').innerHTML = "";
 		document.getElementById('dmgOmanyte3b').innerHTML = "";
 		document.getElementById('dmgTogepi3b').innerHTML = "";
+		document.getElementById('dmgIgglybuff3b').innerHTML = "";
 	}
 	if (slot == 4){
 		slot4occupied = 0;
@@ -1427,12 +1552,15 @@ function clearSlot(slot){
 		document.getElementById('dmgSlugma4').innerHTML = "";
 		document.getElementById('dmgOmanyte4').innerHTML = "";
 		document.getElementById('dmgTogepi4').innerHTML = "";
+		document.getElementById('dmgIgglybuff4').innerHTML = "";
+
 		document.getElementById('dmgSunkern4b').innerHTML = "";
 		document.getElementById('dmgSquirtle4b').innerHTML = "";
 		document.getElementById('dmgMankey4b').innerHTML = "";
 		document.getElementById('dmgSlugma4b').innerHTML = "";
 		document.getElementById('dmgOmanyte4b').innerHTML = "";
 		document.getElementById('dmgTogepi4b').innerHTML = "";
+		document.getElementById('dmgIgglybuff4b').innerHTML = "";
 	}
 	if (slot == 5){
 		slot5occupied = 0;
@@ -1443,12 +1571,15 @@ function clearSlot(slot){
 		document.getElementById('dmgSlugma5').innerHTML = "";
 		document.getElementById('dmgOmanyte5').innerHTML = "";
 		document.getElementById('dmgTogepi5').innerHTML = "";
+		document.getElementById('dmgIgglybuff5').innerHTML = "";
+
 		document.getElementById('dmgSunkern5b').innerHTML = "";
 		document.getElementById('dmgSquirtle5b').innerHTML = "";
 		document.getElementById('dmgMankey5b').innerHTML = "";
 		document.getElementById('dmgSlugma5b').innerHTML = "";
 		document.getElementById('dmgOmanyte5b').innerHTML = "";
 		document.getElementById('dmgTogepi5b').innerHTML = "";
+		document.getElementById('dmgIgglybuff5b').innerHTML = "";
 	}
 	if (slot == 6){
 		slot6occupied = 0;
@@ -1459,12 +1590,15 @@ function clearSlot(slot){
 		document.getElementById('dmgSlugma6').innerHTML = "";
 		document.getElementById('dmgOmanyte6').innerHTML = "";
 		document.getElementById('dmgTogepi6').innerHTML = "";
+		document.getElementById('dmgIgglybuff6').innerHTML = "";
+
 		document.getElementById('dmgSunkern6b').innerHTML = "";
 		document.getElementById('dmgSquirtle6b').innerHTML = "";
 		document.getElementById('dmgMankey6b').innerHTML = "";
 		document.getElementById('dmgSlugma6b').innerHTML = "";
 		document.getElementById('dmgOmanyte6b').innerHTML = "";
 		document.getElementById('dmgTogepi6b').innerHTML = "";
+		document.getElementById('dmgIgglybuff6b').innerHTML = "";
 	}
 }
 
