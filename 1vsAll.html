@@ -35,9 +35,16 @@ table, th, td {
   	<img src="Ani046MS.png" onclick="attackerParas()">
   	<img src="Ani048MS.png" onclick="attackerVenonat()">
   	<br>
+  	<img src="Ani050MS.png" onclick="attackerDiglett()">
+  	<img src="Ani052MS.png" onclick="attackerMeowth()">
+  	<img src="Ani054MS.png" onclick="attackerPsyduck()">
   	<img src="Ani056MS.png" onclick="attackerMankey()">
+  	<img src="Ani058MS.png" onclick="attackerGrowlithe()">
+  	<img src="Ani060MS.png" onclick="attackerPoliwag()">
   	<img src="Ani063MS.png" onclick="attackerAbra()">
+  	<img src="Ani066MS.png" onclick="attackerMachop()">
   	<img src="Ani069MS.png" onclick="attackerBellsprout()">
+  	<img src="Ani072MS.png" onclick="attackerTentacool()">
   	<img src="Ani077MS.png" onclick="attackerPonyta()">
   	<img src="Ani081MS.png" onclick="attackerMagnemite()">
   	<img src="Ani084MS.png" onclick="attackerDoduo()">
@@ -45,11 +52,13 @@ table, th, td {
   	<img src="Ani100MS.png" onclick="attackerVoltorb()">
   	<img src="Ani104MS.png" onclick="attackerCubone()">
   	<img src="Ani113MS.png" onclick="attackerChansey()">
-  	<img src="Ani116MS.png" onclick="attackerHorsea()">
   	<br>
+  	<img src="Ani116MS.png" onclick="attackerHorsea()">
   	<img src="Ani123MS.png" onclick="attackerScyther()">
   	<img src="Ani138MS.png" onclick="attackerOmanyte()">
   	<img src="Ani147MS.png" onclick="attackerDratini()">
+  	<img src="Ani152MS.png" onclick="attackerChikorita()">
+  	<img src="Ani155MS.png" onclick="attackerCyndaquil()">
   	<img src="Ani158MS.png" onclick="attackerTotodile()">
   	<img src="Ani172MS.png" onclick="attackerPichu()">
   	<img src="Ani174MS.png" onclick="attackerIgglybuff()">
@@ -61,6 +70,7 @@ table, th, td {
   	<img src="Ani228MS.png" onclick="attackerHoundour()">
   	<img src="Ani231MS.png" onclick="attackerPhanpy()">
 	<img src="Ani239MS.png" onclick="attackerElekid()">
+	<br>
   	<img src="Ani246MS.png" onclick="attackerLarvitar()">
   	</td>
 
@@ -1410,7 +1420,7 @@ function attackerMareep(){
 	SameType = 1.5;
 	category = "Special";
 	slot = findEmptySlot();
-	slotpicker(slot,"Spr_5b_179.png")
+	slotpicker(slot,"179.png")
 
 	moveindex = 2;
 	movename = "Return";
@@ -1927,6 +1937,214 @@ function attackerCubone(){
 	calcB(slot);
 }
 
+function attackerDiglett(){
+	attacker = "Diglett";
+	moveindex = 1;
+	movename = "Magnitude 7";
+	movetype = "Ground";
+	Level = 5;
+	Attack = 11;
+	Power = 70;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"050.png")
+
+	moveindex = 2;
+	movename = "Slash";
+	movetype = "Normal";
+	Power = 70;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerMeowth(){
+	attacker = "Meowth";
+	moveindex = 1;
+	movename = "Pay Day";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 11;
+	Power = 40;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"052.png")
+
+	moveindex = 2;
+	movename = "Iron Tail";
+	movetype = "Steel";
+	Power = 100;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerPsyduck(){
+	attacker = "Psyduck";
+	moveindex = 1;
+	movename = "Waterfall";
+	movetype = "Water";
+	Level = 5;
+	Attack = 11;
+	Power = 80;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"054.png")
+
+	moveindex = 2;
+	movename = "Fury Swipes";
+	movetype = "Normal";
+	Attack = 10;
+	Power = 18;
+	SameType = 1;
+	category = "Physical";
+	multihit = 5;
+	calcB(slot);
+	multihit = 0;
+}
+
+function attackerGrowlithe(){
+	attacker = "Growlithe";
+	moveindex = 1;
+	movename = "Flame Wheel";
+	movetype = "Fire";
+	Level = 5;
+	Attack = 12;
+	Power = 60;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"058.png")
+
+	moveindex = 2;
+	movename = "Take Down";
+	movetype = "Normal";
+	Attack = 12;
+	Power = 90;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerPoliwag(){
+	attacker = "Poliwag";
+	moveindex = 1;
+	movename = "Doubleslap";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 10;
+	Power = 15;
+	SameType = 1;
+	category = "Physical";
+	multihit = 5;
+	slot = findEmptySlot();
+	slotpicker(slot,"060.png")
+	multihit = 0;
+
+	moveindex = 2;
+	movename = "Whirlpool";
+	movetype = "Water";
+	Attack = 9;
+	Power = 15;
+	SameType = 1.5;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerMachop(){
+	attacker = "Machop";
+	moveindex = 1;
+	movename = "Vital Throw";
+	movetype = "Fighting";
+	Level = 5;
+	Attack = 13;
+	Power = 70;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"066.png")
+
+	moveindex = 2;
+	movename = "Dig";
+	movetype = "Ground";
+	Power = 60;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerTentacool(){
+	attacker = "Tentacool";
+	moveindex = 1;
+	movename = "Bubblebeam";
+	movetype = "Water";
+	Level = 5;
+	Attack = 10;
+	Power = 65;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"072.png")
+
+	moveindex = 2;
+	movename = "Acid";
+	movetype = "Poison";
+	Power = 40;
+	Attack = 9;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerCyndaquil(){
+	attacker = "Cyndaquil";
+	moveindex = 1;
+	movename = "Flame Wheel";
+	movetype = "Fire";
+	Level = 5;
+	Attack = 11;
+	Power = 60;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"155.png")
+
+	moveindex = 2;
+	movename = "Dig";
+	movetype = "Ground";
+	Power = 60;
+	Attack = 10;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerChikorita(){
+	attacker = "Chikorita";
+	moveindex = 1;
+	movename = "SolarBeam";
+	movetype = "Grass";
+	Level = 5;
+	Attack = 10;
+	Power = 120;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"152.png")
+
+	moveindex = 2;
+	movename = "Body Slam";
+	movetype = "Normal";
+	Power = 85;
+	Attack = 10;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
 function calcSlot1(lvl,atk,bp,stab,movetype,category){
 	calcSunkern(lvl,atk,bp,stab,movetype,category,"dmgSunkern1");
 	calcSquirtle(lvl,atk,bp,stab,movetype,category,"dmgSquirtle1");
@@ -2270,7 +2488,7 @@ function damageColor(fullhp,location,minroll,maxroll){
 	// 	document.getElementById(location).style="color:black;"
 	// }
 	if (maxroll >= fullhp){
-		document.getElementById(location).style="color:lightgreen;"
+		document.getElementById(location).style="color: lightgreen;"
 	}
 	if (minroll >= fullhp){
 		document.getElementById(location).style="color:green;"
