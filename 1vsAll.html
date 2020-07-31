@@ -166,7 +166,7 @@ table, th, td {
 
 <script>
 
-// var moveindex = 0;
+var moveindex = 1;
 
 function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	if (category == "Physical")
@@ -248,12 +248,13 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 		minroll = 1;
 	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
-
-	// if (moveindex == 2)
-	// {
-	// 	document.getElementById(dmgSunkernb).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
-	// }
+	if (moveindex == 1){
+		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+	
+	if (moveindex == 2){
+		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
 }
 
 function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
@@ -336,7 +337,13 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 		minroll = 1;
 	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	if (moveindex == 1){
+		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+	
+	if (moveindex == 2){
+		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
 }
 
 function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
@@ -419,7 +426,13 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 		minroll = 1;
 	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	if (moveindex == 1){
+		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+	
+	if (moveindex == 2){
+		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
 }
 
 function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
@@ -502,7 +515,13 @@ function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
 		minroll = 1;
 	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	if (moveindex == 1){
+		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+	
+	if (moveindex == 2){
+		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
 }
 
 function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
@@ -585,7 +604,13 @@ function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
 		minroll = 1;
 	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	if (moveindex == 1){
+		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+	
+	if (moveindex == 2){
+		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
 }
 
 function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
@@ -668,7 +693,13 @@ function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
 		minroll = 1;
 	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	if (moveindex == 1){
+		document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
+	
+	if (moveindex == 2){
+		document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
+	}
 }
 
 function attackerAbra(){
@@ -684,18 +715,19 @@ function attackerAbra(){
 	slot = findEmptySlot();
 	slotpicker(slot,"063.png")
 
+	moveindex = 2;
 	movename = "Thief";
 	movetype = "Dark";
 	Power = 40;
 	SameType = 1;
 	category = "Special";
-	moveindex = 2;
 	calcB(slot);
 
 }
 
 function attackerLarvitar(){
 	attacker = "Larvitar";
+	moveindex = 1;
 	movename = "Rock Slide";
 	movetype = "Rock";
 	Level = 5;
@@ -705,10 +737,19 @@ function attackerLarvitar(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"246.png")
+
+	moveindex = 2;
+	movename = "Mud Slap";
+	movetype = "Ground";
+	Power = 20;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerHorsea(){
 	attacker = "Horsea";
+	moveindex = 1;
 	movename = "Hydro Pump";
 	movetype = "Water";
 	Level = 5;
@@ -718,10 +759,19 @@ function attackerHorsea(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"116.png")
+
+	moveindex = 2;
+	movename = "Twister";
+	movetype = "Dragon";
+	Power = 40;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
 }
 
 function attackerDoduo(){
 	attacker = "Doduo";
+	moveindex = 1;
 	movename = "Tri Attack";
 	movetype = "Normal";
 	Level = 5;
@@ -731,10 +781,19 @@ function attackerDoduo(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"084.png")
+
+	moveindex = 2;
+	movename = "Peck";
+	movetype = "Flying";
+	Power = 35;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerMankey(){
 	attacker = "Mankey";
+	moveindex = 1;
 	movename = "Cross Chop";
 	movetype = "Fighting";
 	Level = 5;
@@ -744,10 +803,19 @@ function attackerMankey(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"056.png")
+
+	moveindex = 2;
+	movename = "Scratch";
+	movetype = "Normal";
+	Power = 40;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerVoltorb(){
 	attacker = "Voltorb";
+	moveindex = 1;
 	movename = "Thunder";
 	movetype = "Electric";
 	Level = 5;
@@ -757,10 +825,20 @@ function attackerVoltorb(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"100.png")
+
+	moveindex = 1;
+	movename = "Rollout";
+	movetype = "Rock";
+	Attack = 8;
+	Power = 30;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerPhanpy(){
 	attacker = "Phanpy";
+	moveindex = 1;
 	movename = "Earthquake";
 	movetype = "Ground";
 	Level = 5;
@@ -770,10 +848,19 @@ function attackerPhanpy(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"231.png")
+
+	moveindex = 2;
+	movename = "Flail (40)";
+	movetype = "Normal";
+	Power = 40;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerPonyta(){
 	attacker = "Ponyta";
+	moveindex = 1;
 	movename = "Fire Blast";
 	movetype = "Fire";
 	Level = 5;
@@ -787,6 +874,7 @@ function attackerPonyta(){
 
 function attackerDratini(){
 	attacker = "Dratini";
+	moveindex = 1;
 	movename = "Outrage";
 	movetype = "Dragon";
 	Level = 5;
@@ -800,6 +888,7 @@ function attackerDratini(){
 
 function attackerHoundour(){
 	attacker = "Houndour";
+	moveindex = 1;
 	movename = "Crunch";
 	movetype = "Dark";
 	Level = 5;
@@ -813,6 +902,7 @@ function attackerHoundour(){
 
 function attackerGastly(){
 	attacker = "Gastly";
+	moveindex = 1;
 	movename = "Shadow Ball";
 	movetype = "Ghost";
 	Level = 5;
@@ -826,6 +916,7 @@ function attackerGastly(){
 
 function attackerBellsprout(){
 	attacker = "Bellsprout";
+	moveindex = 1;
 	movename = "Sludge Bomb";
 	movetype = "Poison";
 	Level = 5;
@@ -839,6 +930,7 @@ function attackerBellsprout(){
 
 function attackerSwinub(){
 	attacker = "Swinub";
+	moveindex = 1;
 	movename = "Blizzard";
 	movetype = "Ice";
 	Level = 5;
@@ -852,6 +944,7 @@ function attackerSwinub(){
 
 function attackerOddish(){
 	attacker = "Oddish";
+	moveindex = 1;
 	movename = "Petal Dance";
 	movetype = "Grass";
 	Level = 5;
@@ -865,6 +958,7 @@ function attackerOddish(){
 
 function attackerSpearow(){
 	attacker = "Spearow";
+	moveindex = 1;
 	movename = "Drill Peck";
 	movetype = "Flying";
 	Level = 5;
@@ -878,6 +972,7 @@ function attackerSpearow(){
 
 function attackerBulbasaur(){
 	attacker = "Bulbasaur";
+	moveindex = 1;
 	movename = "Razor Leaf";
 	movetype = "Grass";
 	Level = 5;
@@ -891,6 +986,7 @@ function attackerBulbasaur(){
 
 function attackerCharmander(){
 	attacker = "Charmander";
+	moveindex = 1;
 	movename = "Flamethrower";
 	movetype = "Fire";
 	Level = 5;
@@ -904,6 +1000,7 @@ function attackerCharmander(){
 
 function attackerSquirtle(){
 	attacker = "Squirtle";
+	moveindex = 1;
 	movename = "Hydro Pump";
 	movetype = "Water";
 	Level = 5;
@@ -917,6 +1014,7 @@ function attackerSquirtle(){
 
 function attackerElekid(){
 	attacker = "Elekid";
+	moveindex = 1;
 	movename = "ThunderPunch";
 	movetype = "Electric";
 	Level = 5;
@@ -930,6 +1028,7 @@ function attackerElekid(){
 
 function attackerMareep(){
 	attacker = "Mareep";
+	moveindex = 1;
 	movename = "Thunder";
 	movetype = "Electric";
 	Level = 5;
@@ -943,6 +1042,7 @@ function attackerMareep(){
 
 function attackerPichu(){
 	attacker = "Pichu";
+	moveindex = 1;
 	movename = "Zap Cannon";
 	movetype = "Electric";
 	Level = 5;
@@ -956,6 +1056,7 @@ function attackerPichu(){
 
 function attackerMagnemite(){
 	attacker = "Magnemite";
+	moveindex = 1;
 	movename = "Zap Cannon";
 	movetype = "Electric";
 	Level = 5;
@@ -969,6 +1070,7 @@ function attackerMagnemite(){
 
 function attackerTotodile(){
 	attacker = "Totodile";
+	moveindex = 1;
 	movename = "Surf";
 	movetype = "Water";
 	Level = 5;
@@ -982,6 +1084,7 @@ function attackerTotodile(){
 
 function attackerScyther(){
 	attacker = "Scyther";
+	moveindex = 1;
 	movename = "Cut";
 	movetype = "Normal";
 	Level = 5;
@@ -995,6 +1098,7 @@ function attackerScyther(){
 
 function attackerCaterpie(){
 	attacker = "Caterpie";
+	moveindex = 1;
 	movename = "Tackle";
 	movetype = "Normal";
 	Level = 5;
@@ -1008,6 +1112,7 @@ function attackerCaterpie(){
 
 function attackerWeedle(){
 	attacker = "Weedle";
+	moveindex = 1;
 	movename = "Poison Sting";
 	movetype = "Poison";
 	Level = 5;
@@ -1021,6 +1126,7 @@ function attackerWeedle(){
 
 function attackerPidgey(){
 	attacker = "Pidgey";
+	moveindex = 1;
 	movename = "Fly";
 	movetype = "Flying";
 	Level = 5;
@@ -1034,6 +1140,7 @@ function attackerPidgey(){
 
 function attackerRattata(){
 	attacker = "Rattata";
+	moveindex = 1;
 	movename = "Hyper Fang";
 	movetype = "Normal";
 	Level = 5;
@@ -1047,6 +1154,7 @@ function attackerRattata(){
 
 function attackerSandshrew(){
 	attacker = "Sandshrew";
+	moveindex = 1;
 	movename = "Dig";
 	movetype = "Ground";
 	Level = 5;
@@ -1060,6 +1168,7 @@ function attackerSandshrew(){
 
 function attackerChansey(){
 	attacker = "Chansey";
+	moveindex = 1;
 	movename = "Egg Bomb";
 	movetype = "Normal";
 	Level = 5;
