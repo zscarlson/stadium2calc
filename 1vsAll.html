@@ -25,8 +25,15 @@ table, th, td {
   	<img src="Ani016MS.png" onclick="attackerPidgey()">
   	<img src="Ani019MS.png" onclick="attackerRattata()">
   	<img src="Ani021MS.png" onclick="attackerSpearow()">
+  	<img src="Ani023MS.png" onclick="attackerEkans()">
   	<img src="Ani027MS.png" onclick="attackerSandshrew()">
+  	<img src="Ani029MS.png" onclick="attackerNidoranF()">
+  	<img src="Ani032MS.png" onclick="attackerNidoranM()">
+  	<img src="Ani037MS.png" onclick="attackerVulpix()">
+  	<img src="Ani041MS.png" onclick="attackerZubat()">
   	<img src="Ani043MS.png" onclick="attackerOddish()">
+  	<img src="Ani046MS.png" onclick="attackerParas()">
+  	<img src="Ani048MS.png" onclick="attackerVenonat()">
   	<br>
   	<img src="Ani056MS.png" onclick="attackerMankey()">
   	<img src="Ani063MS.png" onclick="attackerAbra()">
@@ -36,6 +43,7 @@ table, th, td {
   	<img src="Ani084MS.png" onclick="attackerDoduo()">
   	<img src="Ani092MS.png" onclick="attackerGastly()">
   	<img src="Ani100MS.png" onclick="attackerVoltorb()">
+  	<img src="Ani104MS.png" onclick="attackerCubone()">
   	<img src="Ani113MS.png" onclick="attackerChansey()">
   	<img src="Ani116MS.png" onclick="attackerHorsea()">
   	<br>
@@ -186,6 +194,7 @@ table, th, td {
 <script>
 
 var moveindex = 1;
+var multihit = 0;
 
 function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	if (category == "Physical")
@@ -274,6 +283,17 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+
+	if (multihit == 5)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*5;
+		}
+	if (multihit == 2)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*2;
+		}
 
 	damageColor(19, location, minroll, maxroll);
 
@@ -374,6 +394,17 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 		minroll = 1;
 	}
 
+	if (multihit == 5)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*5;
+		}
+	if (multihit == 2)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*2;
+		}
+
 	damageColor(19, location, minroll, maxroll);
 
 	if (moveindex == 1){
@@ -473,6 +504,18 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+
+	if (multihit == 5)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*5;
+		}
+	if (multihit == 2)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*2;
+		}
+
 	damageColor(20, location, minroll, maxroll);
 
 	if (moveindex == 1){
@@ -572,6 +615,17 @@ function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
 		minroll = 1;
 	}
 
+	if (multihit == 5)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*5;
+		}
+	if (multihit == 2)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*2;
+		}
+
 	damageColor(19, location, minroll, maxroll);
 
 	if (moveindex == 1){
@@ -670,6 +724,18 @@ function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
 	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+
+	if (multihit == 5)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*5;
+		}
+	if (multihit == 2)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*2;
+		}
+
 	damageColor(19, location, minroll, maxroll);
 
 	if (moveindex == 1){
@@ -768,6 +834,18 @@ function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
 	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+
+	if (multihit == 5)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*5;
+		}
+	if (multihit == 2)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*2;
+		}
+
 	damageColor(20, location, minroll, maxroll);
 
 	if (moveindex == 1){
@@ -866,6 +944,18 @@ function calcIgglybuff(lvl,atk,bp,stab,movetype,category,location) {
 	if (minroll == 0 & type != 0){
 		minroll = 1;
 	}
+
+	if (multihit == 5)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*5;
+		}
+	if (multihit == 2)
+		{
+			minroll = minroll*2;
+			maxroll = maxroll*2;
+		}
+
 	damageColor(24, location, minroll, maxroll);
 
 	if (moveindex == 1){
@@ -1207,13 +1297,14 @@ function attackerSpearow(){
 	slotpicker(slot,"021.png")
 
 	moveindex = 2;
-	movename = "Pursuit";
-	movetype = "Dark";
-	Attack = 9;
-	Power = 40;
-	SameType = 1;
-	category = "Special";
+	movename = "Fury Attack";
+	movetype = "Normal";
+	Power = 15;
+	SameType = 1.5;
+	multihit = 5;
+	category = "Physical";
 	calcB(slot);
+	multihit = 0;
 }
 
 function attackerBulbasaur(){
@@ -1648,6 +1739,189 @@ function attackerSlugma(){
 	movetype = "Rock";
 	Power = 50;
 	Attack = 9;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerEkans(){
+	attacker = "Ekans";
+	moveindex = 1;
+	movename = "Acid";
+	movetype = "Poison";
+	Level = 5;
+	Attack = 11;
+	Power = 40;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"023.png")
+
+	moveindex = 2;
+	movename = "Strength";
+	movetype = "Normal";
+	Power = 80;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerNidoranF(){
+	attacker = "Nidoran♀";
+	moveindex = 1;
+	movename = "Blizzard";
+	movetype = "Ice";
+	Level = 5;
+	Attack = 9;
+	Power = 120;
+	SameType = 1;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"029.png")
+
+	moveindex = 2;
+	movename = "Poison Sting";
+	movetype = "Poison";
+	Attack = 10;
+	Power = 15;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerNidoranM(){
+	attacker = "Nidoran♂";
+	moveindex = 1;
+	movename = "Horn Attack";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 11;
+	Power = 65;
+	SameType = 1;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"032.png")
+
+	moveindex = 2;
+	movename = "Poison Sting";
+	movetype = "Poison";
+	Power = 15;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerVulpix(){
+	attacker = "Vulpix";
+	moveindex = 1;
+	movename = "Quick Attack";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 8;
+	Power = 40;
+	SameType = 1;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"037.png")
+
+	moveindex = 2;
+	movename = "Fire Spin";
+	movetype = "Fire";
+	Attack = 10;
+	Power = 15;
+	SameType = 1.5;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerZubat(){
+	attacker = "Zubat";
+	moveindex = 1;
+	movename = "Wing Attack";
+	movetype = "Flying";
+	Level = 5;
+	Attack = 10;
+	Power = 60;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"041.png")
+
+	moveindex = 2;
+	movename = "Bite";
+	movetype = "Dark";
+	Attack = 8;
+	Power = 60;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerParas(){
+	attacker = "Paras";
+	moveindex = 1;
+	movename = "Giga Drain";
+	movetype = "Grass";
+	Level = 5;
+	Attack = 10;
+	Power = 60;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"046.png")
+
+	moveindex = 2;
+	movename = "Leech Life";
+	movetype = "Bug";
+	Attack = 12;
+	Power = 20;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerVenonat(){
+	attacker = "Venonat";
+	moveindex = 1;
+	movename = "Sludge Bomb";
+	movetype = "Poison";
+	Level = 5;
+	Attack = 11;
+	Power = 90;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"048.png")
+
+	moveindex = 2;
+	movename = "Confusion";
+	movetype = "Psychic";
+	Attack = 9;
+	Power = 50;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerCubone(){
+	attacker = "Cubone";
+	moveindex = 1;
+	movename = "Bonemerang";
+	movetype = "Ground";
+	multihit = 2;
+	Level = 5;
+	Attack = 10;
+	Power = 50;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"104.png")
+	multihit = 0;
+
+	moveindex = 2;
+	movename = "Headbutt";
+	movetype = "Normal";
+	Power = 70;
 	SameType = 1;
 	category = "Physical";
 	calcB(slot);
