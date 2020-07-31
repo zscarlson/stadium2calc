@@ -40,10 +40,15 @@ table, th, td {
   	<img src="Ani116MS.png" onclick="attackerHorsea()">
   	<br>
   	<img src="Ani123MS.png" onclick="attackerScyther()">
+  	<img src="Ani138MS.png" onclick="attackerOmanyte()">
   	<img src="Ani147MS.png" onclick="attackerDratini()">
   	<img src="Ani158MS.png" onclick="attackerTotodile()">
   	<img src="Ani172MS.png" onclick="attackerPichu()">
+  	<img src="Ani174MS.png" onclick="attackerIgglybuff()">
+  	<img src="Ani175MS.png" onclick="attackerTogepi()">
   	<img src="Ani179MS.png" onclick="attackerMareep()">
+  	<img src="Ani191MS.png" onclick="attackerSunkern()">
+  	<img src="Ani218MS.png" onclick="attackerSlugma()">
   	<img src="Ani220MS.png" onclick="attackerSwinub()">
   	<img src="Ani228MS.png" onclick="attackerHoundour()">
   	<img src="Ani231MS.png" onclick="attackerPhanpy()">
@@ -252,6 +257,14 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 2;
 	}	
+	if (movetype == "Steel")
+	{
+		type = 1;
+	}	
+	if (movetype == "Bug")
+	{
+		type = 2;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -340,6 +353,14 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 		type = 2;
 	}	
 	if (movetype == "Flying")
+	{
+		type = 1;
+	}	
+	if (movetype == "Steel")
+	{
+		type = 0.5;
+	}	
+	if (movetype == "Bug")
 	{
 		type = 1;
 	}	
@@ -435,6 +456,14 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 2;
 	}	
+	if (movetype == "Steel")
+	{
+		type = 1;
+	}	
+	if (movetype == "Bug")
+	{
+		type = 0.5;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -522,6 +551,14 @@ function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
 		type = 1;
 	}	
 	if (movetype == "Flying")
+	{
+		type = 1;
+	}	
+	if (movetype == "Steel")
+	{
+		type = 1;
+	}	
+	if (movetype == "Bug")
 	{
 		type = 1;
 	}	
@@ -616,6 +653,14 @@ function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 0.5;
 	}	
+	if (movetype == "Steel")
+	{
+		type = 1;
+	}	
+	if (movetype == "Bug")
+	{
+		type = 1;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -706,6 +751,14 @@ function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
 	{
 		type = 1;
 	}	
+	if (movetype == "Steel")
+	{
+		type = 0.5;
+	}	
+	if (movetype == "Bug")
+	{
+		type = 0.5;
+	}	
 	var inter1 = Math.floor(lvl*0.4 + 2);
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
@@ -793,6 +846,14 @@ function calcIgglybuff(lvl,atk,bp,stab,movetype,category,location) {
 		type = 1;
 	}	
 	if (movetype == "Flying")
+	{
+		type = 1;
+	}	
+	if (movetype == "Steel")
+	{
+		type = 1;
+	}	
+	if (movetype == "Bug")
 	{
 		type = 1;
 	}	
@@ -984,6 +1045,15 @@ function attackerPonyta(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"077.png")
+
+	moveindex = 2;
+	movename = "Tackle";
+	movetype = "Normal";
+	Attack = 13;
+	Power = 35;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerDratini(){
@@ -998,6 +1068,15 @@ function attackerDratini(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"147.png")
+
+	moveindex = 2;
+	movename = "Wrap";
+	movetype = "Normal";
+	Attack = 12;
+	Power = 15;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerHoundour(){
@@ -1012,6 +1091,14 @@ function attackerHoundour(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"228.png")
+
+	moveindex = 2;
+	movename = "Ember";
+	movetype = "Fire";
+	Power = 40;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerGastly(){
@@ -1026,6 +1113,15 @@ function attackerGastly(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"092.png")
+
+	moveindex = 2;
+	movename = "Thief";
+	movetype = "Dark";
+	Attack = 15;
+	Power = 40;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
 }
 
 function attackerBellsprout(){
@@ -1040,6 +1136,15 @@ function attackerBellsprout(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"069.png")
+
+	moveindex = 2;
+	movename = "Vine Whip";
+	movetype = "Grass";
+	Attack = 12;
+	Power = 35;
+	SameType = 1.5;
+	category = "Special";
+	calcB(slot);
 }
 
 function attackerSwinub(){
@@ -1054,6 +1159,15 @@ function attackerSwinub(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"220.png")
+
+	moveindex = 2;
+	movename = "Mud Slap";
+	movetype = "Ground";
+	Attack = 10;
+	Power = 20;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerOddish(){
@@ -1068,6 +1182,15 @@ function attackerOddish(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"043.png")
+
+	moveindex = 2;
+	movename = "Cut";
+	movetype = "Normal";
+	Attack = 10;
+	Power = 50;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerSpearow(){
@@ -1082,6 +1205,15 @@ function attackerSpearow(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"021.png")
+
+	moveindex = 2;
+	movename = "Pursuit";
+	movetype = "Dark";
+	Attack = 9;
+	Power = 40;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
 }
 
 function attackerBulbasaur(){
@@ -1096,6 +1228,15 @@ function attackerBulbasaur(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"001.png")
+
+	moveindex = 2;
+	movename = "Cut";
+	movetype = "Normal";
+	Attack = 10;
+	Power = 50;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerCharmander(){
@@ -1110,6 +1251,15 @@ function attackerCharmander(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"004.png")
+
+	moveindex = 2;
+	movename = "Rage";
+	movetype = "Normal";
+	Attack = 10;
+	Power = 20;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerSquirtle(){
@@ -1124,6 +1274,15 @@ function attackerSquirtle(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"007.png")
+
+	moveindex = 2;
+	movename = "Rapid Spin";
+	movetype = "Normal";
+	Attack = 10;
+	Power = 20;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerElekid(){
@@ -1138,6 +1297,15 @@ function attackerElekid(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"239.png")
+
+	moveindex = 2;
+	movename = "Quick Attack";
+	movetype = "Normal";
+	Attack = 11;
+	Power = 40;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerMareep(){
@@ -1152,6 +1320,15 @@ function attackerMareep(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"Spr_5b_179.png")
+
+	moveindex = 2;
+	movename = "Return";
+	movetype = "Normal";
+	Attack = 9;
+	Power = 60;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerPichu(){
@@ -1166,6 +1343,15 @@ function attackerPichu(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"172.png")
+
+	moveindex = 2;
+	movename = "Swift";
+	movetype = "Normal";
+	Attack = 10;
+	Power = 60;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerMagnemite(){
@@ -1180,6 +1366,15 @@ function attackerMagnemite(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"081.png")
+
+	moveindex = 2;
+	movename = "Tackle";
+	movetype = "Normal";
+	Attack = 8;
+	Power = 35;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerTotodile(){
@@ -1194,6 +1389,15 @@ function attackerTotodile(){
 	category = "Special";
 	slot = findEmptySlot();
 	slotpicker(slot,"158.png")
+
+	moveindex = 2;
+	movename = "Cut";
+	movetype = "Normal";
+	Attack = 12;
+	Power = 50;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerScyther(){
@@ -1208,6 +1412,15 @@ function attackerScyther(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"123.png")
+
+	moveindex = 2;
+	movename = "Pursuit";
+	movetype = "Dark";
+	Attack = 10;
+	Power = 40;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
 }
 
 function attackerCaterpie(){
@@ -1250,6 +1463,14 @@ function attackerPidgey(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"016.png")
+
+	moveindex = 2;
+	movename = "Steel Wing";
+	movetype = "Steel";
+	Power = 70;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerRattata(){
@@ -1264,6 +1485,15 @@ function attackerRattata(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"019.png")
+
+	moveindex = 2;
+	movename = "Thief";
+	movetype = "Dark";
+	Attack = 8;
+	Power = 40;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
 }
 
 function attackerSandshrew(){
@@ -1278,6 +1508,14 @@ function attackerSandshrew(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"027.png")
+
+	moveindex = 2;
+	movename = "Swift";
+	movetype = "Normal";
+	Power = 60;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function attackerChansey(){
@@ -1292,6 +1530,127 @@ function attackerChansey(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"113.png")
+
+	moveindex = 2;
+	movename = "Mud Slap";
+	movetype = "Ground";
+	Power = 20;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerIgglybuff(){
+	attacker = "Igglybuff";
+	moveindex = 1;
+	movename = "Icy Wind";
+	movetype = "Ice";
+	Level = 5;
+	Attack = 10;
+	Power = 55;
+	SameType = 1;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"174.png")
+
+	moveindex = 2;
+	movename = "Dream Eater";
+	movetype = "Psychic";
+	Power = 100;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerSunkern(){
+	attacker = "Sunkern";
+	moveindex = 1;
+	movename = "Giga Drain";
+	movetype = "Grass";
+	Level = 5;
+	Attack = 9;
+	Power = 60;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"191.png")
+
+	moveindex = 2;
+	movename = "Sludge Bomb";
+	movetype = "Poison";
+	Attack = 9;
+	Power = 90;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerTogepi(){
+	attacker = "Togepi";
+	moveindex = 1;
+	movename = "Double Edge";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 7;
+	Power = 120;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"175.png")
+
+	moveindex = 2;
+	movename = "Rollout";
+	movetype = "Rock";
+	Power = 30;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerOmanyte(){
+	attacker = "Omanyte";
+	moveindex = 1;
+	movename = "Water Gun";
+	movetype = "Water";
+	Level = 5;
+	Attack = 14;
+	Power = 40;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"138.png")
+
+	moveindex = 2;
+	movename = "AncientPower";
+	movetype = "Rock";
+	Power = 60;
+	Attack = 9;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerSlugma(){
+	attacker = "Slugma";
+	moveindex = 1;
+	movename = "Flamethrower";
+	movetype = "Fire";
+	Level = 5;
+	Attack = 12;
+	Power = 95;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"218.png")
+
+	moveindex = 2;
+	movename = "Rock Throw";
+	movetype = "Rock";
+	Power = 50;
+	Attack = 9;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
 }
 
 function calcSlot1(lvl,atk,bp,stab,movetype,category){
