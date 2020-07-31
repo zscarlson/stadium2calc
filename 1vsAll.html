@@ -28,35 +28,56 @@ table, th, td {
   	<img src="Ani023MS.png" onclick="attackerEkans()">
   	<img src="Ani027MS.png" onclick="attackerSandshrew()">
   	<img src="Ani029MS.png" onclick="attackerNidoranF()">
+  	  	<br>
   	<img src="Ani032MS.png" onclick="attackerNidoranM()">
   	<img src="Ani037MS.png" onclick="attackerVulpix()">
   	<img src="Ani041MS.png" onclick="attackerZubat()">
   	<img src="Ani043MS.png" onclick="attackerOddish()">
   	<img src="Ani046MS.png" onclick="attackerParas()">
   	<img src="Ani048MS.png" onclick="attackerVenonat()">
-  	<br>
   	<img src="Ani050MS.png" onclick="attackerDiglett()">
   	<img src="Ani052MS.png" onclick="attackerMeowth()">
   	<img src="Ani054MS.png" onclick="attackerPsyduck()">
   	<img src="Ani056MS.png" onclick="attackerMankey()">
   	<img src="Ani058MS.png" onclick="attackerGrowlithe()">
+  	  	<br>
   	<img src="Ani060MS.png" onclick="attackerPoliwag()">
   	<img src="Ani063MS.png" onclick="attackerAbra()">
   	<img src="Ani066MS.png" onclick="attackerMachop()">
   	<img src="Ani069MS.png" onclick="attackerBellsprout()">
   	<img src="Ani072MS.png" onclick="attackerTentacool()">
+  	<img src="Ani074MS.png" onclick="attackerGeodude()">
   	<img src="Ani077MS.png" onclick="attackerPonyta()">
+  	<img src="Ani079MS.png" onclick="attackerSlowpoke()">
   	<img src="Ani081MS.png" onclick="attackerMagnemite()">
   	<img src="Ani084MS.png" onclick="attackerDoduo()">
+  	<img src="Ani086MS.png" onclick="attackerSeel()">
+  	  	<br>
+  	<img src="Ani088MS.png" onclick="attackerGrimer()">
+  	<img src="Ani090MS.png" onclick="attackerShellder()">
   	<img src="Ani092MS.png" onclick="attackerGastly()">
+  	<img src="Ani095MS.png" onclick="attackerOnix()">
+  	<img src="Ani096MS.png" onclick="attackerDrowzee()">
+  	<img src="Ani098MS.png" onclick="attackerKrabby()">
   	<img src="Ani100MS.png" onclick="attackerVoltorb()">
+  	<img src="Ani102MS.png" onclick="attackerExeggcute()">
   	<img src="Ani104MS.png" onclick="attackerCubone()">
+  	<img src="Ani109MS.png" onclick="attackerKoffing()">
+  	<img src="Ani111MS.png" onclick="attackerRhyhorn()">
+  	  	<br>
   	<img src="Ani113MS.png" onclick="attackerChansey()">
-  	<br>
   	<img src="Ani116MS.png" onclick="attackerHorsea()">
+  	<img src="Ani118MS.png" onclick="attackerGoldeen()">
+  	<img src="Ani120MS.png" onclick="attackerStaryu()">
   	<img src="Ani123MS.png" onclick="attackerScyther()">
+  	<img src="Ani129MS.png" onclick="attackerMagikarp()">
+  	<img src="Ani133MS.png" onclick="attackerEevee()">
+  	<img src="Ani137MS.png" onclick="attackerPorygon()">
   	<img src="Ani138MS.png" onclick="attackerOmanyte()">
+  	<img src="Ani140MS.png" onclick="attackerKabuto()">
   	<img src="Ani147MS.png" onclick="attackerDratini()">
+  	<br>
+  	<br>
   	<img src="Ani152MS.png" onclick="attackerChikorita()">
   	<img src="Ani155MS.png" onclick="attackerCyndaquil()">
   	<img src="Ani158MS.png" onclick="attackerTotodile()">
@@ -70,7 +91,6 @@ table, th, td {
   	<img src="Ani228MS.png" onclick="attackerHoundour()">
   	<img src="Ani231MS.png" onclick="attackerPhanpy()">
 	<img src="Ani239MS.png" onclick="attackerElekid()">
-	<br>
   	<img src="Ani246MS.png" onclick="attackerLarvitar()">
   	</td>
 
@@ -2142,6 +2162,395 @@ function attackerChikorita(){
 	Attack = 10;
 	SameType = 1;
 	category = "Physical";
+	calcB(slot);
+}
+
+function attackerGeodude(){
+	attacker = "Geodude";
+	moveindex = 1;
+	movename = "Rollout";
+	movetype = "Rock";
+	Level = 5;
+	Attack = 9;
+	Power = 30;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"074.png")
+
+	moveindex = 2;
+	movename = "Tackle";
+	movetype = "Normal";
+	Power = 35;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerSlowpoke(){
+	attacker = "Slowpoke";
+	moveindex = 1;
+	movename = "Confusion";
+	movetype = "Psychic";
+	Level = 5;
+	Attack = 9;
+	Power = 50;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"079.png")
+
+	moveindex = 2;
+	movename = "Headbutt";
+	movetype = "Normal";
+	Attack = 12;
+	Power = 70;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerSeel(){
+	attacker = "Seel";
+	moveindex = 1;
+	movename = "Headbutt";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 10;
+	Power = 70;
+	SameType = 1;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"086.png")
+
+	moveindex = 2;
+	movename = "Aurora Beam";
+	movetype = "Ice";
+	Attack = 9;
+	Power = 65;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerGrimer(){
+	attacker = "Grimer";
+	moveindex = 1;
+	movename = "Sludge";
+	movetype = "Poison";
+	Level = 5;
+	Attack = 13;
+	Power = 65;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"088.png")
+
+	moveindex = 2;
+	movename = "Fire Punch";
+	movetype = "Fire";
+	Attack = 9;
+	Power = 75;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerShellder(){
+	attacker = "Shellder";
+	moveindex = 1;
+	movename = "Clamp";
+	movetype = "Water";
+	Level = 5;
+	Attack = 10;
+	Power = 35;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"090.png")
+
+	moveindex = 2;
+	movename = "Icy Wind";
+	movetype = "Ice";
+	Power = 55;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerOnix(){
+	attacker = "Onix";
+	moveindex = 1;
+	movename = "Dig";
+	movetype = "Ground";
+	Level = 5;
+	Attack = 9;
+	Power = 60;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"095.png")
+
+	moveindex = 2;
+	movename = "Rock Throw";
+	movetype = "Rock";
+	Power = 50;
+	SameType = 1.5;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerDrowzee(){
+	attacker = "Drowzee";
+	moveindex = 1;
+	movename = "Dream Eater";
+	movetype = "Psychic";
+	Level = 5;
+	Attack = 9;
+	Power = 100;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"096.png")
+
+	moveindex = 2;
+	movename = "Headbutt";
+	movetype = "Normal";
+	Attack = 10;
+	Power = 70;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerKrabby(){
+	attacker = "Krabby";
+	moveindex = 1;
+	movename = "Crabhammer";
+	movetype = "Water";
+	Level = 5;
+	Attack = 7;
+	Power = 90;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"098.png")
+
+	moveindex = 2;
+	movename = "ViceGrip";
+	movetype = "Normal";
+	Attack = 10;
+	Power = 55;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerExeggcute(){
+	attacker = "Exeggcute";
+	moveindex = 1;
+	movename = "Barrage";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 9;
+	Power = 15;
+	SameType = 1;
+	category = "Physical";
+	multihit = 5;
+	slot = findEmptySlot();
+	slotpicker(slot,"102.png")
+	multihit = 0;
+
+	moveindex = 2;
+	movename = "SolarBeam";
+	movetype = "Grass";
+	Attack = 11;
+	Power = 120;
+	SameType = 1.5;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerKoffing(){
+	attacker = "Koffing";
+	moveindex = 1;
+	movename = "Sludge Bomb";
+	movetype = "Poison";
+	Level = 5;
+	Attack = 11;
+	Power = 90;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"109.png")
+
+	moveindex = 2;
+	movename = "Tackle";
+	movetype = "Normal";
+	Power = 35;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerRhyhorn(){
+	attacker = "Rhyhorn";
+	moveindex = 1;
+	movename = "Rollout";
+	movetype = "Rock";
+	Level = 5;
+	Attack = 13;
+	Power = 30;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"111.png")
+
+	moveindex = 2;
+	movename = "Horn Attack";
+	movetype = "Normal";
+	Power = 65;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerGoldeen(){
+	attacker = "Goldeen";
+	moveindex = 1;
+	movename = "Waterfall";
+	movetype = "Water";
+	Level = 5;
+	Attack = 8;
+	Power = 80;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"118.png")
+
+	moveindex = 2;
+	movename = "Fury Attack";
+	movetype = "Normal";
+	Attack = 12;
+	Power = 15;
+	SameType = 1;
+	multihit = 5;
+	category = "Physical";
+	calcB(slot);
+	multihit = 0;
+}
+
+function attackerStaryu(){
+	attacker = "Staryu";
+	moveindex = 1;
+	movename = "Bubblebeam";
+	movetype = "Water";
+	Level = 5;
+	Attack = 12;
+	Power = 65;
+	SameType = 1.5;
+	category = "Special";
+	slot = findEmptySlot();
+	slotpicker(slot,"120.png")
+
+	moveindex = 2;
+	movename = "Swift";
+	movetype = "Normal";
+	Attack = 9;
+	Power = 60;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerMagikarp(){
+	attacker = "Magikarp";
+	moveindex = 1;
+	movename = "Flail (40)";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 7;
+	Power = 40;
+	SameType = 1;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"129.png")
+
+	moveindex = 2;
+	movename = "Tackle";
+	movetype = "Normal";
+	Power = 35;
+	SameType = 1;
+	category = "Physical";
+	calcB(slot);
+}
+
+function attackerEevee(){
+	attacker = "Eevee";
+	moveindex = 1;
+	movename = "Take Down";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 10;
+	Power = 90;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"133.png")
+
+	moveindex = 2;
+	movename = "Bite";
+	movetype = "Dark";
+	Attack = 9;
+	Power = 60;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerPorygon(){
+	attacker = "Porygon";
+	moveindex = 1;
+	movename = "Return";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 11;
+	Power = 50;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"137.png")
+
+	moveindex = 2;
+	movename = "Icy Wind";
+	movetype = "Ice";
+	Attack = 13;
+	Power = 55;
+	SameType = 1;
+	category = "Special";
+	calcB(slot);
+}
+
+function attackerKabuto(){
+	attacker = "Kabuto";
+	moveindex = 1;
+	movename = "AncientPower";
+	movetype = "Rock";
+	Level = 5;
+	Attack = 13;
+	Power = 60;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"140.png")
+
+	moveindex = 2;
+	movename = "Mega Drain";
+	movetype = "Grass";
+	Attack = 10;
+	Power = 40;
+	SameType = 1;
+	category = "Special";
 	calcB(slot);
 }
 
