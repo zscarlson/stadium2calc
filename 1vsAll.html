@@ -23,6 +23,10 @@ table, th, td {
   	<img src="Ani001MS.png" onclick="attackerBulbasaur()">
   	<img src="Ani004MS.png" onclick="attackerCharmander()">
   	<img src="Ani007MS.png" onclick="attackerSquirtle()">
+  	<img src="Ani010MS.png" onclick="attackerCaterpie()">
+  	<img src="Ani013MS.png" onclick="attackerWeedle()">
+  	<img src="Ani016MS.png" onclick="attackerPidgey()">
+  	<img src="Ani019MS.png" onclick="attackerRattata()">
   	<img src="Ani063MS.png" onclick="attackerAbra()">
   	<img src="Ani116MS.png" onclick="attackerHorsea()">
   	<img src="Ani056MS.png" onclick="attackerMankey()">
@@ -201,10 +205,13 @@ function calcSunkern(lvl,atk,bp,stab,movetype,category,location) {
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
 	var inter4 = Math.floor(inter3*stab);
-	var inter5 = Math.floor(inter4*type);
-	var inter6 = Math.floor(inter5*217/255);
+	var maxroll = Math.floor(inter4*type);
+	var minroll = Math.floor(maxroll*217/255);
+	if (minroll == 0){
+		minroll = 1;
+	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
 }
 
 function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
@@ -281,10 +288,13 @@ function calcSquirtle(lvl,atk,bp,stab,movetype,category,location) {
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
 	var inter4 = Math.floor(inter3*stab);
-	var inter5 = Math.floor(inter4*type);
-	var inter6 = Math.floor(inter5*217/255);
+	var maxroll = Math.floor(inter4*type);
+	var minroll = Math.floor(maxroll*217/255);
+	if (minroll == 0){
+		minroll = 1;
+	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
 }
 
 function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
@@ -361,10 +371,13 @@ function calcMankey(lvl,atk,bp,stab,movetype,category,location) {
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
 	var inter4 = Math.floor(inter3*stab);
-	var inter5 = Math.floor(inter4*type);
-	var inter6 = Math.floor(inter5*217/255);
+	var maxroll = Math.floor(inter4*type);
+	var minroll = Math.floor(maxroll*217/255);
+	if (minroll == 0){
+		minroll = 1;
+	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
 }
 
 function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
@@ -441,10 +454,13 @@ function calcTogepi(lvl,atk,bp,stab,movetype,category,location) {
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
 	var inter4 = Math.floor(inter3*stab);
-	var inter5 = Math.floor(inter4*type);
-	var inter6 = Math.floor(inter5*217/255);
+	var maxroll = Math.floor(inter4*type);
+	var minroll = Math.floor(maxroll*217/255);
+	if (minroll == 0){
+		minroll = 1;
+	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
 }
 
 function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
@@ -521,10 +537,13 @@ function calcOmanyte(lvl,atk,bp,stab,movetype,category,location) {
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
 	var inter4 = Math.floor(inter3*stab);
-	var inter5 = Math.floor(inter4*type);
-	var inter6 = Math.floor(inter5*217/255);
+	var maxroll = Math.floor(inter4*type);
+	var minroll = Math.floor(maxroll*217/255);
+	if (minroll == 0){
+		minroll = 1;
+	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
 }
 
 function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
@@ -601,10 +620,13 @@ function calcSlugma(lvl,atk,bp,stab,movetype,category,location) {
 	var inter2 = Math.floor(inter1*atk*bp/50);
 	var inter3 = Math.floor((inter2/def)+2);
 	var inter4 = Math.floor(inter3*stab);
-	var inter5 = Math.floor(inter4*type);
-	var inter6 = Math.floor(inter5*217/255);
+	var maxroll = Math.floor(inter4*type);
+	var minroll = Math.floor(maxroll*217/255);
+	if (minroll == 0){
+		minroll = 1;
+	}
 
-	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + inter6 + " - " + inter5;
+	document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
 }
 
 function attackerAbra(){
@@ -864,7 +886,7 @@ function attackerMareep(){
 	SameType = 1.5;
 	category = "Special";
 	slot = findEmptySlot();
-	slotpicker(slot,"179.png")
+	slotpicker(slot,"Spr_5b_179.png")
 }
 
 function attackerPichu(){
@@ -917,6 +939,58 @@ function attackerScyther(){
 	category = "Physical";
 	slot = findEmptySlot();
 	slotpicker(slot,"123.png")
+}
+
+function attackerCaterpie(){
+	attacker = "Caterpie";
+	movename = "Tackle";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 9;
+	Power = 35;
+	SameType = 1;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"010.png")
+}
+
+function attackerWeedle(){
+	attacker = "Weedle";
+	movename = "Poison Sting";
+	movetype = "Poison";
+	Level = 5;
+	Attack = 9;
+	Power = 15;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"013.png")
+}
+
+function attackerPidgey(){
+	attacker = "Pidgey";
+	movename = "Fly";
+	movetype = "Flying";
+	Level = 5;
+	Attack = 10;
+	Power = 70;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"016.png")
+}
+
+function attackerRattata(){
+	attacker = "Rattata";
+	movename = "Hyper Fang";
+	movetype = "Normal";
+	Level = 5;
+	Attack = 11;
+	Power = 80;
+	SameType = 1.5;
+	category = "Physical";
+	slot = findEmptySlot();
+	slotpicker(slot,"019.png")
 }
 
 function calcSlot1(lvl,atk,bp,stab,movetype,category){
