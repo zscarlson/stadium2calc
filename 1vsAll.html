@@ -1495,18 +1495,18 @@ function damageColor(fullhp,location,minroll,maxroll){
 	thirdhp = Math.ceil(fullhp/3);
 	fourthhp = Math.ceil(fullhp/4);
 
-		document.getElementById(location).style="color:red;"
+		document.getElementById(location).style="color:	#bd1e24;"
 	if (maxroll >= halfhp){
-		document.getElementById(location).style="color:orange;"
+		document.getElementById(location).style="color:#f6c700;"
 	}
 	if (minroll >= halfhp){
-		document.getElementById(location).style="color:gold;"
+		document.getElementById(location).style="color:#007256;"
 	}
 	if (maxroll >= fullhp){
-		document.getElementById(location).style="color:green;"
+		document.getElementById(location).style="color:#0067a7;"
 	}
 	if (minroll >= fullhp){
-		document.getElementById(location).style="color:blue;"
+		document.getElementById(location).style="color:	#964f8e;"
 	}
 	// GUARANTEED OHKO: darkgreen = min roll above max hp
 	// POSSIBLE OHKO: lightgreen = min roll below max hp, max roll above max hp
