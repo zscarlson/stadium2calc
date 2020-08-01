@@ -11,14 +11,11 @@ table, th, td {
 
 <h1>Little Cup Damage Calculator</h1>
 
-<input type="checkbox" id="magnitudeBox" onclick="toggleMagnitudeMode()">
-<label for="magnitudeBox"> MAGNITUDE MODE </label><br>
-
 <table> 
 
   <tr> 
   	<td colspan="2", style="text-align:center"> RENTAL<br>POKEMON: </td>
-  	<td colspan="6", style="text-align:center"> 
+  	<td colspan="6", rowspan="2", style="text-align:center"> 
   	<img src="Ani001MS.png" onclick="attackerBulbasaur()">
   	<img src="Ani004MS.png" onclick="attackerCharmander()">
   	<img src="Ani007MS.png" onclick="attackerSquirtle()">
@@ -111,12 +108,26 @@ table, th, td {
   	<img src="Ani239MS.png" onclick="attackerElekid()">
   	<img src="Ani240MS.png" onclick="attackerMagby()">
 	<img src="Ani246MS.png" onclick="attackerLarvitar()">	
-
   	</td>
-
   </tr> 
 
+  <td style="text-align:center" colspan="2">
+    Settings: <br>
+    <input type="checkbox" id="magnitudeBox" onclick="toggleMagnitudeMode()">
+    <label for="magnitudeBox"> Magnitude 10 </label>
+    <br>
+    <input type="checkbox" id="rolloutBox" onclick="toggleRolloutMode()">
+    <label for="rolloutBox"> Rollout #5 </label>
+    <br>
+    <input type="checkbox" id="flailBox" onclick="toggleFlailMode()">
+    <label for="flailBox"> Flail 200 </label>
+    <br>
+    <input type="checkbox" id="cutterBox" onclick="togglecutterMode()">
+    <label for="cutterBox"> Fury Cutter #5 </label>
+  </td>
   <tr> 
+
+
     <td colspan="2", style="text-align:center"> TIP: Click on a <br> Pokemon to change <br>it back into Ditto </td>
     <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite1", onclick="clearSlot(1)"></td>
     <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite2", onclick="clearSlot(2)"></td>
@@ -261,7 +272,10 @@ table, th, td {
 
 <script>
 
-var magnitudeMode = 0;
+var magnitudeMode = 7;
+var cutterMode = 1;
+var rolloutMode = 1;
+var flailMode = 40;
 var moveindex = 1;
 var multihit = 0;
 
@@ -1715,10 +1729,10 @@ function attackerVoltorb(){
 	slotpicker(slot,"100.png")
 
 	moveindex = 2;
-	movename = "Rollout";
+	movename = "Rollout #" + rolloutMode;
+  Power = 30*(Math.pow(2,rolloutMode-1));
 	movetype = "Rock";
 	Attack = 8;
-	Power = 30;
 	SameType = 1;
 	category = "Physical";
 	calcB(slot);
@@ -1738,9 +1752,9 @@ function attackerPhanpy(){
 	slotpicker(slot,"231.png")
 
 	moveindex = 2;
-	movename = "Flail (40)";
+	movename = "Flail ("+flailMode+")";
+  Power = flailMode;
 	movetype = "Normal";
-	Power = 40;
 	SameType = 1;
 	category = "Physical";
 	calcB(slot);
@@ -2330,9 +2344,9 @@ function attackerTogepi(){
 	slotpicker(slot,"175.png")
 
 	moveindex = 2;
-	movename = "Rollout";
+	movename = "Rollout #" + rolloutMode;
+  Power = 30*(Math.pow(2,rolloutMode-1));
 	movetype = "Rock";
-	Power = 30;
 	SameType = 1;
 	category = "Physical";
 	calcB(slot);
@@ -2605,36 +2619,23 @@ function attackerCubone(){
 }
 
 function attackerDiglett(){
-  if(magnitudeMode == 0){
-    attacker = "Diglett";
-    moveindex = 1;
-    movename = "Magnitude 7";
-    movetype = "Ground";
-    Level = 5;
-    Attack = 11;
-    Power = 70;
-    SameType = 1.5;
-    category = "Physical";
-    slot = findEmptySlot();
-    slotpicker(slot,"050.png")
-  }
+  attacker = "Diglett";
+  moveindex = 1;
+  movename = "Magnitude "+magnitudeMode;
+  movetype = "Ground";
+  Level = 5;
+  Attack = 11;
+  Power = 70;
+  SameType = 1.5;
+  category = "Physical";
 
-    if(magnitudeMode == 1){
-    attacker = "Diglett";
-    moveindex = 1;
-    movename = "Magnitude 10";
-    movetype = "Ground";
-    Level = 5;
-    Attack = 11;
-    Power = 150;
-    SameType = 1.5;
-    category = "Physical";
-    slot = findEmptySlot();
-    slotpicker(slot,"050.png")
-
+  if(magnitudeMode == 10){
+  Power = 150;
   }
+  
+  slot = findEmptySlot();
+  slotpicker(slot,"050.png")
 	
-
 	moveindex = 2;
 	movename = "Slash";
 	movetype = "Normal";
@@ -2833,11 +2834,11 @@ function attackerChikorita(){
 function attackerGeodude(){
 	attacker = "Geodude";
 	moveindex = 1;
-	movename = "Rollout";
+	movename = "Rollout #" + rolloutMode;
+  Power = 30*(Math.pow(2,rolloutMode-1));
 	movetype = "Rock";
 	Level = 5;
 	Attack = 9;
-	Power = 30;
 	SameType = 1.5;
 	category = "Physical";
 	slot = findEmptySlot();
@@ -3094,11 +3095,11 @@ function attackerKoffing(){
 function attackerRhyhorn(){
 	attacker = "Rhyhorn";
 	moveindex = 1;
-	movename = "Rollout";
+	movename = "Rollout #" + rolloutMode;
+  Power = 30*(Math.pow(2,rolloutMode-1));
 	movetype = "Rock";
 	Level = 5;
 	Attack = 13;
-	Power = 30;
 	SameType = 1.5;
 	category = "Physical";
 	slot = findEmptySlot();
@@ -3164,11 +3165,11 @@ function attackerStaryu(){
 function attackerMagikarp(){
 	attacker = "Magikarp";
 	moveindex = 1;
-	movename = "Flail (40)";
+	movename = "Flail ("+flailMode+")";
+  Power = flailMode;
 	movetype = "Normal";
 	Level = 5;
 	Attack = 7;
-	Power = 40;
 	SameType = 1;
 	category = "Physical";
 	slot = findEmptySlot();
@@ -3274,9 +3275,9 @@ function attackerSentret(){
 	calcB(slot);
 
   moveindex = 2;
-  movename = "Fury Cutter";
+  movename = "Fury Cutter #"+cutterMode;
   movetype = "Bug";
-  Power = 10;
+  Power = 10*(Math.pow(2,cutterMode-1));
   SameType = 1;
   category = "Physical";
   calcC(slot);
@@ -3371,9 +3372,9 @@ function attackerChinchou(){
 	calcB(slot);
 
   moveindex = 2;
-  movename = "Flail (40)";
+  movename = "Flail ("+flailMode+")";
+  Power = flailMode;
   movetype = "Normal";
-  Power = 40;
   Attack = 9;
   SameType = 1;
   category = "Physical";
@@ -3440,9 +3441,9 @@ function attackerMarill(){
 	slotpicker(slot,"183.png")
 
 	moveindex = 2;
-	movename = "Rollout";
 	movetype = "Rock";
-	Power = 30;
+	movename = "Rollout #" + rolloutMode;
+  Power = 30*(Math.pow(2,rolloutMode-1));
 	Attack = 7;
 	SameType = 1;
 	category = "Physical";
@@ -3898,13 +3899,46 @@ function calcC(slot){
 }
 
 function toggleMagnitudeMode(){
-  if(magnitudeMode == 1)
+  if(magnitudeMode == 10)
   {
-    magnitudeMode = 0
+    magnitudeMode = 7
   }
-  else if(magnitudeMode == 0)
+  else if(magnitudeMode == 7)
   {
-    magnitudeMode = 1
+    magnitudeMode = 10
+  }
+}
+
+function toggleRolloutMode(){
+  if(rolloutMode == 1)
+  {
+    rolloutMode = 5;
+  }
+  else if(rolloutMode == 5)
+  {
+    rolloutMode = 1;
+  }
+}
+
+function toggleFlailMode(){
+  if(flailMode == 40)
+  {
+    flailMode = 200;
+  }
+  else if(flailMode == 200)
+  {
+    flailMode = 40;
+  }
+}
+
+function togglecutterMode(){
+  if(cutterMode == 1)
+  {
+    cutterMode = 5;
+  }
+  else if(cutterMode == 5)
+  {
+    cutterMode = 1;
   }
 }
 
