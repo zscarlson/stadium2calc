@@ -11,6 +11,9 @@ table, th, td {
 
 <h1>Little Cup Damage Calculator</h1>
 
+<input type="checkbox" id="magnitudeBox" onclick="toggleMagnitudeMode()">
+<label for="magnitudeBox"> MAGNITUDE MODE </label><br>
+
 <table> 
 
   <tr> 
@@ -258,6 +261,7 @@ table, th, td {
 
 <script>
 
+var magnitudeMode = 0;
 var moveindex = 1;
 var multihit = 0;
 
@@ -2601,17 +2605,35 @@ function attackerCubone(){
 }
 
 function attackerDiglett(){
-	attacker = "Diglett";
-	moveindex = 1;
-	movename = "Magnitude 7";
-	movetype = "Ground";
-	Level = 5;
-	Attack = 11;
-	Power = 70;
-	SameType = 1.5;
-	category = "Physical";
-	slot = findEmptySlot();
-	slotpicker(slot,"050.png")
+  if(magnitudeMode == 0){
+    attacker = "Diglett";
+    moveindex = 1;
+    movename = "Magnitude 7";
+    movetype = "Ground";
+    Level = 5;
+    Attack = 11;
+    Power = 70;
+    SameType = 1.5;
+    category = "Physical";
+    slot = findEmptySlot();
+    slotpicker(slot,"050.png")
+  }
+
+    if(magnitudeMode == 1){
+    attacker = "Diglett";
+    moveindex = 1;
+    movename = "Magnitude 10";
+    movetype = "Ground";
+    Level = 5;
+    Attack = 11;
+    Power = 150;
+    SameType = 1.5;
+    category = "Physical";
+    slot = findEmptySlot();
+    slotpicker(slot,"050.png")
+
+  }
+	
 
 	moveindex = 2;
 	movename = "Slash";
@@ -3873,6 +3895,17 @@ function calcB(slot){
 
 function calcC(slot){
     newcalcC(Level,Attack,Power,SameType,movetype,category, slot);
+}
+
+function toggleMagnitudeMode(){
+  if(magnitudeMode == 1)
+  {
+    magnitudeMode = 0
+  }
+  else if(magnitudeMode == 0)
+  {
+    magnitudeMode = 1
+  }
 }
 
 function damageColor(fullhp,location,minroll,maxroll){
