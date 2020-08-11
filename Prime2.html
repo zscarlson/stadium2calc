@@ -16,8 +16,12 @@ table, th, td {
   <tr> 
   	<td colspan="2", style="text-align:center"> RENTAL POKEMON<br>Click on any one<br> to get started! </td>
   	<td colspan="6", rowspan="2", style="text-align:center"> 
-    <img src="Ani106MS.png" onclick="attackerHitmonlee()">
     <img src="Ani022MS.png" onclick="attackerFearow()">
+    <img src="Ani100MS.png" onclick="attackerVoltorb()">
+    <img src="Ani106MS.png" onclick="attackerHitmonlee()">
+    <img src="Ani214MS.png" onclick="attackerHeracross()">
+    <img src="Ani064MS.png" onclick="attackerKadabra()">
+    <img src="Ani202MS.png" onclick="attackerWobbuffet()">
   	</td>
   </tr> 
 
@@ -164,6 +168,7 @@ var rolloutMode = 1;
 var flailMode = 20;
 var moveindex = 1;
 var multihit = 0;
+var BoomDefense = 0;
 
 function calcMiltank(lvl,atk,bp,stab,movetype,category,location) {
   hp = 350, defense = 281, spdef = 211;
@@ -266,6 +271,94 @@ function attackerFearow(){
   Attack = 184;
   category = "Special";
   calcC(slot);
+}
+
+function attackerHeracross(){
+  attacker = "Heracross";
+  moveindex = 1;
+  movename = "Megahorn";
+  movetype = "Bug";
+  Attack = 298;
+  Power = 120;
+  SameType = 1.5;
+  category = "Physical";
+  slot = findEmptySlot();
+  slotpicker(slot,"214.png")
+
+  moveindex = 2;
+  movename = "Rock Smash";
+  Power = 20;
+  movetype = "Fighting";
+  SameType = 1.5;
+  category = "Physical";
+  calcB(slot);
+
+  moveindex = 2;
+  movename = "Thief";
+  Power = 40;
+  movetype = "Dark";
+  SameType = 1;
+  Attack = 128;
+  category = "Special";
+  calcC(slot);
+}
+
+function attackerVoltorb(){
+  attacker = "Voltorb";
+  moveindex = 1;
+  movename = "Thunder";
+  movetype = "Electric";
+  Attack = 186;
+  Power = 120;
+  SameType = 1.5;
+  category = "Special";
+  slot = findEmptySlot();
+  slotpicker(slot,"100.png")
+
+  moveindex = 2;
+  movename = "Selfdestruct";
+  Attack = 136;
+  Power = 200;
+  movetype = "Normal";
+  SameType = 1;
+  category = "Physical";
+  BoomDefense = 1;
+  calcB(slot);
+  BoomDefense = 0;
+}
+
+function attackerKadabra(){
+  attacker = "Kadabra";
+  moveindex = 1;
+  movename = "Psychic";
+  movetype = "Psychic";
+  Attack = 302;
+  Power = 90;
+  SameType = 1.5;
+  category = "Special";
+  slot = findEmptySlot();
+  slotpicker(slot,"064.png")
+
+  moveindex = 2;
+  movename = "ThunderPunch";
+  Power = 75;
+  movetype = "Electric";
+  SameType = 1;
+  category = "Special";
+  calcB(slot);
+}
+
+function attackerWobbuffet(){
+  attacker = "Wobbuffet";
+  moveindex = 1;
+  movename = "Psychic";
+  movetype = "Psychic";
+  Attack = 302;
+  Power = 0;
+  SameType = 0;
+  category = "Special";
+  slot = findEmptySlot();
+  slotpicker(slot,"202.png")
 }
 
 function calcA(lvl,atk,bp,stab,movetype,category,slot){
@@ -568,7 +661,12 @@ function SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,R
   if (movetype == "Bug")
   {
     type = Bug;
-  } 
+  }
+
+  if (BoomDefense == 1) {
+    def = Math.floor(def/2);
+  }
+
   var inter1 = Math.floor(lvl*0.4 + 2);
   var inter2 = Math.floor(inter1*atk*bp/50);
   var inter3 = Math.floor((inter2/def)+2);
@@ -591,13 +689,16 @@ function SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,R
     }
 
   damageColor(hp, location, minroll, maxroll);
-
   if (moveindex == 1){
     document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
   }
   
   if (moveindex == 2){
     document.getElementById(location).innerHTML = movename + ": " + "<br />" + minroll + " - " + maxroll;
+  }
+
+  if (attacker == "Wobbuffet"){
+    document.getElementById(location).innerHTML = "( > ﹏ < )";
   }
 }
 
