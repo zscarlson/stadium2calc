@@ -242,8 +242,8 @@ table, th, td {
     </tr>  
 
     <tr> 
-    <td colspan="8"> VS Flora's Pokemon
-    <input type="checkbox" name="FloraBox" onclick="toggleFlora()">
+    <td colspan="8"> VS Floria's Pokemon
+    <input type="checkbox" name="FloriaBox" onclick="toggleFloria()">
     <label for="futurebox"> Hide Trainer </td>
     </tr>  
 
@@ -287,7 +287,7 @@ var BoomDefense = 0;
 var TerryOn = 1;
 var YangOn = 1;
 var AdamOn = 1;
-var FloraOn = 1;
+var FloriaOn = 1;
 var ChaseOn = 1;
 var CraigOn = 1;
 var KathyOn = 1;
@@ -970,20 +970,20 @@ function toggleAdam(){
   }
 }
 
-function toggleFlora(){
-  if (FloraOn == 1){
-    FloraOn = 0;
-    var x = document.getElementsByClassName("Flora");
+function toggleFloria(){
+  if (FloriaOn == 1){
+    FloriaOn = 0;
+    var x = document.getElementsByClassName("Floria");
     var i;
     for (i = 0; i < x.length; i++) {
       x[i].style = "display:none";
     }
   }
-  else if (FloraOn == 0){
-    FloraOn = 1;
+  else if (FloriaOn == 0){
+    FloriaOn = 1;
 
     style="display:none;"
-    var x = document.getElementsByClassName("Flora");
+    var x = document.getElementsByClassName("Floria");
     var i;
     for (i = 0; i < x.length; i++) {
       x[i].style = "";
