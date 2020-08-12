@@ -79,7 +79,7 @@ table, th, td {
   <tr> 
 
 
-    <td colspan="2", rowspan="2" style="text-align:center"> TRAINER TIP <br> You can click on a <br> Pokemon to change <br> it back into Ditto!
+    <td colspan="2", rowspan="2", style="text-align:center"> TRAINER TIP <br> You can click on a <br> Pokemon to change <br> it back into Ditto!
     <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite1", onclick="clearSlot(1)"> </td>
     <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite2", onclick="clearSlot(2)"> </td>
     <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite3", onclick="clearSlot(3)"> </td>
@@ -89,12 +89,12 @@ table, th, td {
   </tr>  
 
   <tr>
-    <td style="text-align:center"> <p id="speed1"> </td>
-    <td style="text-align:center"> <p id="speed2"> </td>
-    <td style="text-align:center"> <p id="speed3"> </td>
-    <td style="text-align:center"> <p id="speed4"> </td>
-    <td style="text-align:center"> <p id="speed5"> </td>
-    <td style="text-align:center"> <p id="speed6"> </td>
+    <td style="display:none" class="rentalspeeds"> <p id="speed1"> </td>
+    <td style="display:none" class="rentalspeeds"> <p id="speed2"> </td>
+    <td style="display:none" class="rentalspeeds"> <p id="speed3"> </td>
+    <td style="display:none" class="rentalspeeds"> <p id="speed4"> </td>
+    <td style="display:none" class="rentalspeeds"> <p id="speed5"> </td>
+    <td style="display:none" class="rentalspeeds"> <p id="speed6"> </td>
 
   </tr>
 
@@ -108,7 +108,7 @@ table, th, td {
 
   <tr class="Terry"> 
     <td style="text-align:center"> <img src="241.png"> </td>
-    <td style="text-align:center"> 350 HP <br> 269 Spd </td>
+    <td style="text-align:center"> 350 HP </td>
     <td style="text-align:center"> <p id="dmgMiltank1" class="slot1"></p> <p id="dmgMiltank1b" class="slot1"></p> <p id="dmgMiltank1c" class="slot1"></p> </td> 
     <td style="text-align:center"> <p id="dmgMiltank2" class="slot2"></p> <p id="dmgMiltank2b" class="slot2"></p> <p id="dmgMiltank2c" class="slot2"></p> </td> 
     <td style="text-align:center"> <p id="dmgMiltank3" class="slot3"></p> <p id="dmgMiltank3b" class="slot3"></p> <p id="dmgMiltank3c" class="slot3"></p> </td>
@@ -251,6 +251,72 @@ table, th, td {
     <label for="futurebox"> Hide Trainer </td>
     </tr>  
 
+    <tr class="Adam"> 
+    <td style="text-align:center"> <img src="149.png"> </td>
+    <td style="text-align:center"> 355 HP </td>
+    <td style="text-align:center"> <p id="dmgDragonite1" class="slot1"></p> <p id="dmgDragonite1b" class="slot1"></p> <p id="dmgDragonite1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgDragonite2" class="slot2"></p> <p id="dmgDragonite2b" class="slot2"></p> <p id="dmgDragonite2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgDragonite3" class="slot3"></p> <p id="dmgDragonite3b" class="slot3"></p> <p id="dmgDragonite3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgDragonite4" class="slot4"></p> <p id="dmgDragonite4b" class="slot4"></p> <p id="dmgDragonite4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgDragonite5" class="slot5"></p> <p id="dmgDragonite5b" class="slot5"></p> <p id="dmgDragonite5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgDragonite6" class="slot6"></p> <p id="dmgDragonite6b" class="slot6"></p> <p id="dmgDragonite6c" class="slot6"></p> </td> 
+  </tr> 
+
+  <tr class="Adam"> 
+    <td style="text-align:center"> <img src="178.png"> </td>
+    <td style="text-align:center"> 293 HP </td>
+    <td style="text-align:center"> <p id="dmgXatu1" class="slot1"></p> <p id="dmgXatu1b" class="slot1"></p> <p id="dmgXatu1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgXatu2" class="slot2"></p> <p id="dmgXatu2b" class="slot2"></p> <p id="dmgXatu2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgXatu3" class="slot3"></p> <p id="dmgXatu3b" class="slot3"></p> <p id="dmgXatu3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgXatu4" class="slot4"></p> <p id="dmgXatu4b" class="slot4"></p> <p id="dmgXatu4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgXatu5" class="slot5"></p> <p id="dmgXatu5b" class="slot5"></p> <p id="dmgXatu5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgXatu6" class="slot6"></p> <p id="dmgXatu6b" class="slot6"></p> <p id="dmgXatu6c" class="slot6"></p> </td> 
+  </tr> 
+
+  <tr class="Adam"> 
+    <td style="text-align:center"> <img src="142.png"> </td>
+    <td style="text-align:center"> 323 HP </td>
+    <td style="text-align:center"> <p id="dmgAerodactyl1" class="slot1"></p> <p id="dmgAerodactyl1b" class="slot1"></p> <p id="dmgAerodactyl1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgAerodactyl2" class="slot2"></p> <p id="dmgAerodactyl2b" class="slot2"></p> <p id="dmgAerodactyl2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgAerodactyl3" class="slot3"></p> <p id="dmgAerodactyl3b" class="slot3"></p> <p id="dmgAerodactyl3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgAerodactyl4" class="slot4"></p> <p id="dmgAerodactyl4b" class="slot4"></p> <p id="dmgAerodactyl4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgAerodactyl5" class="slot5"></p> <p id="dmgAerodactyl5b" class="slot5"></p> <p id="dmgAerodactyl5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgAerodactyl6" class="slot6"></p> <p id="dmgAerodactyl6b" class="slot6"></p> <p id="dmgAerodactyl6c" class="slot6"></p> </td> 
+  </tr> 
+
+  <tr class="Adam"> 
+    <td style="text-align:center"> <img src="146.png"> </td>
+    <td style="text-align:center"> 343 HP </td>
+    <td style="text-align:center"> <p id="dmgMoltres1" class="slot1"></p> <p id="dmgMoltres1b" class="slot1"></p> <p id="dmgMoltres1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgMoltres2" class="slot2"></p> <p id="dmgMoltres2b" class="slot2"></p> <p id="dmgMoltres2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgMoltres3" class="slot3"></p> <p id="dmgMoltres3b" class="slot3"></p> <p id="dmgMoltres3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgMoltres4" class="slot4"></p> <p id="dmgMoltres4b" class="slot4"></p> <p id="dmgMoltres4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgMoltres5" class="slot5"></p> <p id="dmgMoltres5b" class="slot5"></p> <p id="dmgMoltres5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgMoltres6" class="slot6"></p> <p id="dmgMoltres6b" class="slot6"></p> <p id="dmgMoltres6c" class="slot6"></p> </td> 
+  </tr> 
+
+    <tr class="Adam"> 
+    <td style="text-align:center"> <img src="145.png"> </td>
+    <td style="text-align:center"> 343 HP </td>
+    <td style="text-align:center"> <p id="dmgZapdos1" class="slot1"></p> <p id="dmgZapdos1b" class="slot1"></p> <p id="dmgZapdos1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgZapdos2" class="slot2"></p> <p id="dmgZapdos2b" class="slot2"></p> <p id="dmgZapdos2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgZapdos3" class="slot3"></p> <p id="dmgZapdos3b" class="slot3"></p> <p id="dmgZapdos3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgZapdos4" class="slot4"></p> <p id="dmgZapdos4b" class="slot4"></p> <p id="dmgZapdos4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgZapdos5" class="slot5"></p> <p id="dmgZapdos5b" class="slot5"></p> <p id="dmgZapdos5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgZapdos6" class="slot6"></p> <p id="dmgZapdos6b" class="slot6"></p> <p id="dmgZapdos6c" class="slot6"></p> </td> 
+  </tr> 
+
+  <tr class="Adam"> 
+    <td style="text-align:center"> <img src="144.png"> </td>
+    <td style="text-align:center"> 343 HP </td>
+    <td style="text-align:center"> <p id="dmgArticuno1" class="slot1"></p> <p id="dmgArticuno1b" class="slot1"></p> <p id="dmgArticuno1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgArticuno2" class="slot2"></p> <p id="dmgArticuno2b" class="slot2"></p> <p id="dmgArticuno2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgArticuno3" class="slot3"></p> <p id="dmgArticuno3b" class="slot3"></p> <p id="dmgArticuno3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgArticuno4" class="slot4"></p> <p id="dmgArticuno4b" class="slot4"></p> <p id="dmgArticuno4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgArticuno5" class="slot5"></p> <p id="dmgArticuno5b" class="slot5"></p> <p id="dmgArticuno5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgArticuno6" class="slot6"></p> <p id="dmgArticuno6b" class="slot6"></p> <p id="dmgArticuno6c" class="slot6"></p> </td> 
+  </tr> 
+
     <tr> 
     <td colspan="8"> <img src="S2_Cooltrainer_F.png"> VS Floria
     <input type="checkbox" name="FloriaBox" onclick="toggleFloria()">
@@ -283,6 +349,10 @@ table, th, td {
 
 </table>
 
+
+<input type="checkbox" name="speedBox" onclick="toggleSpeeds()">
+<label for="speedBox"> Show Speeds
+
 <script>
 
 
@@ -302,6 +372,7 @@ var ChaseOn = 1;
 var CraigOn = 1;
 var KathyOn = 1;
 var MartyOn = 1;
+var SpeedsOn = 0;
 
 function calcMiltank(lvl,atk,bp,stab,movetype,category,location) {
   hp = 350, defense = 281, spdef = 211;
@@ -386,6 +457,49 @@ function calcPoliwrath(lvl,atk,bp,stab,movetype,category,location) {
   Flying = 2, Bug = 0.5, Normal = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 0.5;
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
+
+function calcDragonite(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 355, defense = 262, spdef = 272;
+  Normal = 1, Rock = 2, Water = 0.5, Electric = 1, Grass = 0.25, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 0;
+  Flying = 1, Bug = 0.5, Normal = 1, Ghost = 1, Fighting = 0.5, Steel = 1, Ice = 4, Dragon = 2, Dark = 1;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcXatu(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 293, defense = 214, spdef = 214;
+  Normal = 1, Rock = 2, Water = 1, Electric = 2, Grass = 0.5, Poison = 1, Psychic = 0.5, Fire = 1, Ground = 0;
+  Flying = 1, Bug = 1, Normal = 1, Ghost = 2, Fighting = 0.25, Steel = 1, Ice = 2, Dragon = 1, Dark = 2;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcAerodactyl(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 323, defense = 204, spdef = 224;
+  Normal = 0.5, Rock = 2, Water = 2, Electric = 2, Grass = 1, Poison = 0.5, Psychic = 1, Fire = 0.5, Ground = 0;
+  Flying = 0.5, Bug = 0.5, Normal = 0.5, Ghost = 1, Fighting = 1, Steel = 2, Ice = 2, Dragon = 1, Dark = 1;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcMoltres(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 343, defense = 252, spdef = 242;
+  Normal = 1, Rock = 4, Water = 2, Electric = 2, Grass = 0.25, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 0;
+  Flying = 1, Bug = 0.25, Normal = 1, Ghost = 1, Fighting = 0.5, Steel = 0.5, Ice = 1, Dragon = 1, Dark = 1;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcZapdos(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 343, defense = 244, spdef = 254;
+  Normal = 1, Rock = 2, Water = 1, Electric = 1, Grass = 0.5, Poison = 1, Psychic = 1, Fire = 1, Ground = 0;
+  Flying = 0.5, Bug = 0.5, Normal = 1, Ghost = 1, Fighting = 0.5, Steel = 0.5, Ice = 2, Dragon = 1, Dark = 1;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcArticuno(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 343, defense = 270, spdef = 320;
+  Normal = 1, Rock = 4, Water = 1, Electric = 2, Grass = 0.5, Poison = 1, Psychic = 1, Fire = 2, Ground = 0;
+  Flying = 1, Bug = 0.5, Normal = 1, Ghost = 1, Fighting = 1, Steel = 2, Ice = 1, Dragon = 1, Dark = 1;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
 
   Level = 100;
 
@@ -562,6 +676,19 @@ function calcA(lvl,atk,bp,stab,movetype,category,slot){
   calcHeracross(lvl,atk,bp,stab,movetype,category,destination);
   destination = "dmgPoliwrath" + slot;
   calcPoliwrath(lvl,atk,bp,stab,movetype,category,destination);
+
+  destination = "dmgDragonite" + slot;
+  calcDragonite(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgXatu" + slot;
+  calcXatu(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgAerodactyl" + slot;
+  calcAerodactyl(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgMoltres" + slot;
+  calcMoltres(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgZapdos" + slot;
+  calcZapdos(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgArticuno" + slot;
+  calcArticuno(lvl,atk,bp,stab,movetype,category,destination);
 }
 
 function newcalcB(lvl,atk,bp,stab,movetype,category,slot){
@@ -590,6 +717,19 @@ function newcalcB(lvl,atk,bp,stab,movetype,category,slot){
   calcHeracross(lvl,atk,bp,stab,movetype,category,destination);
   destination = "dmgPoliwrath" + slot + "b";
   calcPoliwrath(lvl,atk,bp,stab,movetype,category,destination);
+
+  destination = "dmgDragonite" + slot + "b";
+  calcDragonite(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgXatu" + slot + "b";
+  calcXatu(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgAerodactyl" + slot + "b";
+  calcAerodactyl(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgMoltres" + slot + "b";
+  calcMoltres(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgZapdos" + slot + "b";
+  calcZapdos(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgArticuno" + slot + "b";
+  calcArticuno(lvl,atk,bp,stab,movetype,category,destination);
 }
 
 function newcalcC(lvl,atk,bp,stab,movetype,category,slot){
@@ -618,6 +758,19 @@ function newcalcC(lvl,atk,bp,stab,movetype,category,slot){
   calcHeracross(lvl,atk,bp,stab,movetype,category,destination);
   destination = "dmgPoliwrath" + slot + "c";
   calcPoliwrath(lvl,atk,bp,stab,movetype,category,destination);
+
+  destination = "dmgDragonite" + slot + "c";
+  calcDragonite(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgXatu" + slot + "c";
+  calcXatu(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgAerodactyl" + slot + "c";
+  calcAerodactyl(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgMoltres" + slot + "c";
+  calcMoltres(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgZapdos" + slot + "c";
+  calcZapdos(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgArticuno" + slot + "c";
+  calcArticuno(lvl,atk,bp,stab,movetype,category,destination);
 }
 
 
@@ -1097,6 +1250,28 @@ function toggleMarty(){
   }
 }
 
+function toggleSpeeds(){
+
+    if (SpeedsOn == 1){
+    SpeedsOn = 0;
+    var x = document.getElementsByClassName("rentalspeeds");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "display:none";
+      }
+    }
+
+  else if (SpeedsOn == 0){
+    SpeedsOn = 1;
+
+    style="display:none;"
+    var x = document.getElementsByClassName("rentalspeeds");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "text-align:center";
+      }
+    }  
+}
 
 </script>
 
