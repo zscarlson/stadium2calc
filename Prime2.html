@@ -79,17 +79,27 @@ table, th, td {
   <tr> 
 
 
-    <td colspan="2", style="text-align:center"> TRAINER TIP <br> You can click on a <br> Pokemon to change <br> it back into Ditto!
-    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite1", onclick="clearSlot(1)"></td>
-    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite2", onclick="clearSlot(2)"></td>
-    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite3", onclick="clearSlot(3)"></td>
-    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite4", onclick="clearSlot(4)"></td>
-    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite5", onclick="clearSlot(5)"></td>
-    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite6", onclick="clearSlot(6)"></td>
+    <td colspan="2", rowspan="2" style="text-align:center"> TRAINER TIP <br> You can click on a <br> Pokemon to change <br> it back into Ditto!
+    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite1", onclick="clearSlot(1)"> </td>
+    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite2", onclick="clearSlot(2)"> </td>
+    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite3", onclick="clearSlot(3)"> </td>
+    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite4", onclick="clearSlot(4)"> </td>
+    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite5", onclick="clearSlot(5)"> </td>
+    <td style="text-align:center"> <img src="Spr_5b_132.png", id="sprite6", onclick="clearSlot(6)"> </td>
   </tr>  
 
+  <tr>
+    <td style="text-align:center"> <p id="speed1"> </td>
+    <td style="text-align:center"> <p id="speed2"> </td>
+    <td style="text-align:center"> <p id="speed3"> </td>
+    <td style="text-align:center"> <p id="speed4"> </td>
+    <td style="text-align:center"> <p id="speed5"> </td>
+    <td style="text-align:center"> <p id="speed6"> </td>
+
+  </tr>
+
   <tr> 
-    <td colspan="8"> VS Terry's Pokemon 
+    <td colspan="8"> <img src="S2_Lass.png"> VS Terry
     <input type="checkbox" name="TerryBox" onclick="toggleTerry()">
     <label for="futurebox"> Hide Trainer
 
@@ -98,7 +108,7 @@ table, th, td {
 
   <tr class="Terry"> 
     <td style="text-align:center"> <img src="241.png"> </td>
-    <td style="text-align:center"> 350 HP </td>
+    <td style="text-align:center"> 350 HP <br> 269 Spd </td>
     <td style="text-align:center"> <p id="dmgMiltank1" class="slot1"></p> <p id="dmgMiltank1b" class="slot1"></p> <p id="dmgMiltank1c" class="slot1"></p> </td> 
     <td style="text-align:center"> <p id="dmgMiltank2" class="slot2"></p> <p id="dmgMiltank2b" class="slot2"></p> <p id="dmgMiltank2c" class="slot2"></p> </td> 
     <td style="text-align:center"> <p id="dmgMiltank3" class="slot3"></p> <p id="dmgMiltank3b" class="slot3"></p> <p id="dmgMiltank3c" class="slot3"></p> </td>
@@ -163,7 +173,7 @@ table, th, td {
   </tr> 
 
     <tr> 
-    <td colspan="8"> VS Yang's Pokemon
+    <td colspan="8"> <img src="S2_Blackbelt.png"> VS Yang
     <input type="checkbox" name="YangBox" onclick="toggleYang()">
     <label for="futurebox"> Hide Trainer </td>
     </tr>  
@@ -236,37 +246,37 @@ table, th, td {
   </tr> 
 
     <tr> 
-    <td colspan="8"> VS Adam's Pokemon
+    <td colspan="8"> <img src="S2_Bird_Keeper.png"> VS Adam
     <input type="checkbox" name="AdamBox" onclick="toggleAdam()">
     <label for="futurebox"> Hide Trainer </td>
     </tr>  
 
     <tr> 
-    <td colspan="8"> VS Floria's Pokemon
+    <td colspan="8"> <img src="S2_Cooltrainer_F.png"> VS Floria
     <input type="checkbox" name="FloriaBox" onclick="toggleFloria()">
     <label for="futurebox"> Hide Trainer </td>
     </tr>  
 
     <tr> 
-    <td colspan="8"> VS Chase's Pokemon
+    <td colspan="8"> <img src="S2_Fisherman.png"> VS Chase
     <input type="checkbox" name="ChaseBox" onclick="toggleChase()">
     <label for="futurebox"> Hide Trainer </td>
     </tr>  
 
     <tr> 
-    <td colspan="8"> VS Craig's Pokemon
+    <td colspan="8"> <img src="S2_Scientist.png"> VS Craig
     <input type="checkbox" name="CraigBox" onclick="toggleCraig()">
     <label for="futurebox"> Hide Trainer </td>
     </tr>  
 
     <tr> 
-    <td colspan="8"> VS Kathy's Pokemon
+    <td colspan="8"> <img src="S2_Skier.png"> VS Kathy
     <input type="checkbox" name="KathyBox" onclick="toggleKathy()">
     <label for="futurebox"> Hide Trainer </td>
     </tr>  
 
     <tr> 
-    <td colspan="8"> VS Marty's Pokemon
+    <td colspan="8"> <img src="S2_Cooltrainer_M.png"> VS Marty
     <input type="checkbox" name="MartyBox" onclick="toggleMarty()">
     <label for="futurebox"> Hide Trainer </td>
     </tr>  
@@ -389,7 +399,7 @@ function attackerHitmonlee(){
   SameType = 1.5;
   category = "Physical";
   slot = findEmptySlot();
-  slotpicker(slot,"106.png")
+  slotpicker(slot,"106.png",234)
 
   moveindex = 2;
   movename = "Reversal ("+flailMode+")";
@@ -418,7 +428,7 @@ function attackerFearow(){
   SameType = 1.5;
   category = "Physical";
   slot = findEmptySlot();
-  slotpicker(slot,"022.png")
+  slotpicker(slot,"022.png",264)
 
   moveindex = 2;
   movename = "Hyper Beam";
@@ -448,7 +458,7 @@ function attackerHeracross(){
   SameType = 1.5;
   category = "Physical";
   slot = findEmptySlot();
-  slotpicker(slot,"214.png")
+  slotpicker(slot,"214.png",216)
 
   moveindex = 2;
   movename = "Rock Smash";
@@ -478,7 +488,7 @@ function attackerVoltorb(){
   SameType = 1.5;
   category = "Special";
   slot = findEmptySlot();
-  slotpicker(slot,"100.png")
+  slotpicker(slot,"100.png",278)
 
   moveindex = 2;
   movename = "Selfdestruct";
@@ -502,7 +512,7 @@ function attackerKadabra(){
   SameType = 1.5;
   category = "Special";
   slot = findEmptySlot();
-  slotpicker(slot,"064.png")
+  slotpicker(slot,"064.png",274)
 
   moveindex = 2;
   movename = "ThunderPunch";
@@ -523,7 +533,7 @@ function attackerWobbuffet(){
   SameType = 0;
   category = "Special";
   slot = findEmptySlot();
-  slotpicker(slot,"202.png")
+  slotpicker(slot,"202.png",130)
 }
 
 function calcA(lvl,atk,bp,stab,movetype,category,slot){
@@ -616,31 +626,37 @@ function newcalcC(lvl,atk,bp,stab,movetype,category,slot){
 
 
 
-function slotpicker(slot,sprite){
+function slotpicker(slot,sprite,speed){
 	calcA(Level,Attack,Power,SameType,movetype,category,slot);
 	if (slot == "1"){
 		document.getElementById('sprite1').src = sprite;
 		slot1occupied = 1;
+    document.getElementById('speed1').innerHTML = speed + " Speed";
 	}
 	if (slot == "2"){
 		document.getElementById('sprite2').src = sprite;
 		slot2occupied = 1;
+    document.getElementById('speed2').innerHTML = speed + " Speed";
 	}
 	if (slot == "3"){
 		document.getElementById('sprite3').src = sprite;
 		slot3occupied = 1;
+    document.getElementById('speed3').innerHTML = speed + " Speed";
 	}
 	if (slot == "4"){
 		document.getElementById('sprite4').src = sprite;
 		slot4occupied = 1;
+    document.getElementById('speed4').innerHTML = speed + " Speed";
 	}
 	if (slot == "5"){
 		document.getElementById('sprite5').src = sprite;
 		slot5occupied = 1;
+    document.getElementById('speed5').innerHTML = speed + " Speed";
 	}
 	if (slot == "6"){
 		document.getElementById('sprite6').src = sprite;
 		slot6occupied = 1;
+    document.getElementById('speed6').innerHTML = speed + " Speed";
 	}
 
 }
@@ -686,6 +702,7 @@ function clearSlot(slot){
 	if (slot == 1){
 		slot1occupied = 0;
 		document.getElementById('sprite1').src ="Spr_5b_132.png";
+    document.getElementById('speed1').innerHTML ="";
 		var x = document.getElementsByClassName("slot1");
 		var i;
 		for (i = 0; i < x.length; i++) {
@@ -695,6 +712,7 @@ function clearSlot(slot){
 	if (slot == 2){
 		slot2occupied = 0;
 		document.getElementById('sprite2').src ="Spr_5b_132.png";
+    document.getElementById('speed2').innerHTML ="";
 		var x = document.getElementsByClassName("slot2");
 		var i;
 		for (i = 0; i < x.length; i++) {
@@ -704,6 +722,7 @@ function clearSlot(slot){
 	if (slot == 3){
 		slot3occupied = 0;
 		document.getElementById('sprite3').src ="Spr_5b_132.png";
+    document.getElementById('speed3').innerHTML ="";
 		var x = document.getElementsByClassName("slot3");
 		var i;
 		for (i = 0; i < x.length; i++) {
@@ -713,6 +732,7 @@ function clearSlot(slot){
 	if (slot == 4){
 		slot4occupied = 0;
 		document.getElementById('sprite4').src ="Spr_5b_132.png";
+    document.getElementById('speed4').innerHTML ="";
 		var x = document.getElementsByClassName("slot4");
 		var i;
 		for (i = 0; i < x.length; i++) {
@@ -722,6 +742,7 @@ function clearSlot(slot){
 	if (slot == 5){
 		slot5occupied = 0;
 		document.getElementById('sprite5').src ="Spr_5b_132.png";
+    document.getElementById('speed5').innerHTML ="";
 		var x = document.getElementsByClassName("slot5");
 		var i;
 		for (i = 0; i < x.length; i++) {
@@ -731,6 +752,7 @@ function clearSlot(slot){
 	if (slot == 6){
 		slot6occupied = 0;
 		document.getElementById('sprite6').src ="Spr_5b_132.png";
+    document.getElementById('speed6').innerHTML ="";
 		var x = document.getElementsByClassName("slot6");
 		var i;
 		for (i = 0; i < x.length; i++) {
