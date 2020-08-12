@@ -17,11 +17,11 @@ table, th, td {
   	<td colspan="2", style="text-align:center"> RENTAL POKEMON<br>Click on any one<br> to get started! </td>
   	<td colspan="6", rowspan="2", style="text-align:center"> 
     <img src="Ani022MS.png" onclick="attackerFearow()">
+    <img src="Ani064MS.png" onclick="attackerKadabra()">
     <img src="Ani100MS.png" onclick="attackerVoltorb()">
     <img src="Ani106MS.png" onclick="attackerHitmonlee()">
-    <img src="Ani214MS.png" onclick="attackerHeracross()">
-    <img src="Ani064MS.png" onclick="attackerKadabra()">
     <img src="Ani202MS.png" onclick="attackerWobbuffet()">
+    <img src="Ani214MS.png" onclick="attackerHeracross()">
   	</td>
   </tr> 
 
@@ -51,7 +51,7 @@ table, th, td {
 </form>
 
   <form>
-  <label for="flailDropdown">Flail Power:</label>
+  <label for="flailDropdown">Reversal Power:</label>
   <select onchange="toggleFlailMode(value)">
     <option value="20">20</option>
     <option value="40">40</option>
@@ -89,10 +89,14 @@ table, th, td {
   </tr>  
 
   <tr> 
-    <td colspan="8"> VS Terry's Pokemon: </td>
+    <td colspan="8"> VS Terry's Pokemon 
+    <input type="checkbox" name="TerryBox" onclick="toggleTerry()">
+    <label for="futurebox"> Hide Trainer
+
+    </td>
   </tr>  
 
-  <tr> 
+  <tr class="Terry"> 
     <td style="text-align:center"> <img src="241.png"> </td>
     <td style="text-align:center"> 350 HP </td>
     <td style="text-align:center"> <p id="dmgMiltank1" class="slot1"></p> <p id="dmgMiltank1b" class="slot1"></p> <p id="dmgMiltank1c" class="slot1"></p> </td> 
@@ -103,7 +107,7 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgMiltank6" class="slot6"></p> <p id="dmgMiltank6b" class="slot6"></p> <p id="dmgMiltank6c" class="slot6"></p> </td> 
   </tr> 
 
-  <tr> 
+  <tr class="Terry"> 
     <td style="text-align:center"> <img src="242.png"> </td>
     <td style="text-align:center"> 680 HP </td>
     <td style="text-align:center"> <p id="dmgBlissey1" class="slot1"></p> <p id="dmgBlissey1b" class="slot1"></p> <p id="dmgBlissey1c" class="slot1"></p> </td> 
@@ -114,7 +118,7 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgBlissey6" class="slot6"></p> <p id="dmgBlissey6b" class="slot6"></p> <p id="dmgBlissey6c" class="slot6"></p> </td> 
   </tr> 
 
-  <tr> 
+  <tr class="Terry"> 
     <td style="text-align:center"> <img src="208.png"> </td>
     <td style="text-align:center"> 320 HP </td>
     <td style="text-align:center"> <p id="dmgSteelix1" class="slot1"></p> <p id="dmgSteelix1b" class="slot1"></p> <p id="dmgSteelix1c" class="slot1"></p> </td> 
@@ -125,7 +129,7 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgSteelix6" class="slot6"></p> <p id="dmgSteelix6b" class="slot6"></p> <p id="dmgSteelix6c" class="slot6"></p> </td> 
   </tr> 
 
-  <tr> 
+  <tr class="Terry"> 
     <td style="text-align:center"> <img src="182.png"> </td>
     <td style="text-align:center"> 320 HP </td>
     <td style="text-align:center"> <p id="dmgBellossom1" class="slot1"></p> <p id="dmgBellossom1b" class="slot1"></p> <p id="dmgBellossom1c" class="slot1"></p> </td> 
@@ -136,7 +140,7 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgBellossom6" class="slot6"></p> <p id="dmgBellossom6b" class="slot6"></p> <p id="dmgBellossom6c" class="slot6"></p> </td> 
   </tr> 
 
-    <tr> 
+    <tr class="Terry"> 
     <td style="text-align:center"> <img src="232.png"> </td>
     <td style="text-align:center"> 340 HP </td>
     <td style="text-align:center"> <p id="dmgDonphan1" class="slot1"></p> <p id="dmgDonphan1b" class="slot1"></p> <p id="dmgDonphan1c" class="slot1"></p> </td> 
@@ -147,7 +151,7 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgDonphan6" class="slot6"></p> <p id="dmgDonphan6b" class="slot6"></p> <p id="dmgDonphan6c" class="slot6"></p> </td> 
   </tr> 
 
-  <tr> 
+  <tr class="Terry"> 
     <td style="text-align:center"> <img src="189.png"> </td>
     <td style="text-align:center"> 320 HP </td>
     <td style="text-align:center"> <p id="dmgJumpluff1" class="slot1"></p> <p id="dmgJumpluff1b" class="slot1"></p> <p id="dmgJumpluff1c" class="slot1"></p> </td> 
@@ -158,9 +162,120 @@ table, th, td {
     <td style="text-align:center"> <p id="dmgJumpluff6" class="slot6"></p> <p id="dmgJumpluff6b" class="slot6"></p> <p id="dmgJumpluff6c" class="slot6"></p> </td> 
   </tr> 
 
+    <tr> 
+    <td colspan="8"> VS Yang's Pokemon
+    <input type="checkbox" name="YangBox" onclick="toggleYang()">
+    <label for="futurebox"> Hide Trainer </td>
+    </tr>  
+
+
+  <tr class="Yang"> 
+    <td style="text-align:center"> <img src="202.png"> </td>
+    <td style="text-align:center"> 550 HP </td>
+    <td style="text-align:center"> <p id="dmgWobbuffet1" class="slot1"></p> <p id="dmgWobbuffet1b" class="slot1"></p> <p id="dmgWobbuffet1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgWobbuffet2" class="slot2"></p> <p id="dmgWobbuffet2b" class="slot2"></p> <p id="dmgWobbuffet2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgWobbuffet3" class="slot3"></p> <p id="dmgWobbuffet3b" class="slot3"></p> <p id="dmgWobbuffet3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgWobbuffet4" class="slot4"></p> <p id="dmgWobbuffet4b" class="slot4"></p> <p id="dmgWobbuffet4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgWobbuffet5" class="slot5"></p> <p id="dmgWobbuffet5b" class="slot5"></p> <p id="dmgWobbuffet5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgWobbuffet6" class="slot6"></p> <p id="dmgWobbuffet6b" class="slot6"></p> <p id="dmgWobbuffet6c" class="slot6"></p> </td> 
+  </tr> 
+
+  <tr class="Yang"> 
+    <td style="text-align:center"> <img src="009.png"> </td>
+    <td style="text-align:center"> 328 HP </td>
+    <td style="text-align:center"> <p id="dmgBlastoise1" class="slot1"></p> <p id="dmgBlastoise1b" class="slot1"></p> <p id="dmgBlastoise1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgBlastoise2" class="slot2"></p> <p id="dmgBlastoise2b" class="slot2"></p> <p id="dmgBlastoise2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgBlastoise3" class="slot3"></p> <p id="dmgBlastoise3b" class="slot3"></p> <p id="dmgBlastoise3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgBlastoise4" class="slot4"></p> <p id="dmgBlastoise4b" class="slot4"></p> <p id="dmgBlastoise4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgBlastoise5" class="slot5"></p> <p id="dmgBlastoise5b" class="slot5"></p> <p id="dmgBlastoise5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgBlastoise6" class="slot6"></p> <p id="dmgBlastoise6b" class="slot6"></p> <p id="dmgBlastoise6c" class="slot6"></p> </td> 
+  </tr> 
+
+  <tr class="Yang"> 
+    <td style="text-align:center"> <img src="073.png"> </td>
+    <td style="text-align:center"> 320 HP </td>
+    <td style="text-align:center"> <p id="dmgTentacruel1" class="slot1"></p> <p id="dmgTentacruel1b" class="slot1"></p> <p id="dmgTentacruel1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgTentacruel2" class="slot2"></p> <p id="dmgTentacruel2b" class="slot2"></p> <p id="dmgTentacruel2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgTentacruel3" class="slot3"></p> <p id="dmgTentacruel3b" class="slot3"></p> <p id="dmgTentacruel3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgTentacruel4" class="slot4"></p> <p id="dmgTentacruel4b" class="slot4"></p> <p id="dmgTentacruel4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgTentacruel5" class="slot5"></p> <p id="dmgTentacruel5b" class="slot5"></p> <p id="dmgTentacruel5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgTentacruel6" class="slot6"></p> <p id="dmgTentacruel6b" class="slot6"></p> <p id="dmgTentacruel6c" class="slot6"></p> </td> 
+  </tr> 
+
+  <tr class="Yang"> 
+    <td style="text-align:center"> <img src="057.png"> </td>
+    <td style="text-align:center"> 300 HP </td>
+    <td style="text-align:center"> <p id="dmgPrimeape1" class="slot1"></p> <p id="dmgPrimeape1b" class="slot1"></p> <p id="dmgPrimeape1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgPrimeape2" class="slot2"></p> <p id="dmgPrimeape2b" class="slot2"></p> <p id="dmgPrimeape2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgPrimeape3" class="slot3"></p> <p id="dmgPrimeape3b" class="slot3"></p> <p id="dmgPrimeape3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgPrimeape4" class="slot4"></p> <p id="dmgPrimeape4b" class="slot4"></p> <p id="dmgPrimeape4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgPrimeape5" class="slot5"></p> <p id="dmgPrimeape5b" class="slot5"></p> <p id="dmgPrimeape5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgPrimeape6" class="slot6"></p> <p id="dmgPrimeape6b" class="slot6"></p> <p id="dmgPrimeape6c" class="slot6"></p> </td> 
+  </tr> 
+
+    <tr class="Yang"> 
+    <td style="text-align:center"> <img src="214.png"> </td>
+    <td style="text-align:center"> 330 HP </td>
+    <td style="text-align:center"> <p id="dmgHeracross1" class="slot1"></p> <p id="dmgHeracross1b" class="slot1"></p> <p id="dmgHeracross1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgHeracross2" class="slot2"></p> <p id="dmgHeracross2b" class="slot2"></p> <p id="dmgHeracross2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgHeracross3" class="slot3"></p> <p id="dmgHeracross3b" class="slot3"></p> <p id="dmgHeracross3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgHeracross4" class="slot4"></p> <p id="dmgHeracross4b" class="slot4"></p> <p id="dmgHeracross4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgHeracross5" class="slot5"></p> <p id="dmgHeracross5b" class="slot5"></p> <p id="dmgHeracross5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgHeracross6" class="slot6"></p> <p id="dmgHeracross6b" class="slot6"></p> <p id="dmgHeracross6c" class="slot6"></p> </td> 
+  </tr> 
+
+  <tr class="Yang"> 
+    <td style="text-align:center"> <img src="062.png"> </td>
+    <td style="text-align:center"> 340 HP </td>
+    <td style="text-align:center"> <p id="dmgPoliwrath1" class="slot1"></p> <p id="dmgPoliwrath1b" class="slot1"></p> <p id="dmgPoliwrath1c" class="slot1"></p> </td> 
+    <td style="text-align:center"> <p id="dmgPoliwrath2" class="slot2"></p> <p id="dmgPoliwrath2b" class="slot2"></p> <p id="dmgPoliwrath2c" class="slot2"></p> </td> 
+    <td style="text-align:center"> <p id="dmgPoliwrath3" class="slot3"></p> <p id="dmgPoliwrath3b" class="slot3"></p> <p id="dmgPoliwrath3c" class="slot3"></p> </td>
+    <td style="text-align:center"> <p id="dmgPoliwrath4" class="slot4"></p> <p id="dmgPoliwrath4b" class="slot4"></p> <p id="dmgPoliwrath4c" class="slot4"></p> </td> 
+    <td style="text-align:center"> <p id="dmgPoliwrath5" class="slot5"></p> <p id="dmgPoliwrath5b" class="slot5"></p> <p id="dmgPoliwrath5c" class="slot5"></p> </td> 
+    <td style="text-align:center"> <p id="dmgPoliwrath6" class="slot6"></p> <p id="dmgPoliwrath6b" class="slot6"></p> <p id="dmgPoliwrath6c" class="slot6"></p> </td> 
+  </tr> 
+
+    <tr> 
+    <td colspan="8"> VS Adam's Pokemon
+    <input type="checkbox" name="AdamBox" onclick="toggleAdam()">
+    <label for="futurebox"> Hide Trainer </td>
+    </tr>  
+
+    <tr> 
+    <td colspan="8"> VS Flora's Pokemon
+    <input type="checkbox" name="FloraBox" onclick="toggleFlora()">
+    <label for="futurebox"> Hide Trainer </td>
+    </tr>  
+
+    <tr> 
+    <td colspan="8"> VS Chase's Pokemon
+    <input type="checkbox" name="ChaseBox" onclick="toggleChase()">
+    <label for="futurebox"> Hide Trainer </td>
+    </tr>  
+
+    <tr> 
+    <td colspan="8"> VS Craig's Pokemon
+    <input type="checkbox" name="CraigBox" onclick="toggleCraig()">
+    <label for="futurebox"> Hide Trainer </td>
+    </tr>  
+
+    <tr> 
+    <td colspan="8"> VS Kathy's Pokemon
+    <input type="checkbox" name="KathyBox" onclick="toggleKathy()">
+    <label for="futurebox"> Hide Trainer </td>
+    </tr>  
+
+    <tr> 
+    <td colspan="8"> VS Marty's Pokemon
+    <input type="checkbox" name="MartyBox" onclick="toggleMarty()">
+    <label for="futurebox"> Hide Trainer </td>
+    </tr>  
+
 </table>
 
 <script>
+
+
 
 var magnitudeMode = 7;
 var cutterMode = 1;
@@ -169,6 +284,14 @@ var flailMode = 20;
 var moveindex = 1;
 var multihit = 0;
 var BoomDefense = 0;
+var TerryOn = 1;
+var YangOn = 1;
+var AdamOn = 1;
+var FloraOn = 1;
+var ChaseOn = 1;
+var CraigOn = 1;
+var KathyOn = 1;
+var MartyOn = 1;
 
 function calcMiltank(lvl,atk,bp,stab,movetype,category,location) {
   hp = 350, defense = 281, spdef = 211;
@@ -209,6 +332,48 @@ function calcJumpluff(lvl,atk,bp,stab,movetype,category,location) {
   hp = 320, defense = 209, spdef = 239;
   Normal = 1, Rock = 2, Water = 0.5, Electric = 1, Grass = 0.25, Poison = 2, Psychic = 1, Fire = 2, Ground = 0;
   Flying = 2, Bug = 1, Normal = 1, Ghost = 1, Fighting = 0.5, Steel = 1, Ice = 4, Dragon = 1, Dark = 1;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcWobbuffet(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 550, defense = 185, spdef = 185;
+  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 0.5, Fire = 1, Ground = 1;
+  Flying = 1, Bug = 2, Normal = 1, Ghost = 2, Fighting = 0.5, Steel = 1, Ice = 4, Dragon = 1, Dark = 2;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcBlastoise(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 328, defense = 269, spdef = 279;
+  Normal = 1, Rock = 1, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 1;
+  Flying = 1, Bug = 1, Normal = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 1;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcTentacruel(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 320, defense = 201, spdef = 311;
+  Normal = 1, Rock = 1, Water = 0.5, Electric = 2, Grass = 1, Poison = 0.5, Psychic = 2, Fire = 0.5, Ground = 2;
+  Flying = 1, Bug = 0.5, Normal = 1, Ghost = 1, Fighting = 0.5, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 1;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcPrimeape(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 300, defense = 189, spdef = 209;
+  Normal = 1, Rock = 0.5, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 2, Fire = 1, Ground = 1;
+  Flying = 2, Bug = 0.5, Normal = 1, Ghost = 1, Fighting = 1, Steel = 1, Ice = 1, Dragon = 1, Dark = 0.5;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcHeracross(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 330, defense = 219, spdef = 259;
+  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 0.5, Poison = 1, Psychic = 2, Fire = 2, Ground = 0.5;
+  Flying = 4, Bug = 0.5, Normal = 1, Ghost = 1, Fighting = 0.5, Steel = 1, Ice = 1, Dragon = 1, Dark = 0.5;
+  SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
+}
+
+function calcPoliwrath(lvl,atk,bp,stab,movetype,category,location) {
+  hp = 340, defense = 261, spdef = 251;
+  Normal = 1, Rock = 0.5, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 2, Fire = 0.5, Ground = 1;
+  Flying = 2, Bug = 0.5, Normal = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 0.5;
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
@@ -374,6 +539,19 @@ function calcA(lvl,atk,bp,stab,movetype,category,slot){
   calcDonphan(lvl,atk,bp,stab,movetype,category,destination);
   destination = "dmgJumpluff" + slot;
   calcJumpluff(lvl,atk,bp,stab,movetype,category,destination);
+
+  destination = "dmgWobbuffet" + slot;
+  calcWobbuffet(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgBlastoise" + slot;
+  calcBlastoise(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgTentacruel" + slot;
+  calcTentacruel(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgPrimeape" + slot;
+  calcPrimeape(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgHeracross" + slot;
+  calcHeracross(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgPoliwrath" + slot;
+  calcPoliwrath(lvl,atk,bp,stab,movetype,category,destination);
 }
 
 function newcalcB(lvl,atk,bp,stab,movetype,category,slot){
@@ -389,6 +567,19 @@ function newcalcB(lvl,atk,bp,stab,movetype,category,slot){
   calcDonphan(lvl,atk,bp,stab,movetype,category,destination);
   destination = "dmgJumpluff" + slot + "b";
   calcJumpluff(lvl,atk,bp,stab,movetype,category,destination);
+
+  destination = "dmgWobbuffet" + slot + "b";
+  calcWobbuffet(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgBlastoise" + slot + "b";
+  calcBlastoise(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgTentacruel" + slot + "b";
+  calcTentacruel(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgPrimeape" + slot + "b";
+  calcPrimeape(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgHeracross" + slot + "b";
+  calcHeracross(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgPoliwrath" + slot + "b";
+  calcPoliwrath(lvl,atk,bp,stab,movetype,category,destination);
 }
 
 function newcalcC(lvl,atk,bp,stab,movetype,category,slot){
@@ -404,6 +595,19 @@ function newcalcC(lvl,atk,bp,stab,movetype,category,slot){
   calcDonphan(lvl,atk,bp,stab,movetype,category,destination);
   destination = "dmgJumpluff" + slot + "c";
   calcJumpluff(lvl,atk,bp,stab,movetype,category,destination);
+
+  destination = "dmgWobbuffet" + slot + "c";
+  calcWobbuffet(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgBlastoise" + slot + "c";
+  calcBlastoise(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgTentacruel" + slot + "c";
+  calcTentacruel(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgPrimeape" + slot + "c";
+  calcPrimeape(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgHeracross" + slot + "c";
+  calcHeracross(lvl,atk,bp,stab,movetype,category,destination);
+  destination = "dmgPoliwrath" + slot + "c";
+  calcPoliwrath(lvl,atk,bp,stab,movetype,category,destination);
 }
 
 
@@ -699,6 +903,175 @@ function SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,R
 
   if (attacker == "Wobbuffet"){
     document.getElementById(location).innerHTML = "( > ﹏ < )";
+  }
+}
+
+
+function toggleTerry(){
+  if (TerryOn == 1){
+    TerryOn = 0;
+    var x = document.getElementsByClassName("Terry");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "display:none";
+    }
+  }
+  else if (TerryOn == 0){
+    TerryOn = 1;
+
+    style="display:none;"
+    var x = document.getElementsByClassName("Terry");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "";
+    }
+  }
+}
+
+function toggleYang(){
+  if (YangOn == 1){
+    YangOn = 0;
+    var x = document.getElementsByClassName("Yang");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "display:none";
+    }
+  }
+  else if (YangOn == 0){
+    YangOn = 1;
+
+    style="display:none;"
+    var x = document.getElementsByClassName("Yang");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "";
+    }
+  }
+}
+
+function toggleAdam(){
+  if (AdamOn == 1){
+    AdamOn = 0;
+    var x = document.getElementsByClassName("Adam");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "display:none";
+    }
+  }
+  else if (AdamOn == 0){
+    AdamOn = 1;
+
+    style="display:none;"
+    var x = document.getElementsByClassName("Adam");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "";
+    }
+  }
+}
+
+function toggleFlora(){
+  if (FloraOn == 1){
+    FloraOn = 0;
+    var x = document.getElementsByClassName("Flora");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "display:none";
+    }
+  }
+  else if (FloraOn == 0){
+    FloraOn = 1;
+
+    style="display:none;"
+    var x = document.getElementsByClassName("Flora");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "";
+    }
+  }
+}
+
+function toggleChase(){
+  if (ChaseOn == 1){
+    ChaseOn = 0;
+    var x = document.getElementsByClassName("Chase");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "display:none";
+    }
+  }
+  else if (ChaseOn == 0){
+    ChaseOn = 1;
+
+    style="display:none;"
+    var x = document.getElementsByClassName("Chase");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "";
+    }
+  }
+}
+
+function toggleCraig(){
+  if (CraigOn == 1){
+    CraigOn = 0;
+    var x = document.getElementsByClassName("Craig");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "display:none";
+    }
+  }
+  else if (CraigOn == 0){
+    CraigOn = 1;
+
+    style="display:none;"
+    var x = document.getElementsByClassName("Craig");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "";
+    }
+  }
+}
+
+function toggleKathy(){
+  if (KathyOn == 1){
+    KathyOn = 0;
+    var x = document.getElementsByClassName("Kathy");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "display:none";
+    }
+  }
+  else if (KathyOn == 0){
+    KathyOn = 1;
+
+    style="display:none;"
+    var x = document.getElementsByClassName("Kathy");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "";
+    }
+  }
+}
+
+function toggleMarty(){
+  if (MartyOn == 1){
+    MartyOn = 0;
+    var x = document.getElementsByClassName("Marty");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "display:none";
+    }
+  }
+  else if (MartyOn == 0){
+    MartyOn = 1;
+
+    style="display:none;"
+    var x = document.getElementsByClassName("Marty");
+    var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].style = "";
+    }
   }
 }
 
