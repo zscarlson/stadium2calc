@@ -1736,11 +1736,11 @@ function damageColor(fullhp,location,minroll,maxroll){
 	// if (maxroll >= halfhp){
 	// 	document.getElementById(location).style="color:red;"
 	// }
-	// if (minroll >= halfhp){
-	// 	document.getElementById(location).style="color:black;"
-	// }
+	if (minroll >= halfhp){
+		document.getElementById(location).style="color:gold;"
+	}
 	if (maxroll >= fullhp){
-		document.getElementById(location).style="color: lightgreen;"
+		document.getElementById(location).style="color:lightgreen;"
 	}
 	if (minroll >= fullhp){
 		document.getElementById(location).style="color:green;"
