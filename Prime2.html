@@ -19,9 +19,11 @@ table, th, td {
     <img src="Ani022MS.png" onclick="attackerFearow()">
     <img src="Ani064MS.png" onclick="attackerKadabra()">
     <img src="Ani100MS.png" onclick="attackerVoltorb()">
+    <img src="Ani103MS.png" onclick="attackerExeggutor()">
     <img src="Ani106MS.png" onclick="attackerHitmonlee()">
-    <img src="Ani202MS.png" onclick="attackerWobbuffet()">
+    <img src="Ani144MS.png" onclick="attackerArticuno()">
     <img src="Ani214MS.png" onclick="attackerHeracross()">
+    <img src="Ani202MS.png" onclick="attackerWobbuffet()">
   	</td>
   </tr> 
 
@@ -756,7 +758,7 @@ function calcJumpluff(lvl,atk,bp,stab,movetype,category,location) {
 function calcWobbuffet(lvl,atk,bp,stab,movetype,category,location) {
   hp = 550, defense = 185, spdef = 185;
   Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 0.5, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 2, Ghost = 2, Fighting = 0.5, Steel = 1, Ice = 4, Dragon = 1, Dark = 2;
+  Flying = 1, Bug = 2, Ghost = 2, Fighting = 0.5, Steel = 1, Ice = 1, Dragon = 1, Dark = 2;
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
@@ -854,7 +856,7 @@ function calcExeggutor(lvl,atk,bp,stab,movetype,category,location) {
 function calcRapidash(lvl,atk,bp,stab,movetype,category,location) {
   hp = 309, defense = 216, spdef = 234;
   Normal = 1, Rock = 2, Water = 2, Electric = 1, Grass = 0.5, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 2;
-  Flying = 1, Bug = 0.5, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 2;
+  Flying = 1, Bug = 0.5, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 1;
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
@@ -952,7 +954,7 @@ function calcStantler(lvl,atk,bp,stab,movetype,category,location) {
 function calcCrobat(lvl,atk,bp,stab,movetype,category,location) {
   hp = 350, defense = 239, spdef = 239;
   Normal = 1, Rock = 2, Water = 1, Electric = 2, Grass = 0.25, Poison = 0.5, Psychic = 2, Fire = 1, Ground = 0;
-  Flying = 1, Bug = 0.25, Ghost = 1, Fighting = 0.25, Steel = 1, Ice = 2, Dragon = 1, Dark = 0.5;
+  Flying = 1, Bug = 0.25, Ghost = 1, Fighting = 0.25, Steel = 1, Ice = 2, Dragon = 1, Dark = 1;
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
@@ -1195,6 +1197,50 @@ function attackerWobbuffet(){
   category = "Special";
   slot = findEmptySlot();
   slotpicker(slot,"202.png",130)
+}
+
+function attackerArticuno(){
+  attacker = "Articuno";
+  moveindex = 1;
+  movename = "Blizzard";
+  movetype = "Ice";
+  Attack = 212;
+  Power = 120;
+  SameType = 1.5;
+  category = "Special";
+  slot = findEmptySlot();
+  slotpicker(slot,"144.png",190)
+
+  moveindex = 2;
+  movename = "Peck";
+  Attack = 190;
+  Power = 35;
+  movetype = "Flying";
+  SameType = 1.5;
+  category = "Physical";
+  calcB(slot);
+}
+
+function attackerExeggutor(){
+  attacker = "Exeggutor";
+  moveindex = 1;
+  movename = "Confusion";
+  movetype = "Psychic";
+  Attack = 298;
+  Power = 50;
+  SameType = 1.5;
+  category = "Special";
+  slot = findEmptySlot();
+  slotpicker(slot,"103.png",190)
+
+  moveindex = 2;
+  movename = "Egg Bomb";
+  Attack = 238;
+  Power = 100;
+  movetype = "Normal";
+  SameType = 1;
+  category = "Physical";
+  calcB(slot);
 }
 
 function calcA(lvl,atk,bp,stab,movetype,category,slot){
