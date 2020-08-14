@@ -18,12 +18,17 @@ table, th, td {
   	<td colspan="6", rowspan="2", style="text-align:center"> 
     <img src="Ani022MS.png" onclick="attackerFearow()">
     <img src="Ani064MS.png" onclick="attackerKadabra()">
+    <img src="Ani082MS.png" onclick="attackerMagneton()">
     <img src="Ani100MS.png" onclick="attackerVoltorb()">
     <img src="Ani103MS.png" onclick="attackerExeggutor()">
     <img src="Ani106MS.png" onclick="attackerHitmonlee()">
     <img src="Ani144MS.png" onclick="attackerArticuno()">
-    <img src="Ani214MS.png" onclick="attackerHeracross()">
     <img src="Ani202MS.png" onclick="attackerWobbuffet()">
+    <img src="Ani208MS.png" onclick="attackerSteelix()">
+    <img src="Ani214MS.png" onclick="attackerHeracross()">
+    <img src="Ani222MS.png" onclick="attackerCorsola()">
+    <img src="Ani230MS.png" onclick="attackerKingdra()">
+    <img src="Ani251MS.png" onclick="attackerCelebi()">
   	</td>
   </tr> 
 
@@ -1189,12 +1194,12 @@ function attackerKadabra(){
 function attackerWobbuffet(){
   attacker = "Wobbuffet";
   moveindex = 1;
-  movename = "Psychic";
-  movetype = "Psychic";
-  Attack = 302;
+  movename = "Counter";
+  movetype = "Typeless";
+  Attack = 1;
   Power = 0;
   SameType = 0;
-  category = "Special";
+  category = "Physical";
   slot = findEmptySlot();
   slotpicker(slot,"202.png",130)
 }
@@ -1231,7 +1236,7 @@ function attackerExeggutor(){
   SameType = 1.5;
   category = "Special";
   slot = findEmptySlot();
-  slotpicker(slot,"103.png",190)
+  slotpicker(slot,"103.png",156)
 
   moveindex = 2;
   movename = "Egg Bomb";
@@ -1241,6 +1246,137 @@ function attackerExeggutor(){
   SameType = 1;
   category = "Physical";
   calcB(slot);
+}
+
+function attackerCelebi(){
+  attacker = "Celebi";
+  moveindex = 1;
+  movename = "Giga Drain";
+  movetype = "Grass";
+  Attack = 205;
+  Power = 60;
+  SameType = 1.5;
+  category = "Special";
+  slot = findEmptySlot();
+  slotpicker(slot,"251.png",205)
+
+  moveindex = 2;
+  movename = "Future Sight";
+  Power = 80;
+  movetype = "Typeless";
+  SameType = 1;
+  category = "Special";
+  calcB(slot);
+
+  movename = "Ancientpower";
+  Power = 60;
+  movetype = "Rock";
+  SameType = 1;
+  category = "Physical";
+  calcC(slot);
+
+}
+
+function attackerMagneton(){
+  attacker = "Magneton";
+  moveindex = 1;
+  movename = "Thunder";
+  movetype = "Electric";
+  Attack = 294;
+  Power = 120;
+  SameType = 1.5;
+  category = "Special";
+  slot = findEmptySlot();
+  slotpicker(slot,"082.png",194)
+
+  moveindex = 2;
+  movename = "Swift";
+  Attack = 176;
+  Power = 60;
+  movetype = "Normal";
+  SameType = 1;
+  category = "Physical";
+  calcB(slot);
+}
+
+function attackerCorsola(){
+  attacker = "Corsola";
+  moveindex = 1;
+  movename = "Surf";
+  movetype = "Water";
+  Attack = 199;
+  Power = 95;
+  SameType = 1.5;
+  category = "Special";
+  slot = findEmptySlot();
+  slotpicker(slot,"222.png",139)
+
+  moveindex = 2;
+  movename = "Ancientpower";
+  Attack = 181;
+  Power = 60;
+  movetype = "Rock";
+  SameType = 1.5;
+  category = "Physical";
+  calcB(slot);
+}
+
+function attackerSteelix(){
+  attacker = "Steelix";
+  moveindex = 1;
+  movename = "Iron Tail";
+  movetype = "Steel";
+  Attack = 218;
+  Power = 100;
+  SameType = 1.5;
+  category = "Physical";
+  slot = findEmptySlot();
+  slotpicker(slot,"208.png",106)
+
+  moveindex = 2;
+  movename = "Rock Throw";
+  Power = 50;
+  movetype = "Rock";
+  SameType = 1;
+  category = "Physical";
+  calcB(slot);
+
+  moveindex = 2;
+  movename = "Mud-Slap";
+  Power = 20;
+  movetype = "Ground";
+  SameType = 1.5;
+  category = "Physical";
+  calcC(slot);
+}
+
+function attackerKingdra(){
+  attacker = "Kingdra";
+  moveindex = 1;
+  movename = "Waterfall";
+  movetype = "Water";
+  Attack = 238;
+  Power = 80;
+  SameType = 1.5;
+  category = "Special";
+  slot = findEmptySlot();
+  slotpicker(slot,"230.png",216)
+
+  moveindex = 2;
+  movename = "Twister";
+  Power = 40;
+  movetype = "Dragon";
+  SameType = 1.5;
+  category = "Special";
+  calcB(slot);
+
+  moveindex = 2;
+  movename = "Frustration";
+  Power = 0;
+  movetype = "Normal";
+  SameType = 1;
+  category = "Physical";
+  calcC(slot);
 }
 
 function calcA(lvl,atk,bp,stab,movetype,category,slot){
@@ -1830,6 +1966,10 @@ function SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,R
   {
     type = Bug;
   }
+  if (movetype == "Typeless")
+  {
+    type = 1;
+  }
 
   if (BoomDefense == 1) {
     def = Math.floor(def/2);
@@ -1868,6 +2008,11 @@ function SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,R
   if (attacker == "Wobbuffet"){
     document.getElementById(location).innerHTML = "( > w < )";
   }
+
+  if (movename == "Frustration"){
+    document.getElementById(location).innerHTML = "Frustration:<br/>TBD";
+  }
+
 }
 
 
