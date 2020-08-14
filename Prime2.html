@@ -23,6 +23,7 @@ table, th, td {
     <img src="Ani103MS.png" onclick="attackerExeggutor()">
     <img src="Ani106MS.png" onclick="attackerHitmonlee()">
     <img src="Ani144MS.png" onclick="attackerArticuno()">
+    <img src="Ani178MS.png" onclick="attackerXatu()">
     <img src="Ani202MS.png" onclick="attackerWobbuffet()">
     <img src="Ani208MS.png" onclick="attackerSteelix()">
     <img src="Ani214MS.png" onclick="attackerHeracross()">
@@ -717,340 +718,382 @@ var CraigOn = 1;
 var KathyOn = 1;
 var MartyOn = 1;
 var SpeedsOn = 0;
+var Rock = 1;
+var Water = 1;
+var Electric = 1;
+var Grass = 1;
+var Poison = 1;
+var Psychic = 1;
+var Fire = 1;
+var Ground = 1;
+var Flying = 1;
+var Bug = 1;
+var Normal = 1;
+var Ghost = 1;
+var Fighting = 1;
+var Steel = 1;
+var Ice = 1;
+var Dragon = 1;
+var Normal = 1;
+
 
 function calcMiltank(lvl,atk,bp,stab,movetype,category,location) {
   hp = 350, defense = 281, spdef = 211;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 1, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 0, Fighting = 2, Steel = 1, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setNormal();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcBlissey(lvl,atk,bp,stab,movetype,category,location) {
   hp = 680, defense = 89, spdef = 339;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 1, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 0, Fighting = 2, Steel = 1, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setNormal();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcSteelix(lvl,atk,bp,stab,movetype,category,location) {
   hp = 320, defense = 469, spdef = 199;
-  Normal = 0.5, Rock = 0.25, Water = 2, Electric = 0, Grass = 1, Poison = 0, Psychic = 0.5, Fire = 2, Ground = 2;
-  Flying = 0.5, Bug = 0.5, Ghost = 0.5, Fighting = 2, Steel = 0.5, Ice = 1, Dragon = 0.5, Dark = 0.5;
+  setBlank();
+  setSteel();
+  setGround();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcBellossom(lvl,atk,bp,stab,movetype,category,location) {
   hp = 320, defense = 239, spdef = 269;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 0.5, Grass = 0.5, Poison = 2, Psychic = 1, Fire = 2, Ground = 0.5;
-  Flying = 2, Bug = 2, Ghost = 1, Fighting = 1, Steel = 1, Ice = 2, Dragon = 1, Dark = 1;
+  setBlank();
+  setGrass();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcDonphan(lvl,atk,bp,stab,movetype,category,location) {
   hp = 340, defense = 311, spdef = 191;
-  Normal = 1, Rock = 0.5, Water = 2, Electric = 0, Grass = 2, Poison = 0.5, Psychic = 1, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 1, Fighting = 1, Steel = 1, Ice = 2, Dragon = 1, Dark = 1;
+  setBlank();
+  setGround();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcJumpluff(lvl,atk,bp,stab,movetype,category,location) {
   hp = 320, defense = 209, spdef = 239;
-  Normal = 1, Rock = 2, Water = 0.5, Electric = 1, Grass = 0.25, Poison = 2, Psychic = 1, Fire = 2, Ground = 0;
-  Flying = 2, Bug = 1, Ghost = 1, Fighting = 0.5, Steel = 1, Ice = 4, Dragon = 1, Dark = 1;
+  setBlank();
+  setGrass();
+  setFlying();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcWobbuffet(lvl,atk,bp,stab,movetype,category,location) {
   hp = 550, defense = 185, spdef = 185;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 0.5, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 2, Ghost = 2, Fighting = 0.5, Steel = 1, Ice = 1, Dragon = 1, Dark = 2;
+  setBlank();
+  setPsychic();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcBlastoise(lvl,atk,bp,stab,movetype,category,location) {
   hp = 328, defense = 269, spdef = 279;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 1;
+  setBlank();
+  setWater();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcTentacruel(lvl,atk,bp,stab,movetype,category,location) {
   hp = 320, defense = 201, spdef = 311;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 2, Grass = 1, Poison = 0.5, Psychic = 2, Fire = 0.5, Ground = 2;
-  Flying = 1, Bug = 0.5, Ghost = 1, Fighting = 0.5, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 1;
+  setBlank();
+  setWater();
+  setPoison();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcPrimeape(lvl,atk,bp,stab,movetype,category,location) {
   hp = 300, defense = 189, spdef = 209;
-  Normal = 1, Rock = 0.5, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 2, Fire = 1, Ground = 1;
-  Flying = 2, Bug = 0.5, Ghost = 1, Fighting = 1, Steel = 1, Ice = 1, Dragon = 1, Dark = 0.5;
+  setBlank();
+  setFighting();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcHeracross(lvl,atk,bp,stab,movetype,category,location) {
   hp = 330, defense = 219, spdef = 259;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 0.5, Poison = 1, Psychic = 2, Fire = 2, Ground = 0.5;
-  Flying = 4, Bug = 0.5, Ghost = 1, Fighting = 0.5, Steel = 1, Ice = 1, Dragon = 1, Dark = 0.5;
+  setBlank();
+  setFighting();
+  setBug();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcPoliwrath(lvl,atk,bp,stab,movetype,category,location) {
   hp = 340, defense = 261, spdef = 251;
-  Normal = 1, Rock = 0.5, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 2, Fire = 0.5, Ground = 1;
-  Flying = 2, Bug = 0.5, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 0.5;
+  setBlank();
+  setWater();
+  setFighting();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcDragonite(lvl,atk,bp,stab,movetype,category,location) {
   hp = 355, defense = 262, spdef = 272;
-  Normal = 1, Rock = 2, Water = 0.5, Electric = 1, Grass = 0.25, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 0;
-  Flying = 1, Bug = 0.5, Ghost = 1, Fighting = 0.5, Steel = 1, Ice = 4, Dragon = 2, Dark = 1;
+  setBlank();
+  setDragon();
+  setFlying();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcXatu(lvl,atk,bp,stab,movetype,category,location) {
   hp = 293, defense = 214, spdef = 214;
-  Normal = 1, Rock = 2, Water = 1, Electric = 2, Grass = 0.5, Poison = 1, Psychic = 0.5, Fire = 1, Ground = 0;
-  Flying = 1, Bug = 1, Ghost = 2, Fighting = 0.25, Steel = 1, Ice = 2, Dragon = 1, Dark = 2;
+  setBlank();
+  setFlying();
+  setPsychic();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcAerodactyl(lvl,atk,bp,stab,movetype,category,location) {
   hp = 323, defense = 204, spdef = 224;
-  Normal = 0.5, Rock = 2, Water = 2, Electric = 2, Grass = 1, Poison = 0.5, Psychic = 1, Fire = 0.5, Ground = 0;
-  Flying = 0.5, Bug = 0.5, Ghost = 1, Fighting = 1, Steel = 2, Ice = 2, Dragon = 1, Dark = 1;
+  setBlank();
+  setFlying();
+  setRock();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcMoltres(lvl,atk,bp,stab,movetype,category,location) {
   hp = 343, defense = 252, spdef = 242;
-  Normal = 1, Rock = 4, Water = 2, Electric = 2, Grass = 0.25, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 0;
-  Flying = 1, Bug = 0.25, Ghost = 1, Fighting = 0.5, Steel = 0.5, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setFlying();
+  setFire();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcZapdos(lvl,atk,bp,stab,movetype,category,location) {
   hp = 343, defense = 244, spdef = 254;
-  Normal = 1, Rock = 2, Water = 1, Electric = 1, Grass = 0.5, Poison = 1, Psychic = 1, Fire = 1, Ground = 0;
-  Flying = 0.5, Bug = 0.5, Ghost = 1, Fighting = 0.5, Steel = 0.5, Ice = 2, Dragon = 1, Dark = 1;
+  setBlank();
+  setFlying();
+  setElectric();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcArticuno(lvl,atk,bp,stab,movetype,category,location) {
   hp = 343, defense = 270, spdef = 320;
-  Normal = 1, Rock = 4, Water = 1, Electric = 2, Grass = 0.5, Poison = 1, Psychic = 1, Fire = 2, Ground = 0;
-  Flying = 1, Bug = 0.5, Ghost = 1, Fighting = 1, Steel = 2, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setFlying();
+  setIce();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcHypno(lvl,atk,bp,stab,movetype,category,location) {
   hp = 347, defense = 216, spdef = 316;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 0.5, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 2, Ghost = 2, Fighting = 0.5, Steel = 1, Ice = 1, Dragon = 1, Dark = 2;
+  setBlank();
+  setPsychic();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcExeggutor(lvl,atk,bp,stab,movetype,category,location) {
   hp = 373, defense = 244, spdef = 204;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 0.5, Grass = 0.5, Poison = 2, Psychic = 0.5, Fire = 2, Ground = 0.5;
-  Flying = 2, Bug = 4, Ghost = 2, Fighting = 0.5, Steel = 1, Ice = 2, Dragon = 1, Dark = 2;
+  setBlank();
+  setPsychic();
+  setGrass();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcRapidash(lvl,atk,bp,stab,movetype,category,location) {
   hp = 309, defense = 216, spdef = 234;
-  Normal = 1, Rock = 2, Water = 2, Electric = 1, Grass = 0.5, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 2;
-  Flying = 1, Bug = 0.5, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 1;
+  setBlank();
+  setFire();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcPolitoed(lvl,atk,bp,stab,movetype,category,location) {
   hp = 359, defense = 226, spdef = 274;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 1;
+  setBlank();
+  setWater();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcMrMime(lvl,atk,bp,stab,movetype,category,location) {
   hp = 259, defense = 206, spdef = 314;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 0.5, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 2, Ghost = 2, Fighting = 0.5, Steel = 1, Ice = 1, Dragon = 1, Dark = 2;
+  setBlank();
+  setPsychic();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcEspeon(lvl,atk,bp,stab,movetype,category,location) {
   hp = 309, defense = 196, spdef = 264;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 0.5, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 2, Ghost = 2, Fighting = 0.5, Steel = 1, Ice = 1, Dragon = 1, Dark = 2;
+  setBlank();
+  setPsychic();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcOmastar(lvl,atk,bp,stab,movetype,category,location) {
   hp = 322, defense = 329, spdef = 217;
-  Normal = 0.5, Rock = 1, Water = 1, Electric = 2, Grass = 4, Poison = 0.5, Psychic = 1, Fire = 0.25, Ground = 2;
-  Flying = 0.5, Bug = 1, Ghost = 1, Fighting = 2, Steel = 1, Ice = 0.5, Dragon = 1, Dark = 1;
+  setBlank();
+  setWater();
+  setRock();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcFeraligatr(lvl,atk,bp,stab,movetype,category,location) {
   hp = 352, defense = 279, spdef = 243;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 1;
+  setBlank();
+  setWater();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcLanturn(lvl,atk,bp,stab,movetype,category,location) {
   hp = 432, defense = 195, spdef = 229;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 1, Grass = 2, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 2;
-  Flying = 0.5, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.25, Ice = 0.5, Dragon = 1, Dark = 1;
+  setBlank();
+  setWater();
+  setElectric();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcWeezing(lvl,atk,bp,stab,movetype,category,location) {
   hp = 312, defense = 319, spdef = 217;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 0.5, Poison = 0.5, Psychic = 2, Fire = 1, Ground = 2;
-  Flying = 1, Bug = 0.5, Ghost = 1, Fighting = 0.5, Steel = 1, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setPoison();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcQuagsire(lvl,atk,bp,stab,movetype,category,location) {
   hp = 372, defense = 249, spdef = 207;
-  Normal = 1, Rock = 0.5, Water = 1, Electric = 0, Grass = 4, Poison = 0.5, Psychic = 1, Fire = 0.5, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setWater();
+  setGround();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcSlowbro(lvl,atk,bp,stab,movetype,category,location) {
   hp = 372, defense = 299, spdef = 241;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 0.5, Fire = 0.5, Ground = 1;
-  Flying = 1, Bug = 2, Ghost = 2, Fighting = 0.5, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 2;
+  setBlank();
+  setWater();
+  setPsychic();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcStarmie(lvl,atk,bp,stab,movetype,category,location) {
   hp = 290, defense = 247, spdef = 251;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 0.5, Fire = 0.5, Ground = 1;
-  Flying = 1, Bug = 2, Ghost = 2, Fighting = 0.5, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 2;
+  setBlank();
+  setWater();
+  setPsychic();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcUmbreon(lvl,atk,bp,stab,movetype,category,location) {
   hp = 360, defense = 301, spdef = 337;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 0, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 2, Ghost = 0.5, Fighting = 2, Steel = 1, Ice = 1, Dragon = 1, Dark = 0.5;
+  setBlank();
+  setDark();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcMisdreavus(lvl,atk,bp,stab,movetype,category,location) {
   hp = 310, defense = 197, spdef = 247;
-  Normal = 0, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 0.5, Psychic = 1, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 0.5, Ghost = 2, Fighting = 0, Steel = 1, Ice = 1, Dragon = 1, Dark = 2;
+  setBlank();
+  setGhost();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcStantler(lvl,atk,bp,stab,movetype,category,location) {
   hp = 320, defense = 205, spdef = 211;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 1, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 0, Fighting = 2, Steel = 1, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setNormal();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcCrobat(lvl,atk,bp,stab,movetype,category,location) {
   hp = 350, defense = 239, spdef = 239;
-  Normal = 1, Rock = 2, Water = 1, Electric = 2, Grass = 0.25, Poison = 0.5, Psychic = 2, Fire = 1, Ground = 0;
-  Flying = 1, Bug = 0.25, Ghost = 1, Fighting = 0.25, Steel = 1, Ice = 2, Dragon = 1, Dark = 1;
+  setBlank();
+  setPoison();
+  setFlying();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcElectrode(lvl,atk,bp,stab,movetype,category,location) {
   hp = 302, defense = 219, spdef = 241;
-  Normal = 1, Rock = 1, Water = 1, Electric = 0.5, Grass = 1, Poison = 1, Psychic = 1, Fire = 1, Ground = 2;
-  Flying = 0.5, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setElectric();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcSuicune(lvl,atk,bp,stab,movetype,category,location) {
   hp = 389, defense = 314, spdef = 310;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 1, Fire = 0.5, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 1, Dark = 1;
+  setBlank();
+  setWater();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcTyranitar(lvl,atk,bp,stab,movetype,category,location) {
   hp = 377, defense = 300, spdef = 280;
-  Normal = 0.5, Rock = 1, Water = 2, Electric = 1, Grass = 2, Poison = 0.5, Psychic = 0, Fire = 0.5, Ground = 2;
-  Flying = 0.5, Bug = 2, Ghost = 0.5, Fighting = 4, Steel = 2, Ice = 1, Dragon = 1, Dark = 0.5;
+  setBlank();
+  setRock();
+  setDark();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcSnorlax(lvl,atk,bp,stab,movetype,category,location) {
   hp = 505, defense = 212, spdef = 304;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 1, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 0, Fighting = 2, Steel = 1, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setNormal();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcKingdra(lvl,atk,bp,stab,movetype,category,location) {
   hp = 339, defense = 270, spdef = 270;
-  Normal = 1, Rock = 1, Water = 0.25, Electric = 1, Grass = 1, Poison = 1, Psychic = 1, Fire = 0.25, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 1, Dragon = 2, Dark = 1;
+  setBlank();
+  setWater();
+  setDragon();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcScizor(lvl,atk,bp,stab,movetype,category,location) {
   hp = 313, defense = 284, spdef = 244;
-  Normal = 0.5, Rock = 1, Water = 1, Electric = 1, Grass = 0.25, Poison = 0, Psychic = 0.5, Fire = 4, Ground = 1;
-  Flying = 1, Bug = 0.5, Ghost = 0.5, Fighting = 1, Steel = 0.5, Ice = 0.5, Dragon = 0.5, Dark = 0.5;
+  setBlank();
+  setBug();
+  setSteel();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcJolteon(lvl,atk,bp,stab,movetype,category,location) {
   hp = 303, defense = 204, spdef = 274;
-  Normal = 1, Rock = 1, Water = 1, Electric = 0.5, Grass = 1, Poison = 1, Psychic = 1, Fire = 1, Ground = 2;
-  Flying = 0.5, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setElectric();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcCelebi(lvl,atk,bp,stab,movetype,category,location) {
   hp = 371, defense = 284, spdef = 286;
-  Normal = 1, Rock = 1, Water = 0.5, Electric = 0.5, Grass = 0.5, Poison = 2, Psychic = 0.5, Fire = 2, Ground = 0.5;
-  Flying = 2, Bug = 4, Ghost = 2, Fighting = 0.5, Steel = 1, Ice = 2, Dragon = 1, Dark = 2;
+  setBlank();
+  setGrass();
+  setPsychic();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcPersian(lvl,atk,bp,stab,movetype,category,location) {
   hp = 318, defense = 205, spdef = 217;
-  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 1, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 0, Fighting = 2, Steel = 1, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setNormal();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcGengar(lvl,atk,bp,stab,movetype,category,location) {
   hp = 308, defense = 205, spdef = 237;
-  Normal = 0, Rock = 1, Water = 1, Electric = 1, Grass = 0.5, Poison = 0.25, Psychic = 2, Fire = 1, Ground = 2;
-  Flying = 1, Bug = 0.25, Ghost = 2, Fighting = 0, Steel = 1, Ice = 1, Dragon = 1, Dark = 2;
+  setBlank();
+  setGhost();
+  setPoison();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcMachamp(lvl,atk,bp,stab,movetype,category,location) {
   hp = 368, defense = 245, spdef = 257;
-  Normal = 1, Rock = 0.5, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 2, Fire = 1, Ground = 1;
-  Flying = 2, Bug = 0.5, Ghost = 1, Fighting = 1, Steel = 1, Ice = 1, Dragon = 1, Dark = 0.5;
+  setBlank();
+  setFighting();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcLapras(lvl,atk,bp,stab,movetype,category,location) {
   hp = 452, defense = 243, spdef = 273;
-  Normal = 1, Rock = 2, Water = 0.5, Electric = 2, Grass = 2, Poison = 1, Psychic = 1, Fire = 1, Ground = 1;
-  Flying = 1, Bug = 1, Ghost = 1, Fighting = 2, Steel = 1, Ice = 0.25, Dragon = 1, Dark = 1;
+  setBlank();
+  setWater();
+  setIce();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
 function calcRaikou(lvl,atk,bp,stab,movetype,category,location) {
   hp = 368, defense = 235, spdef = 287;
-  Normal = 1, Rock = 1, Water = 1, Electric = 0.5, Grass = 1, Poison = 1, Psychic = 1, Fire = 1, Ground = 2;
-  Flying = 0.5, Bug = 1, Ghost = 1, Fighting = 1, Steel = 0.5, Ice = 1, Dragon = 1, Dark = 1;
+  setBlank();
+  setElectric();
   SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,Rock,Water,Electric,Grass,Poison,Psychic,Fire,Ground,Flying,Bug,Normal,Ghost,Fighting,Steel,Ice,Dragon,Dark);
 }
 
@@ -1376,6 +1419,36 @@ function attackerKingdra(){
   movetype = "Normal";
   SameType = 1;
   category = "Physical";
+  calcC(slot);
+}
+
+function attackerXatu(){
+  attacker = "Xatu";
+  moveindex = 1;
+  movename = "Fly";
+  movetype = "Flying";
+  Attack = 206;
+  Power = 70;
+  SameType = 1.5;
+  category = "Physical";
+  slot = findEmptySlot();
+  slotpicker(slot,"178.png",244)
+
+  moveindex = 2;
+  movename = "Future Sight";
+  Attack = 244;
+  Power = 80;
+  movetype = "Typeless";
+  SameType = 1;
+  category = "Special";
+  calcB(slot);
+
+  moveindex = 2;
+  movename = "Night Shade";
+  Power = 100;
+  movetype = "Ghost";
+  SameType = 1;
+  category = "Special";
   calcC(slot);
 }
 
@@ -1996,6 +2069,15 @@ function SUPERCALC(lvl,atk,bp,stab,movetype,category,location,hp,defense,spdef,R
       maxroll = maxroll*2;
     }
 
+  if (movename == "Night Shade"){
+      minroll = lvl;
+      maxroll = lvl;
+      if (Ghost == 0){
+        minroll = 0;
+        maxroll = 0;
+      }
+    }
+
   damageColor(hp, location, minroll, maxroll);
   if (moveindex == 1){
     document.getElementById(location).innerHTML = attacker + "<br />" + movename + ": " + "<br />" + minroll + " - " + maxroll;
@@ -2205,6 +2287,172 @@ function toggleSpeeds(){
       x[i].style = "text-align:center";
       }
     }  
+}
+
+function setBlank(){
+  Normal = 1, Rock = 1, Water = 1, Electric = 1, Grass = 1, Poison = 1, Psychic = 1, Fire = 1, Ground = 1;
+  Flying = 1, Bug = 1, Ghost = 1, Fighting = 1, Steel = 1, Ice = 1, Dragon = 1, Dark = 1;
+}
+
+function setNormal(){
+  Ghost = 0;
+  Fighting = 2*Fighting;
+}
+
+function setRock(){
+  Fire = Fire*0.5;
+  Flying = Flying*0.5;
+  Normal = Normal*0.5;
+  Poison = Poison*0.5;
+  Fighting = Fighting*2;
+  Grass = Grass*2;
+  Ground = Ground*2;
+  Steel = Steel*2;
+  Water = Water*2;
+}
+
+function setWater(){
+  Fire = Fire*0.5;
+  Ice = Ice*0.5;
+  Water = Water*0.5;
+  Steel = Steel*0.5;
+  Electric = Electric*2;
+  Grass = Grass*2;
+}
+
+function setElectric(){
+  Electric = Electric*0.5;
+  Flying = Flying*0.5;
+  Steel = Steel*0.5;
+  Ground = Ground*2;
+}
+
+function setGrass(){
+  Electric = Electric*0.5;
+  Grass = Grass*0.5;
+  Ground = Ground*0.5;
+  Water = Water*0.5;
+  Bug = Bug*2;
+  Fire = Fire*2;
+  Flying = Flying*2;
+  Ice = Ice*2;
+  Poison = Poison*2;
+}
+
+function setPoison(){
+  Grass = Grass*0.5;
+  Poison = Poison*0.5;
+  Bug = Bug*0.5;
+  Fighting = Fighting*0.5;
+  Psychic = Psychic*2;
+  Ground = Ground*2;
+}
+
+function setPsychic(){
+  Fighting = Fighting*0.5;
+  Psychic = Psychic*0.5;
+  Ghost = Ghost*2;
+  Dark = Dark*2;
+  Bug = Bug*2;
+}
+
+function setFire(){
+  Bug = Bug*0.5;
+  Grass = Grass*0.5;
+  Fire = Fire*0.5;
+  Steel = Steel*0.5;
+  Ice = Ice*0.5;
+  Ground = Ground*2;
+  Water = Water*2;
+  Rock = Rock*2;
+}
+
+function setGround(){
+  Poison = Poison*0.5;
+  Rock = Rock*0.5;
+  Grass = Grass*2;
+  Water = Water*2;
+  Ice = Ice*2;
+  Electric = 0;
+}
+
+function setFlying(){
+  Bug = Bug*0.5;
+  Grass = Grass*0.5;
+  Fighting = Fighting*0.5;
+  Electric = Electric*2;
+  Ice = Ice*2;
+  Rock = Rock*2;
+  Ground = 0;
+}
+
+function setBug(){
+  Grass = Grass*0.5;
+  Fighting = Fighting*0.5;
+  Ground = Ground*0.5;
+  Rock = Rock*2;
+  Flying = Flying*2;
+  Fire = Fire*2;
+}
+
+function setGhost(){
+  Bug = Bug*0.5;
+  Poison = Poison*0.5;
+  Normal = 0;
+  Fighting = 0;
+  Ghost = Ghost*2;
+  Dark = Dark*2;
+}
+
+function setFighting(){
+  Bug = Bug*0.5;
+  Rock = Rock*0.5;
+  Dark = Dark*0.5;
+  Psychic = Psychic*2;
+  Flying = Flying*2;
+}
+
+function setSteel(){
+  Bug = Bug*0.5;
+  Dark = Dark*0.5;
+  Dragon = Dragon*0.5;
+  Flying = Flying*0.5;
+  Ghost = Ghost*0.5;
+  Grass = Grass*0.5;
+  Ice = Ice*0.5;
+  Normal = Normal*0.5;
+  Psychic = Psychic*0.5;
+  Rock = Rock*0.5;
+  Steel = Steel*0.5;
+  Poison = 0;
+  Fighting = Fighting*2;
+  Fire = Fire*2;
+  Ground = Ground*2;
+}
+
+function setIce(){
+  Ice = Ice*0.5;
+  Fighting = Fighting*2;
+  Fire = Fire*2;
+  Rock = Rock*2;
+  Steel = Steel*2;
+}
+
+function setDragon(){
+  Fire = Fire*0.5;
+  Water = Water*0.5;
+  Grass = Grass*0.5;
+  Electric = Electric*0.5;
+  Dragon = Dragon*2;
+  Ice = Ice*2;
+}
+
+function setDark(){
+  Bug = Bug*2;
+  Ghost = Ghost*0.5;
+  Dark = Dark*0.5;
+  Psychic = 0;
+  Fighting = Fighting*2;
 }
 
 </script>
