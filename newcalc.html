@@ -2,22 +2,38 @@
 <html>
 <body>
 
-<img src="Ani106MS.png", onclick="setPokemon(Hitmonlee); calcAll(Hitmonlee,TerryMiltank)" >
-<img src="Ani241MS.png", onclick="setPokemon(TerryMiltank); calcAll(TerryMiltank,Hitmonlee)">
+<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee)" >
+<img src="Ani241MS.png", onclick="setDefender(TerryMiltank)">
+<img src="Ani053MS.png", onclick="setDefender(MartyPersian)">
+<br>
+<img src="Spr_5b_132.png", id="sprite1", onclick="calcAll(attacker,defender)">
+<img src="Spr_5b_132.png", id="sprite2", onclick="calcAll(attacker,defender)">
 
-<p id="name">Ditto</p>
-<img src="Spr_5b_132.png", id="sprite">
 <p id="calcresult1"></p>
+<p id="KO1"></p>
 <p id="calcresult2"></p>
+<p id="KO2"></p>
 <p id="calcresult3"></p>
+<p id="KO3"></p>
 <p id="calcresult4"></p>
+<p id="KO4"></p>
+<p id="calcresult5"></p>
+<p id="KO5"></p>
+<p id="calcresult6"></p>
+<p id="KO6"></p>
+<p id="calcresult7"></p>
+<p id="KO7"></p>
+<p id="calcresult8"></p>
+<p id="KO8"></p>
 
 <script>
 
-var reversalPower = 20;
+var attacker = "unselected";
+var defender = "unselected";
+var reversalPower = 200;
 		
 const Hitmonlee = {
-	Name: "Hitmonlee", Number: 106, Type1: "Fighting", Type2: "none", Level: 100, Item: "none",
+	Name: "Hitmonlee", Number: "106", Type1: "Fighting", Type2: "none", Level: 100, Item: "none",
 	HP: 263, Attack: 300, Defense: 164, SpAtk: 128, SpDef: 278, Speed: 234,
 	Move1: {name: "Hi Jump Kick", type: "Fighting", category: "Physical", power: 85},
 	Move2: {name: "Mega Kick", type: "Normal", category: "Physical", power: 120},
@@ -26,27 +42,47 @@ const Hitmonlee = {
 }
 
 const TerryMiltank = {
-	Name: "Terry's Miltank", Number: 241, Type1: "Normal", Type2: "none", Level: 100, Item: "Scope Lens",
+	Name: "Terry's Miltank", Number: "241", Type1: "Normal", Type2: "none", Level: 100, Item: "Scope Lens",
 	HP: 350, Attack: 229, Defense: 281, SpAtk: 151, SpDef: 211, Speed: 269,
-	Move1: {name: "Strength", type: "Normal", category: "Physical", power: 85},
+	Move1: {name: "Strength", type: "Normal", category: "Physical", power: 80},
 	Move2: {name: "Seismic Toss", type: "Fighting", category: "Physical", power: "?"},
 	Move3: {name: "Attract", type: "Normal", category: "Status", power: 0},
 	Move4: {name: "Heal Bell", type: "Normal", category: "Status", power: 0}
 }
 
-function setPokemon(pkmn){
-	document.getElementById("name").innerHTML = pkmn.Name;
-	document.getElementById('sprite').src = pkmn.Number + ".png";
+const MartyPersian = {
+	Name: "Marty's Persian", Number: "053", Type1: "Normal", Type2: "none", Level: 100, Item: "King's Rock",
+	HP: 318, Attack: 215, Defense: 205, SpAtk: 217, SpDef: 217, Speed: 317,
+	Move1: {name: "Body Slam", type: "Normal", category: "Physical", power: 85},
+	Move2: {name: "Thunderbolt", type: "Electric", category: "Special", power: "95"},
+	Move3: {name: "Bite", type: "Dark", category: "Special", power: 60},
+	Move4: {name: "Hypnosis", type: "Psychic", category: "Status", power: 0}
 }
 
 function calcAll(attacker, defender){
-	calcMove(attacker,defender,1);
-	calcMove(attacker,defender,2);
-	calcMove(attacker,defender,3);
-	calcMove(attacker,defender,4);
+	if((attacker !== "unselected") & (defender !== "unselected")){
+	calcMove(attacker,defender,1,1);
+	calcMove(attacker,defender,2,2);
+	calcMove(attacker,defender,3,3);
+	calcMove(attacker,defender,4,4);
+	calcMove(defender,attacker,1,5);
+	calcMove(defender,attacker,2,6);
+	calcMove(defender,attacker,3,7);
+	calcMove(defender,attacker,4,8);
+	}
 }
 
-function calcMove(attacker,defender,moveslot){
+function setAttacker(pkmn){
+	attacker = pkmn;
+	document.getElementById('sprite1').src = pkmn.Number + ".png";
+}
+
+function setDefender(pkmn){
+	defender = pkmn;
+	document.getElementById('sprite2').src = pkmn.Number + ".png";
+}
+
+function calcMove(attacker,defender,moveslot,resultslot){
 	if (moveslot == 1)
 	{
 		movename = attacker.Move1.name;
@@ -108,7 +144,7 @@ function calcMove(attacker,defender,moveslot){
 
 
 	  //THIS IS WHERE EXCEPTIONS FOR THINGS LIKE FIXED DAMAGE MOVES, MULTI STRIKE, ETC GO
-	  
+
 	  if (movename == "Seismic Toss"){
 	  	minroll = attacker.Level;
 	  	maxroll = attacker.Level;
@@ -118,14 +154,91 @@ function calcMove(attacker,defender,moveslot){
 	  	}
 	  }
 
-	document.getElementById('calcresult' + moveslot).innerHTML = attacker.Name + " will do " + minroll + " to " + maxroll + " damage to " + defender.Name + " with " + movename + "."
+	document.getElementById('calcresult' + resultslot).innerHTML = attacker.Name + " will do " + minroll + " to " + maxroll + " damage to " + defender.Name + " with " + movename + " (" + defender.HP + " HP)"
 
-	if (minroll == maxroll){
-		document.getElementById('calcresult' + moveslot).innerHTML = attacker.Name + " will do " + minroll + " damage to " + defender.Name + " with " + movename + "."
+	if(minroll == maxroll){
+		document.getElementById('KO' + resultslot).innerHTML = ""
+	}
+	else if (maxroll >= defender.HP){
+		OneHitChecker(maxroll,defender.HP,resultslot);	
+	}
+	else if (maxroll >= defender.HP/2){
+		TwoHitChecker(maxroll,defender.HP,resultslot);	
+	}
+	else if (maxroll >= defender.HP/3){
+		ThreeHitChecker(maxroll,defender.HP,resultslot);	
+	}
+	else{
+		document.getElementById('KO' + resultslot).innerHTML = ""
 	}
 
 	if (bp == 0){
-		document.getElementById('calcresult' + moveslot).innerHTML = ""
+		document.getElementById('calcresult' + resultslot).innerHTML = ""
+		document.getElementById('KO' + resultslot).innerHTML = ""
+	}
+}
+
+function OneHitChecker(maxroll,HP,resultslot){
+	count = 0;
+	hp = HP;
+	var i;
+	for (i = 217; i < 256; i++)
+	{
+		damage = Math.floor(maxroll*i/255);
+		if (damage >= hp){
+			count = count + 1;
+		}
+	}
+	var OneHitChance = Math.round(count * 10000/39) / 100;
+	document.getElementById('KO' + resultslot).innerHTML = OneHitChance + "% chance to OHKO";
+	if(OneHitChance == 100){
+		document.getElementById('KO' + resultslot).innerHTML = "Guaranteed OHKO";
+	}
+}
+
+function TwoHitChecker(maxroll,HP,resultslot){
+	count = 0;
+	hp = HP;
+	var i;
+	var j;
+	for (i = 217; i < 256; i++)
+	{
+		for (j = 217; j < 256; j++){
+			damage = Math.floor(maxroll*i/255) + Math.floor(maxroll*j/255);
+				if (damage >= hp){
+					count = count + 1;
+				}
+		}
+	}
+	var TwoHitChance = Math.round(count * 10000/1521) / 100;
+	document.getElementById('KO' + resultslot).innerHTML = TwoHitChance + "% chance to 2HKO";
+	if(TwoHitChance == 100){
+		document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 2HKO";
+	}
+}
+
+function ThreeHitChecker(maxroll,HP,resultslot){
+	count = 0;
+	hp = HP;
+	var i;
+	var j;
+	var k;
+	for (i = 217; i < 256; i++)
+	{
+		for (j = 217; j < 256; j++)
+		{
+			for (k = 217; k < 256; k++){
+				damage = Math.floor(maxroll*i/255) + Math.floor(maxroll*j/255) + Math.floor(maxroll*k/255);
+				if (damage >= hp){
+				count = count + 1;
+				}
+			}
+		}
+	}
+	var ThreeHitChance = Math.round(count * 10000/59319) / 100
+	document.getElementById('KO' + resultslot).innerHTML = ThreeHitChance + "% chance to 3HKO";
+	if(ThreeHitChance == 100){
+		document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 3HKO";
 	}
 }
 
