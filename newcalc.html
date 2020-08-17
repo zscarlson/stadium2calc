@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="name">Ditto</p>
+<img src="Spr_5b_132.png", id="sprite">
+<p id="Move1">Transform</p>
+<p id="Move2"></p>
+<p id="Move3"></p>
+<p id="Move4"></p>
+
+<script>
+		
+const Hitmonlee = {
+	Name: "Hitmonlee", Number: 106, Type1: "Fighting", Type2: "none", Level: 100, Item: "none",
+	HP: 200, Attack: 200, Defense: 200, SpAtk: 200, SpDef: 200, Speed: 200,
+	Move1: {name: "Hi Jump Kick", type: "Fighting", category: "Physical", power: 85},
+	Move2: {name: "Mega Kick", type: "Normal", category: "Physical", power: 120},
+	Move3: {name: "Reversal", type: "Fighting", category: "Physical", power: "?"},
+	Move4: {name: "Meditate", type: "Psychic", category: "Status", power: 0}
+}
+
+document.getElementById("name").innerHTML = Hitmonlee.Name;
+document.getElementById('sprite').src = Hitmonlee.Number + ".png";
+document.getElementById('Move1').innerHTML = Hitmonlee.Move1.name;
+document.getElementById('Move2').innerHTML = Hitmonlee.Move2.name;
+document.getElementById('Move3').innerHTML = Hitmonlee.Move3.name;
+document.getElementById('Move4').innerHTML = Hitmonlee.Move4.name;
+
+</script>
+</body>
+</html>
