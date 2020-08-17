@@ -2,30 +2,132 @@
 <html>
 <body>
 
+<img src="Ani106MS.png", onclick="setPokemon(Hitmonlee); calcAll(Hitmonlee,TerryMiltank)" >
+<img src="Ani241MS.png", onclick="setPokemon(TerryMiltank); calcAll(TerryMiltank,Hitmonlee)">
+
 <p id="name">Ditto</p>
 <img src="Spr_5b_132.png", id="sprite">
-<p id="Move1">Transform</p>
-<p id="Move2"></p>
-<p id="Move3"></p>
-<p id="Move4"></p>
+<p id="calcresult1"></p>
+<p id="calcresult2"></p>
+<p id="calcresult3"></p>
+<p id="calcresult4"></p>
 
 <script>
+
+var reversalPower = 20;
 		
 const Hitmonlee = {
 	Name: "Hitmonlee", Number: 106, Type1: "Fighting", Type2: "none", Level: 100, Item: "none",
-	HP: 200, Attack: 200, Defense: 200, SpAtk: 200, SpDef: 200, Speed: 200,
+	HP: 263, Attack: 300, Defense: 164, SpAtk: 128, SpDef: 278, Speed: 234,
 	Move1: {name: "Hi Jump Kick", type: "Fighting", category: "Physical", power: 85},
 	Move2: {name: "Mega Kick", type: "Normal", category: "Physical", power: 120},
-	Move3: {name: "Reversal", type: "Fighting", category: "Physical", power: "?"},
+	Move3: {name: "Reversal", type: "Fighting", category: "Physical", power: reversalPower},
 	Move4: {name: "Meditate", type: "Psychic", category: "Status", power: 0}
 }
 
-document.getElementById("name").innerHTML = Hitmonlee.Name;
-document.getElementById('sprite').src = Hitmonlee.Number + ".png";
-document.getElementById('Move1').innerHTML = Hitmonlee.Move1.name;
-document.getElementById('Move2').innerHTML = Hitmonlee.Move2.name;
-document.getElementById('Move3').innerHTML = Hitmonlee.Move3.name;
-document.getElementById('Move4').innerHTML = Hitmonlee.Move4.name;
+const TerryMiltank = {
+	Name: "Terry's Miltank", Number: 241, Type1: "Normal", Type2: "none", Level: 100, Item: "Scope Lens",
+	HP: 350, Attack: 229, Defense: 281, SpAtk: 151, SpDef: 211, Speed: 269,
+	Move1: {name: "Strength", type: "Normal", category: "Physical", power: 85},
+	Move2: {name: "Seismic Toss", type: "Fighting", category: "Physical", power: "?"},
+	Move3: {name: "Attract", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Heal Bell", type: "Normal", category: "Status", power: 0}
+}
+
+function setPokemon(pkmn){
+	document.getElementById("name").innerHTML = pkmn.Name;
+	document.getElementById('sprite').src = pkmn.Number + ".png";
+}
+
+function calcAll(attacker, defender){
+	calcMove(attacker,defender,1);
+	calcMove(attacker,defender,2);
+	calcMove(attacker,defender,3);
+	calcMove(attacker,defender,4);
+}
+
+function calcMove(attacker,defender,moveslot){
+	if (moveslot == 1)
+	{
+		movename = attacker.Move1.name;
+		bp = attacker.Move1.power;
+		movetype = attacker.Move1.type;
+		category = attacker.Move1.category;
+	}
+	if (moveslot == 2)
+	{
+		movename = attacker.Move2.name
+		bp = attacker.Move2.power;
+		movetype = attacker.Move2.type;
+		category = attacker.Move2.category;
+	}
+	if (moveslot == 3)
+	{
+		movename = attacker.Move3.name
+		bp = attacker.Move3.power;
+		movetype = attacker.Move3.type;
+		category = attacker.Move3.category;
+	}
+	if (moveslot == 4)
+	{
+		movename = attacker.Move4.name
+		bp = attacker.Move4.power;
+		movetype = attacker.Move4.type;
+		category = attacker.Move4.category;
+	}
+
+	//THIS IS WHERE YOU NEED TO PUT IN THE ACTUAL TYPE CHART
+
+	type = 1;
+	if (movetype == "Fighting" & defender.Type1 == "Normal"){
+		type = 2;
+	}
+
+	lvl = attacker.Level;
+	stab = 1;
+	if (movetype == attacker.Type1){
+		stab = 1.5;
+	}
+	if (category == "Physical")
+	  {
+	    def = defender.Defense;
+	    atk = attacker.Attack;
+	  }
+	  if (category == "Special")
+	  {
+	  	def = defender.SpDef;
+	  	atk = attacker.SpAtk;
+	  }
+
+	  var inter1 = Math.floor(lvl*0.4 + 2);
+	  var inter2 = Math.floor(inter1*atk*bp/50);
+	  var inter3 = Math.floor((inter2/def)+2);
+	  var inter4 = Math.floor(inter3*stab);
+	  var maxroll = Math.floor(inter4*type);
+	  var minroll = Math.floor(maxroll*217/255);
+
+
+	  //THIS IS WHERE EXCEPTIONS FOR THINGS LIKE FIXED DAMAGE MOVES, MULTI STRIKE, ETC GO
+	  
+	  if (movename == "Seismic Toss"){
+	  	minroll = attacker.Level;
+	  	maxroll = attacker.Level;
+	  	if ((defender.Type1 == "Ghost") || (defender.Type2 == "Ghost")){
+	  		minroll = 0;
+	  		maxroll = 0;
+	  	}
+	  }
+
+	document.getElementById('calcresult' + moveslot).innerHTML = attacker.Name + " will do " + minroll + " to " + maxroll + " damage to " + defender.Name + " with " + movename + "."
+
+	if (minroll == maxroll){
+		document.getElementById('calcresult' + moveslot).innerHTML = attacker.Name + " will do " + minroll + " damage to " + defender.Name + " with " + movename + "."
+	}
+
+	if (bp == 0){
+		document.getElementById('calcresult' + moveslot).innerHTML = ""
+	}
+}
 
 </script>
 </body>
