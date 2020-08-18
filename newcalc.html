@@ -9,29 +9,75 @@ table, th, td {
 </head>
 <body>
 
-<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee); calcAll(attacker,defender)">
-<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
-<br>
-<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
-<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
-<br>
-
 <table class=calcdisplay style="text-align:center">
 
 	<tr>
 		<td>
 			<img src="Spr_5b_132.png", id="sprite1", onclick="calcAll(attacker,defender)">
-			<p id="Item1"></p>
 			<p id="HP1"></p>
 			<p id="Speed1"></p>
 		</td>
 		<td>
 			<img src="Spr_5b_132.png", id="sprite2", onclick="calcAll(attacker,defender)">
-			<p id="Item2"></p>
 			<p id="HP2"></p>
 			<p id="Speed2"></p>
 		</td>
+		<td rowspan="6">
+			Rental Pokemon<br>
+			<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee); calcAll(attacker,defender)">
+			<img src="Ani202MS.png", onclick="setAttacker(Wobbuffet); calcAll(attacker,defender)">
+			<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
+		</td>
+		<td rowspan="6">
+			Terry Round 1<br>
+			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
+			<br>Yang Round 1<br>
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<br>Adam Round 1<br>
+			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
+			<br>Floria Round 1<br>
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<br>Chase Round 1<br>
+			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
+			<br>Craig Round 1<br>
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<br>Kathy Round 1<br>
+			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
+			<br>Marty Round 1<br>
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+		</td>
+		<td rowspan="6">
+			Terry Round 2<br>
+			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
+			<img src="Ani242MS.png", onclick="setDefender(TerryBlissey); calcAll(attacker,defender)">
+			<br>Yang Round 2<br>
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<br>Adam Round 2<br>
+			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
+			<br>Floria Round 2<br>
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<br>Chase Round 2<br>
+			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
+			<br>Craig Round 2<br>
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<br>Kathy Round 2<br>
+			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
+			<br>Marty Round 2<br>
+			<img src="Ani243MS.png", onclick="setDefender(MartyRaikou); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+		</td>
 	</tr>
+
+
 
 	<tr>
 		<td>
@@ -73,8 +119,19 @@ table, th, td {
 			<p id="KO8"></p>
 		</td>
 	</tr>
-</table>
 
+	<tr>
+		<td>
+			<!-- <p id="Item1"></p> -->
+			<img src="", id="Item1Sprite">
+		</td>
+		<td>
+			<!-- <p id="Item2"></p> -->
+			<img src="", id="Item2Sprite">
+		</td>
+	</tr>
+
+</table>
 
 <script>
 
@@ -83,7 +140,7 @@ var defender = "unselected";
 var reversalPower = 20;
 		
 const Hitmonlee = {
-	Name: "Hitmonlee", Number: "106", Type1: "Fighting", Type2: "none", Level: 100, Item: "none",
+	Name: "Hitmonlee", Number: "106", Type1: "Fighting", Type2: "none", Level: 100, Item: "No Item",
 	HP: 263, Attack: 300, Defense: 164, SpAtk: 128, SpDef: 278, Speed: 234,
 	Move1: {name: "Hi Jump Kick", type: "Fighting", category: "Physical", power: 85},
 	Move2: {name: "Mega Kick", type: "Normal", category: "Physical", power: 120},
@@ -92,12 +149,21 @@ const Hitmonlee = {
 }
 
 const Steelix = {
-	Name: "Steelix", Number: "208", Type1: "Ground", Type2: "Steel", Level: 100, Item: "none",
+	Name: "Steelix", Number: "208", Type1: "Ground", Type2: "Steel", Level: 100, Item: "No Item",
 	HP: 303, Attack: 218, Defense: 448, SpAtk: 158, SpDef: 178, Speed: 106,
 	Move1: {name: "Iron Tail", type: "Steel", category: "Physical", power: 100},
 	Move2: {name: "Mud Slap", type: "Ground", category: "Physical", power: 20},
 	Move3: {name: "Rock Throw", type: "Rock", category: "Physical", power: 50},
 	Move4: {name: "Sandstorm", type: "Rock", category: "Status", power: 0}
+}
+
+const Wobbuffet = {
+	Name: "Wobbuffet", Number: "202", Type1: "Psychic", Type2: "none", Level: 100, Item: "No Item",
+	HP: 547, Attack: 130, Defense: 178, SpAtk: 128, SpDef: 178, Speed: 130,
+	Move1: {name: "Counter", type: "Fighting", category: "Status", power: 0},
+	Move2: {name: "Mirror Coat", type: "Psychic", category: "Status", power: 0},
+	Move3: {name: "Safeguard", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Destiny Bond", type: "Ghost", category: "Status", power: 0}
 }
 
 const TerryMiltank = {
@@ -109,13 +175,31 @@ const TerryMiltank = {
 	Move4: {name: "Heal Bell", type: "Normal", category: "Status", power: 0}
 }
 
+const TerryBlissey = {
+	Name: "Blissey", Number: "242", Type1: "Normal", Type2: "none", Level: 100, Item: "Quick Claw",
+	HP: 680, Attack: 91, Defense: 89, SpAtk: 219, SpDef: 339, Speed: 181,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "Attract", type: "Normal", category: "Status", power: 0},
+	Move3: {name: "Thunder Wave", type: "Electric", category: "Status", power: 0},
+	Move4: {name: "Reflect", type: "Psychic", category: "Status", power: 0}
+}
+
 const MartyPersian = {
 	Name: "Persian", Number: "053", Type1: "Normal", Type2: "none", Level: 100, Item: "King's Rock",
 	HP: 318, Attack: 215, Defense: 205, SpAtk: 217, SpDef: 217, Speed: 317,
 	Move1: {name: "Body Slam", type: "Normal", category: "Physical", power: 85},
-	Move2: {name: "Thunderbolt", type: "Electric", category: "Special", power: "95"},
+	Move2: {name: "Thunderbolt", type: "Electric", category: "Special", power: 95},
 	Move3: {name: "Bite", type: "Dark", category: "Special", power: 60},
 	Move4: {name: "Hypnosis", type: "Psychic", category: "Status", power: 0}
+}
+
+const MartyRaikou = {
+	Name: "Raikou", Number: "243", Type1: "Electric", Type2: "none", Level: 100, Item: "Quick Claw",
+	HP: 368, Attack: 253, Defense: 235, SpAtk: 317, SpDef: 287, Speed: 317,
+	Move1: {name: "Thunderbolt", type: "Electric", category: "Special", power: 95},
+	Move2: {name: "Dig", type: "Ground", category: "Physical", power: 60},
+	Move3: {name: "Crunch", type: "Dark", category: "Special", power: 80},
+	Move4: {name: "Reflect", type: "Psychic", category: "Status", power: 0}
 }
 
 function calcAll(attacker, defender){
@@ -136,11 +220,14 @@ function setAttacker(pkmn){
 	document.getElementById('sprite1').src = pkmn.Number + ".png";
 	document.getElementById('HP1').innerHTML = pkmn.HP + " HP";
 	document.getElementById('Speed1').innerHTML = pkmn.Speed + " Speed";
-	if(pkmn.Item == "none"){
-		document.getElementById('Item1').innerHTML = "";
-	}
-	else{
-		document.getElementById('Item1').innerHTML = "@ " + pkmn.Item;
+	// document.getElementById('Item1').innerHTML = pkmn.Item;
+	document.getElementById('Item1Sprite').src = pkmn.Item + ".png";
+
+	if (defender == "unselected"){
+		document.getElementById('calcresult1').innerHTML = pkmn.Move1.name;
+		document.getElementById('calcresult2').innerHTML = pkmn.Move2.name;
+		document.getElementById('calcresult3').innerHTML = pkmn.Move3.name;
+		document.getElementById('calcresult4').innerHTML = pkmn.Move4.name;
 	}
 	
 }
@@ -150,12 +237,14 @@ function setDefender(pkmn){
 	document.getElementById('sprite2').src = pkmn.Number + ".png";
 	document.getElementById('HP2').innerHTML = pkmn.HP + " HP";
 	document.getElementById('Speed2').innerHTML = pkmn.Speed + " Speed";
-	document.getElementById('Item2').innerHTML = "@ " + pkmn.Item;
-	if(pkmn.Item == "none"){
-		document.getElementById('Item2').innerHTML = "";
-	}
-	else{
-		document.getElementById('Item2').innerHTML = "@ " + pkmn.Item;
+	// document.getElementById('Item2').innerHTML = pkmn.Item;
+	document.getElementById('Item2Sprite').src = pkmn.Item + ".png";
+
+	if (attacker == "unselected"){
+		document.getElementById('calcresult5').innerHTML = pkmn.Move1.name;
+		document.getElementById('calcresult6').innerHTML = pkmn.Move2.name;
+		document.getElementById('calcresult7').innerHTML = pkmn.Move3.name;
+		document.getElementById('calcresult8').innerHTML = pkmn.Move4.name;
 	}
 }
 
@@ -202,15 +291,62 @@ function calcMove(attacker,defender,moveslot,resultslot){
 				type = type*0;
 			}
 		}
-	if (movetype == "Normal" & defender.Type2 == "Steel"){
-		type = 0.5;
-	}
-	if (movetype == "Dark" & defender.Type2 == "Steel"){
-		type = 0.5;
-	}
-	if (movetype == "Electric" & defender.Type1 == "Ground"){
-		type = 0;
-	}
+
+	if ((defender.Type1 == "Fighting") || (defender.Type2 == "Fighting"))
+		{
+			if ((movetype == "Psychic") || (movetype == "Flying")){
+				type = type*2;
+			}
+			if ((movetype == "Bug") || (movetype == "Dark") || (movetype == "Ghost")){
+				type = type*0.5;
+			}
+		}
+
+	if ((defender.Type1 == "Steel") || (defender.Type2 == "Steel"))
+		{
+			if ((movetype == "Fire") || (movetype == "Ground") || (movetype == "Fighting")){
+				type = type*2;
+			}
+			if ((movetype == "Bug") || (movetype == "Dark") || (movetype == "Dragon") || (movetype == "Flying") || (movetype == "Ghost") || (movetype == "Grass") || (movetype == "Ice") || (movetype == "Normal") || (movetype == "Psychic") || (movetype == "Rock") || (movetype == "Steel")){
+				type = type*0.5;
+			}
+			if (movetype == "Poison"){
+				type = type*0;
+			}
+		}
+
+	if ((defender.Type1 == "Ground") || (defender.Type2 == "Ground"))
+		{
+			if ((movetype == "Water") || (movetype == "Grass") || (movetype == "Ice")){
+				type = type*2;
+			}
+			if ((movetype == "Poison") || (movetype == "Rock")){
+				type = type*0.5;
+			}
+			if (movetype == "Electric"){
+				type = type*0;
+			}
+		}
+
+	if ((defender.Type1 == "Electric") || (defender.Type2 == "Electric"))
+		{
+			if (movetype == "Ground"){
+				type = type*2;
+			}
+			if ((movetype == "Electric") || (movetype == "Steel") || (movetype == "Flying")){
+				type = type*0.5;
+			}
+		}
+
+	if ((defender.Type1 == "Psychic") || (defender.Type2 == "Psychic"))
+		{
+			if ((movetype == "Bug") || (movetype == "Dark") || (movetype == "Ghost")){
+				type = type*2;
+			}
+			if ((movetype == "Fighting") || (movetype == "Psychic")){
+				type = type*0.5;
+			}
+		}
 
 	lvl = attacker.Level;
 	stab = 1;
@@ -230,6 +366,11 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	  {
 	  	def = defender.SpDef;
 	  	atk = attacker.SpAtk;
+	  }
+
+	  if (category == "Status"){
+	  	def = 0;
+	  	atk = 0;
 	  }
 
 	  var inter1 = Math.floor(lvl*0.4 + 2);
