@@ -24,6 +24,7 @@ table, th, td {
 		</td>
 		<td rowspan="6">
 			Rental Pokemon<br>
+			<img src="Ani100MS.png", onclick="setAttacker(Voltorb); calcAll(attacker,defender)">
 			<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee); calcAll(attacker,defender)">
 			<img src="Ani202MS.png", onclick="setAttacker(Wobbuffet); calcAll(attacker,defender)">
 			<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
@@ -164,6 +165,15 @@ const Wobbuffet = {
 	Move2: {name: "Mirror Coat", type: "Psychic", category: "Status", power: 0},
 	Move3: {name: "Safeguard", type: "Normal", category: "Status", power: 0},
 	Move4: {name: "Destiny Bond", type: "Ghost", category: "Status", power: 0}
+}
+
+const Voltorb = {
+	Name: "Voltorb", Number: "100", Type1: "Electric", Type2: "none", Level: 100, Item: "No Item",
+	HP: 261, Attack: 136, Defense: 178, SpAtk: 186, SpDef: 186, Speed: 278,
+	Move1: {name: "Thunder", type: "Electric", category: "Special", power: 120},
+	Move2: {name: "Selfdestruct", type: "Normal", category: "Physical", power: 200},
+	Move3: {name: "Mirror Coat", type: "Psychic", category: "Status", power: 0},
+	Move4: {name: "Rain Dance", type: "Water", category: "Status", power: 0}
 }
 
 const TerryMiltank = {
@@ -373,6 +383,12 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	  	atk = 0;
 	  }
 
+	  //THIS IS WHERE EXCEPTIONS FOR THINGS LIKE SELFDESTRUCT GO
+
+	  if ((movename == "Selfdestruct") || (movename == "Explosion")){
+	  	def = def/2;
+	  }
+
 	  var inter1 = Math.floor(lvl*0.4 + 2);
 	  var inter2 = Math.floor(inter1*atk*bp/50);
 	  var inter3 = Math.floor((inter2/def)+2);
@@ -416,6 +432,10 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	else{
 		document.getElementById('KO' + resultslot).innerHTML = ""
 	}
+
+	if (((movename == "Selfdestruct") || (movename == "Explosion")) & (maxroll < defender.HP)){
+	  	document.getElementById('KO' + resultslot).innerHTML = ""
+	 }
 
 	if (bp == 0){
 		document.getElementById('calcresult' + resultslot).innerHTML = movename;
