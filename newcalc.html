@@ -258,7 +258,9 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	}
 
 	if(minroll == maxroll){
-		fixedChecker(maxroll,defender.HP,resultslot);
+		if(minroll !== 0){
+			fixedChecker(maxroll,defender.HP,resultslot);
+		}
 	}
 	else if (maxroll >= defender.HP){
 		OneHitChecker(maxroll,defender.HP,resultslot);	
