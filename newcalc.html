@@ -1,36 +1,84 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
 <body>
 
-<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee)" >
-<img src="Ani241MS.png", onclick="setDefender(TerryMiltank)">
-<img src="Ani053MS.png", onclick="setDefender(MartyPersian)">
+<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee); calcAll(attacker,defender)">
+<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
 <br>
-<img src="Spr_5b_132.png", id="sprite1", onclick="calcAll(attacker,defender)">
-<img src="Spr_5b_132.png", id="sprite2", onclick="calcAll(attacker,defender)">
+<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
+<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+<br>
 
-<p id="calcresult1"></p>
-<p id="KO1"></p>
-<p id="calcresult2"></p>
-<p id="KO2"></p>
-<p id="calcresult3"></p>
-<p id="KO3"></p>
-<p id="calcresult4"></p>
-<p id="KO4"></p>
-<p id="calcresult5"></p>
-<p id="KO5"></p>
-<p id="calcresult6"></p>
-<p id="KO6"></p>
-<p id="calcresult7"></p>
-<p id="KO7"></p>
-<p id="calcresult8"></p>
-<p id="KO8"></p>
+<table class=calcdisplay style="text-align:center">
+
+	<tr>
+		<td>
+			<img src="Spr_5b_132.png", id="sprite1", onclick="calcAll(attacker,defender)">
+			<p id="HP1"></p>
+			<p id="Speed1"></p>
+		</td>
+		<td>
+			<img src="Spr_5b_132.png", id="sprite2", onclick="calcAll(attacker,defender)">
+			<p id="HP2"></p>
+			<p id="Speed2"></p>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			<p id="calcresult1"></p>
+			<p id="KO1"></p>
+		</td>
+		<td>
+			<p id="calcresult5"></p>
+			<p id="KO5"></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p id="calcresult2"></p>
+			<p id="KO2"></p>
+		</td>
+		<td>
+			<p id="calcresult6"></p>
+			<p id="KO6"></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p id="calcresult3"></p>
+			<p id="KO3"></p>
+		</td>
+		<td>
+			<p id="calcresult7"></p>
+			<p id="KO7"></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p id="calcresult4"></p>
+			<p id="KO4"></p>
+		</td>
+		<td>
+			<p id="calcresult8"></p>
+			<p id="KO8"></p>
+		</td>
+	</tr>
+</table>
+
 
 <script>
 
 var attacker = "unselected";
 var defender = "unselected";
-var reversalPower = 200;
+var reversalPower = 20;
 		
 const Hitmonlee = {
 	Name: "Hitmonlee", Number: "106", Type1: "Fighting", Type2: "none", Level: 100, Item: "none",
@@ -41,8 +89,17 @@ const Hitmonlee = {
 	Move4: {name: "Meditate", type: "Psychic", category: "Status", power: 0}
 }
 
+const Steelix = {
+	Name: "Steelix", Number: "208", Type1: "Ground", Type2: "Steel", Level: 100, Item: "none",
+	HP: 303, Attack: 218, Defense: 448, SpAtk: 158, SpDef: 178, Speed: 106,
+	Move1: {name: "Iron Tail", type: "Steel", category: "Physical", power: 100},
+	Move2: {name: "Mud Slap", type: "Ground", category: "Physical", power: 20},
+	Move3: {name: "Rock Throw", type: "Rock", category: "Physical", power: 50},
+	Move4: {name: "Sandstorm", type: "Rock", category: "Status", power: 0}
+}
+
 const TerryMiltank = {
-	Name: "Terry's Miltank", Number: "241", Type1: "Normal", Type2: "none", Level: 100, Item: "Scope Lens",
+	Name: "Miltank", Number: "241", Type1: "Normal", Type2: "none", Level: 100, Item: "Scope Lens",
 	HP: 350, Attack: 229, Defense: 281, SpAtk: 151, SpDef: 211, Speed: 269,
 	Move1: {name: "Strength", type: "Normal", category: "Physical", power: 80},
 	Move2: {name: "Seismic Toss", type: "Fighting", category: "Physical", power: "?"},
@@ -51,7 +108,7 @@ const TerryMiltank = {
 }
 
 const MartyPersian = {
-	Name: "Marty's Persian", Number: "053", Type1: "Normal", Type2: "none", Level: 100, Item: "King's Rock",
+	Name: "Persian", Number: "053", Type1: "Normal", Type2: "none", Level: 100, Item: "King's Rock",
 	HP: 318, Attack: 215, Defense: 205, SpAtk: 217, SpDef: 217, Speed: 317,
 	Move1: {name: "Body Slam", type: "Normal", category: "Physical", power: 85},
 	Move2: {name: "Thunderbolt", type: "Electric", category: "Special", power: "95"},
@@ -75,11 +132,15 @@ function calcAll(attacker, defender){
 function setAttacker(pkmn){
 	attacker = pkmn;
 	document.getElementById('sprite1').src = pkmn.Number + ".png";
+	document.getElementById('HP1').innerHTML = pkmn.HP + " HP";
+	document.getElementById('Speed1').innerHTML = pkmn.Speed + " Speed";
 }
 
 function setDefender(pkmn){
 	defender = pkmn;
 	document.getElementById('sprite2').src = pkmn.Number + ".png";
+	document.getElementById('HP2').innerHTML = pkmn.HP + " HP";
+	document.getElementById('Speed2').innerHTML = pkmn.Speed + " Speed";
 }
 
 function calcMove(attacker,defender,moveslot,resultslot){
@@ -115,8 +176,24 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	//THIS IS WHERE YOU NEED TO PUT IN THE ACTUAL TYPE CHART
 
 	type = 1;
-	if (movetype == "Fighting" & defender.Type1 == "Normal"){
-		type = 2;
+
+	if ((defender.Type1 == "Normal") || (defender.Type2 == "Normal"))
+		{
+			if (movetype == "Fighting"){
+				type = type*2;
+			}
+			if (movetype == "Ghost"){
+				type = type*0;
+			}
+		}
+	if (movetype == "Normal" & defender.Type2 == "Steel"){
+		type = 0.5;
+	}
+	if (movetype == "Dark" & defender.Type2 == "Steel"){
+		type = 0.5;
+	}
+	if (movetype == "Electric" & defender.Type1 == "Ground"){
+		type = 0;
 	}
 
 	lvl = attacker.Level;
@@ -124,6 +201,10 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	if (movetype == attacker.Type1){
 		stab = 1.5;
 	}
+	if (movetype == attacker.Type2){
+		stab = 1.5;
+	}
+
 	if (category == "Physical")
 	  {
 	    def = defender.Defense;
@@ -154,7 +235,11 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	  	}
 	  }
 
-	document.getElementById('calcresult' + resultslot).innerHTML = attacker.Name + " will do " + minroll + " to " + maxroll + " damage to " + defender.Name + " with " + movename + " (" + defender.HP + " HP)"
+	document.getElementById('calcresult' + resultslot).innerHTML = movename + "<br>" + minroll + " - " + maxroll
+
+	if (minroll == maxroll){
+		document.getElementById('calcresult' + resultslot).innerHTML = movename + "<br>" + minroll
+	}
 
 	if(minroll == maxroll){
 		document.getElementById('KO' + resultslot).innerHTML = ""
@@ -168,12 +253,15 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	else if (maxroll >= defender.HP/3){
 		ThreeHitChecker(maxroll,defender.HP,resultslot);	
 	}
+	else if (maxroll >= defender.HP/4){
+		FourHitChecker(maxroll,defender.HP,resultslot);	
+	}
 	else{
 		document.getElementById('KO' + resultslot).innerHTML = ""
 	}
 
 	if (bp == 0){
-		document.getElementById('calcresult' + resultslot).innerHTML = ""
+		document.getElementById('calcresult' + resultslot).innerHTML = movename;
 		document.getElementById('KO' + resultslot).innerHTML = ""
 	}
 }
@@ -190,10 +278,10 @@ function OneHitChecker(maxroll,HP,resultslot){
 		}
 	}
 	var OneHitChance = Math.round(count * 10000/39) / 100;
-	document.getElementById('KO' + resultslot).innerHTML = OneHitChance + "% chance to OHKO";
-	if(OneHitChance == 100){
-		document.getElementById('KO' + resultslot).innerHTML = "Guaranteed OHKO";
-	}
+	document.getElementById('KO' + resultslot).innerHTML = OneHitChance + "% OHKO";
+	// if(OneHitChance == 100){
+	// 	document.getElementById('KO' + resultslot).innerHTML = "Guaranteed OHKO";
+	// }
 }
 
 function TwoHitChecker(maxroll,HP,resultslot){
@@ -211,10 +299,10 @@ function TwoHitChecker(maxroll,HP,resultslot){
 		}
 	}
 	var TwoHitChance = Math.round(count * 10000/1521) / 100;
-	document.getElementById('KO' + resultslot).innerHTML = TwoHitChance + "% chance to 2HKO";
-	if(TwoHitChance == 100){
-		document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 2HKO";
-	}
+	document.getElementById('KO' + resultslot).innerHTML = TwoHitChance + "% 2HKO";
+	// if(TwoHitChance == 100){
+	// 	document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 2HKO";
+	// }
 }
 
 function ThreeHitChecker(maxroll,HP,resultslot){
@@ -236,10 +324,40 @@ function ThreeHitChecker(maxroll,HP,resultslot){
 		}
 	}
 	var ThreeHitChance = Math.round(count * 10000/59319) / 100
-	document.getElementById('KO' + resultslot).innerHTML = ThreeHitChance + "% chance to 3HKO";
-	if(ThreeHitChance == 100){
-		document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 3HKO";
+	document.getElementById('KO' + resultslot).innerHTML = ThreeHitChance + "% 3HKO";
+	// if(ThreeHitChance == 100){
+	// 	document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 3HKO";
+	// }
+}
+
+function FourHitChecker(maxroll,HP,resultslot){
+	count = 0;
+	hp = HP;
+	var i;
+	var j;
+	var k;
+	var l;
+	for (i = 217; i < 256; i++)
+	{
+		for (j = 217; j < 256; j++)
+		{
+			for (k = 217; k < 256; k++){
+
+				for (l = 217; l < 256; l++){
+					damage = Math.floor(maxroll*i/255) + Math.floor(maxroll*j/255) + Math.floor(maxroll*k/255) + Math.floor(maxroll*l/255);
+					if (damage >= hp){
+					count = count + 1;
+				}
+				}
+
+			}
+		}
 	}
+	var FourHitChance = Math.round(count * 10000/2313441) / 100
+	document.getElementById('KO' + resultslot).innerHTML = FourHitChance + "% 4HKO";
+	// if(FourHitChance == 100){
+	// 	document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 4HKO";
+	// }
 }
 
 </script>
