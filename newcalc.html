@@ -21,11 +21,13 @@ table, th, td {
 	<tr>
 		<td>
 			<img src="Spr_5b_132.png", id="sprite1", onclick="calcAll(attacker,defender)">
+			<p id="Item1"></p>
 			<p id="HP1"></p>
 			<p id="Speed1"></p>
 		</td>
 		<td>
 			<img src="Spr_5b_132.png", id="sprite2", onclick="calcAll(attacker,defender)">
+			<p id="Item2"></p>
 			<p id="HP2"></p>
 			<p id="Speed2"></p>
 		</td>
@@ -134,6 +136,13 @@ function setAttacker(pkmn){
 	document.getElementById('sprite1').src = pkmn.Number + ".png";
 	document.getElementById('HP1').innerHTML = pkmn.HP + " HP";
 	document.getElementById('Speed1').innerHTML = pkmn.Speed + " Speed";
+	if(pkmn.Item == "none"){
+		document.getElementById('Item1').innerHTML = "";
+	}
+	else{
+		document.getElementById('Item1').innerHTML = "@ " + pkmn.Item;
+	}
+	
 }
 
 function setDefender(pkmn){
@@ -141,6 +150,13 @@ function setDefender(pkmn){
 	document.getElementById('sprite2').src = pkmn.Number + ".png";
 	document.getElementById('HP2').innerHTML = pkmn.HP + " HP";
 	document.getElementById('Speed2').innerHTML = pkmn.Speed + " Speed";
+	document.getElementById('Item2').innerHTML = "@ " + pkmn.Item;
+	if(pkmn.Item == "none"){
+		document.getElementById('Item2').innerHTML = "";
+	}
+	else{
+		document.getElementById('Item2').innerHTML = "@ " + pkmn.Item;
+	}
 }
 
 function calcMove(attacker,defender,moveslot,resultslot){
@@ -242,7 +258,7 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	}
 
 	if(minroll == maxroll){
-		document.getElementById('KO' + resultslot).innerHTML = ""
+		fixedChecker(maxroll,defender.HP,resultslot);
 	}
 	else if (maxroll >= defender.HP){
 		OneHitChecker(maxroll,defender.HP,resultslot);	
@@ -358,6 +374,11 @@ function FourHitChecker(maxroll,HP,resultslot){
 	// if(FourHitChance == 100){
 	// 	document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 4HKO";
 	// }
+}
+
+function fixedChecker(maxroll,hp,resultslot){
+	var hitsToKO = Math.ceil(hp/maxroll);
+	document.getElementById('KO' + resultslot).innerHTML = "100% " + hitsToKO + "HKO";
 }
 
 </script>
