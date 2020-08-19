@@ -53,6 +53,8 @@ table, th, td {
 			<img src="Ani078MS.png", onclick="setDefender(FloriaRapidash); calcAll(attacker,defender)">
 			<br>Chase Round 2<br>
 			<img src="Ani160MS.png", onclick="setDefender(ChaseFeraligatr); calcAll(attacker,defender)">
+			<img src="Ani171MS.png", onclick="setDefender(ChaseLanturn); calcAll(attacker,defender)">
+			<img src="Ani195MS.png", onclick="setDefender(ChaseQuagsire); calcAll(attacker,defender)">
 			<br>Craig Round 2<br>
 			<img src="Ani197MS.png", onclick="setDefender(CraigUmbreon); calcAll(attacker,defender)">
 			<br>Kathy Round 2<br>
@@ -239,6 +241,24 @@ const ChaseFeraligatr = {
 	Move1: {name: "Hydro Pump", type: "Water", category: "Special", power: 120},
 	Move2: {name: "Rock Slide", type: "Rock", category: "Physical", power: 75},
 	Move3: {name: "Crunch", type: "Dark", category: "Special", power: 80},
+	Move4: {name: "Rain Dance", type: "Water", category: "Status", power: 0}
+}
+
+const ChaseLanturn = {
+	Name: "Lanturn", Number: "171", Type1: "Water", Type2: "Electric", Level: 100, Item: "Scope Lens",
+	HP: 432, Attack: 193, Defense: 195, SpAtk: 229, SpDef: 229, Speed: 215,
+	Move1: {name: "Hydro Pump", type: "Water", category: "Special", power: 120},
+	Move2: {name: "Thunder", type: "Electric", category: "Special", power: 120},
+	Move3: {name: "Rain Dance", type: "Water", category: "Status", power: 0},
+	Move4: {name: "Thunder Wave", type: "Electric", category: "Status", power: 0}
+}
+
+const ChaseQuagsire = {
+	Name: "Quagsire", Number: "195", Type1: "Water", Type2: "Ground", Level: 100, Item: "Leftovers",
+	HP: 372, Attack: 247, Defense: 249, SpAtk: 207, SpDef: 207, Speed: 151,
+	Move1: {name: "Surf", type: "Water", category: "Special", power: 95},
+	Move2: {name: "Earthquake", type: "Ground", category: "Physical", power: 100},
+	Move3: {name: "Ice Punch", type: "Ice", category: "Special", power: 75},
 	Move4: {name: "Rain Dance", type: "Water", category: "Status", power: 0}
 }
 
