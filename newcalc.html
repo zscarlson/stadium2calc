@@ -24,10 +24,12 @@ table, th, td {
 		</td>
 		<td rowspan="6">
 			Rental Pokemon<br>
+			<img src="Ani064MS.png", onclick="setAttacker(Kadabra); calcAll(attacker,defender)">
 			<img src="Ani100MS.png", onclick="setAttacker(Voltorb); calcAll(attacker,defender)">
 			<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee); calcAll(attacker,defender)">
 			<img src="Ani202MS.png", onclick="setAttacker(Wobbuffet); calcAll(attacker,defender)">
 			<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
+			<img src="Ani214MS.png", onclick="setAttacker(Heracross); calcAll(attacker,defender)">
 		</td>
 		<td rowspan="6">
 			Terry Round 1<br>
@@ -57,7 +59,7 @@ table, th, td {
 			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
 			<img src="Ani242MS.png", onclick="setDefender(TerryBlissey); calcAll(attacker,defender)">
 			<br>Yang Round 2<br>
-			<img src="Ani053MS.png", onclick="setDefender(MartyPersian); calcAll(attacker,defender)">
+			<img src="Ani009MS.png", onclick="setDefender(YangBlastoise); calcAll(attacker,defender)">
 			<br>Adam Round 2<br>
 			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
 			<br>Floria Round 2<br>
@@ -176,6 +178,24 @@ const Voltorb = {
 	Move4: {name: "Rain Dance", type: "Water", category: "Status", power: 0}
 }
 
+const Kadabra = {
+	Name: "Kadabra", Number: "064", Type1: "Psychic", Type2: "none", Level: 100, Item: "No Item",
+	HP: 247, Attack: 134, Defense: 122, SpAtk: 302, SpDef: 202, Speed: 274,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "ThunderPunch", type: "Electric", category: "Special", power: 75},
+	Move3: {name: "Reflect", type: "Psychic", category: "Status", power: 0},
+	Move4: {name: "Kinesis", type: "Psychic", category: "Status", power: 0}
+}
+
+const Heracross = {
+	Name: "Heracross", Number: "214", Type1: "Bug", Type2: "Fighting", Level: 100, Item: "No Item",
+	HP: 313, Attack: 298, Defense: 198, SpAtk: 128, SpDef: 238, Speed: 216,
+	Move1: {name: "Megahorn", type: "Bug", category: "Physical", power: 120},
+	Move2: {name: "Rock Smash", type: "Fighting", category: "Physical", power: 20},
+	Move3: {name: "Thief", type: "Dark", category: "Special", power: 40},
+	Move4: {name: "Leer", type: "Normal", category: "Status", power: 0}
+}
+
 const TerryMiltank = {
 	Name: "Miltank", Number: "241", Type1: "Normal", Type2: "none", Level: 100, Item: "Scope Lens",
 	HP: 350, Attack: 229, Defense: 281, SpAtk: 151, SpDef: 211, Speed: 269,
@@ -210,6 +230,15 @@ const MartyRaikou = {
 	Move2: {name: "Dig", type: "Ground", category: "Physical", power: 60},
 	Move3: {name: "Crunch", type: "Dark", category: "Special", power: 80},
 	Move4: {name: "Reflect", type: "Psychic", category: "Status", power: 0}
+}
+
+const YangBlastoise = {
+	Name: "Blastoise", Number: "009", Type1: "Water", Type2: "none", Level: 100, Item: "Leftovers",
+	HP: 328, Attack: 237, Defense: 269, SpAtk: 239, SpDef: 279, Speed: 227,
+	Move1: {name: "Earthquake", type: "Ground", category: "Physical", power: 100},
+	Move2: {name: "Strength", type: "Normal", category: "Physical", power: 80},
+	Move3: {name: "Iron Tail", type: "Steel", category: "Physical", power: 100},
+	Move4: {name: "Counter", type: "Fighting", category: "Status", power: 0}
 }
 
 function calcAll(attacker, defender){
@@ -358,12 +387,29 @@ function calcMove(attacker,defender,moveslot,resultslot){
 			}
 		}
 
+	if ((defender.Type1 == "Water") || (defender.Type2 == "Water"))
+		{
+			if ((movetype == "Electric") || (movetype == "Grass")){
+				type = type*2;
+			}
+			if ((movetype == "Water") || (movetype == "Ice") || (movetype == "Fire") || (movetype == "Steel")){
+				type = type*0.5;
+			}
+		}
+
+	if ((defender.Type1 == "Bug") || (defender.Type2 == "Bug"))
+		{
+			if ((movetype == "Fire") || (movetype == "Flying") || (movetype == "Rock")){
+				type = type*2;
+			}
+			if ((movetype == "Grass") || (movetype == "Fighting") || (movetype == "Ground")){
+				type = type*0.5;
+			}
+		}
+
 	lvl = attacker.Level;
 	stab = 1;
-	if (movetype == attacker.Type1){
-		stab = 1.5;
-	}
-	if (movetype == attacker.Type2){
+	if ((movetype == attacker.Type1) || (movetype == attacker.Type2)){
 		stab = 1.5;
 	}
 
@@ -415,19 +461,19 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	}
 
 	if((minroll == maxroll)&(minroll !== 0)){
-		fixedChecker(maxroll,defender.HP,resultslot);
+		fixedChecker(maxroll,defender.HP,resultslot,defender.Item);
 	}
 	else if (maxroll >= defender.HP){
-		OneHitChecker(maxroll,defender.HP,resultslot);	
+		OneHitChecker(maxroll,defender.HP,resultslot,defender.Item);	
 	}
 	else if (maxroll >= defender.HP/2){
-		TwoHitChecker(maxroll,defender.HP,resultslot);	
+		TwoHitChecker(maxroll,defender.HP,resultslot,defender.Item);	
 	}
 	else if (maxroll >= defender.HP/3){
-		ThreeHitChecker(maxroll,defender.HP,resultslot);	
+		ThreeHitChecker(maxroll,defender.HP,resultslot,defender.Item);	
 	}
 	else if (maxroll >= defender.HP/4){
-		FourHitChecker(maxroll,defender.HP,resultslot);	
+		FourHitChecker(maxroll,defender.HP,resultslot,defender.Item);	
 	}
 	else{
 		document.getElementById('KO' + resultslot).innerHTML = ""
@@ -443,7 +489,7 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	}
 }
 
-function OneHitChecker(maxroll,HP,resultslot){
+function OneHitChecker(maxroll,HP,resultslot,item){
 	count = 0;
 	hp = HP;
 	var i;
@@ -456,16 +502,22 @@ function OneHitChecker(maxroll,HP,resultslot){
 	}
 	var OneHitChance = Math.round(count * 10000/39) / 100;
 	document.getElementById('KO' + resultslot).innerHTML = OneHitChance + "% OHKO";
+	if (count == 0){
+		TwoHitChecker(maxroll,HP,resultslot,item);
+	}
 	// if(OneHitChance == 100){
 	// 	document.getElementById('KO' + resultslot).innerHTML = "Guaranteed OHKO";
 	// }
 }
 
-function TwoHitChecker(maxroll,HP,resultslot){
+function TwoHitChecker(maxroll,HP,resultslot,item){
 	count = 0;
 	hp = HP;
 	var i;
 	var j;
+	if (item == "Leftovers"){
+		hp = hp + Math.floor(hp/16);
+	}
 	for (i = 217; i < 256; i++)
 	{
 		for (j = 217; j < 256; j++){
@@ -477,17 +529,23 @@ function TwoHitChecker(maxroll,HP,resultslot){
 	}
 	var TwoHitChance = Math.round(count * 10000/1521) / 100;
 	document.getElementById('KO' + resultslot).innerHTML = TwoHitChance + "% 2HKO";
+	if (count == 0){
+		ThreeHitChecker(maxroll,HP,resultslot,item);
+	}
 	// if(TwoHitChance == 100){
 	// 	document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 2HKO";
 	// }
 }
 
-function ThreeHitChecker(maxroll,HP,resultslot){
+function ThreeHitChecker(maxroll,HP,resultslot,item){
 	count = 0;
 	hp = HP;
 	var i;
 	var j;
 	var k;
+	if (item == "Leftovers"){
+		hp = hp + 2*Math.floor(hp/16);
+	}
 	for (i = 217; i < 256; i++)
 	{
 		for (j = 217; j < 256; j++)
@@ -502,18 +560,24 @@ function ThreeHitChecker(maxroll,HP,resultslot){
 	}
 	var ThreeHitChance = Math.round(count * 10000/59319) / 100
 	document.getElementById('KO' + resultslot).innerHTML = ThreeHitChance + "% 3HKO";
+	if (count == 0){
+		FourHitChecker(maxroll,HP,resultslot,item);
+	}
 	// if(ThreeHitChance == 100){
 	// 	document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 3HKO";
 	// }
 }
 
-function FourHitChecker(maxroll,HP,resultslot){
+function FourHitChecker(maxroll,HP,resultslot,item){
 	count = 0;
 	hp = HP;
 	var i;
 	var j;
 	var k;
 	var l;
+	if (item == "Leftovers"){
+		hp = hp + 3*Math.floor(hp/16);
+	}
 	for (i = 217; i < 256; i++)
 	{
 		for (j = 217; j < 256; j++)
@@ -532,6 +596,9 @@ function FourHitChecker(maxroll,HP,resultslot){
 	}
 	var FourHitChance = Math.round(count * 10000/2313441) / 100
 	document.getElementById('KO' + resultslot).innerHTML = FourHitChance + "% 4HKO";
+	if (count == 0){
+		document.getElementById('KO' + resultslot).innerHTML = "";
+	}
 	// if(FourHitChance == 100){
 	// 	document.getElementById('KO' + resultslot).innerHTML = "Guaranteed 4HKO";
 	// }
