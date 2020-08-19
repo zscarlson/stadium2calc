@@ -48,7 +48,12 @@ table, th, td {
 			<br>Yang Round 2<br>
 			<img src="Ani009MS.png", onclick="setDefender(YangBlastoise); calcAll(attacker,defender)">
 			<br>Adam Round 2<br>
+			<img src="Ani178MS.png", onclick="setDefender(AdamXatu); calcAll(attacker,defender)">
+			<img src="Ani142MS.png", onclick="setDefender(AdamAerodactyl); calcAll(attacker,defender)">
+			<img src="Ani144MS.png", onclick="setDefender(AdamArticuno); calcAll(attacker,defender)">
+			<img src="Ani145MS.png", onclick="setDefender(AdamZapdos); calcAll(attacker,defender)">
 			<img src="Ani146MS.png", onclick="setDefender(AdamMoltres); calcAll(attacker,defender)">
+			<img src="Ani149MS.png", onclick="setDefender(AdamDragonite); calcAll(attacker,defender)">
 			<br>Floria Round 2<br>
 			<img src="Ani078MS.png", onclick="setDefender(FloriaRapidash); calcAll(attacker,defender)">
 			<br>Chase Round 2<br>
@@ -217,12 +222,57 @@ const YangBlastoise = {
 	Move4: {name: "Counter", type: "Fighting", category: "Status", power: 0}
 }
 
+const AdamXatu = {
+	Name: "Xatu", Number: "178", Type1: "Psychic", Type2: "Flying", Level: 100, Item: "Focus Band",
+	HP: 293, Attack: 222, Defense: 214, SpAtk: 264, SpDef: 214, Speed: 262,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "Drill Peck", type: "Flying", category: "Physical", power: 80},
+	Move3: {name: "Night Shade", type: "Ghost", category: "Status", power: "?"},
+	Move4: {name: "Confuse Ray", type: "Ghost", category: "Status", power: 0}
+}
+
+const AdamAerodactyl = {
+	Name: "Aerodactyl", Number: "142", Type1: "Rock", Type2: "Flying", Level: 100, Item: "Gold Berry",
+	HP: 323, Attack: 282, Defense: 204, SpAtk: 194, SpDef: 224, Speed: 332,
+	Move1: {name: "Earthquake", type: "Ground", category: "Physical", power: 100},
+	Move2: {name: "Fire Blast", type: "Fire", category: "Special", power: 120},
+	Move3: {name: "Iron Tail", type: "Steel", category: "Physical", power: 100},
+	Move4: {name: "Hyper Beam", type: "Normal", category: "Physical", power: 150}
+}
+
+const AdamArticuno = {
+	Name: "Articuno", Number: "144", Type1: "Ice", Type2: "Flying", Level: 100, Item: "Leftovers",
+	HP: 343, Attack: 242, Defense: 270, SpAtk: 260, SpDef: 320, Speed: 242,
+	Move1: {name: "Blizzard", type: "Ice", category: "Special", power: 120},
+	Move2: {name: "Steel Wing", type: "Steel", category: "Physical", power: 70},
+	Move3: {name: "Icy Wind", type: "Ice", category: "Special", power: 55},
+	Move4: {name: "Reflect", type: "Psychic", category: "Status", power: 0}
+}
+
+const AdamZapdos = {
+	Name: "Zapdos", Number: "145", Type1: "Electric", Type2: "Flying", Level: 100, Item: "Quick Claw",
+	HP: 343, Attack: 252, Defense: 244, SpAtk: 324, SpDef: 254, Speed: 272,
+	Move1: {name: "Thunderbolt", type: "Electric", category: "Special", power: 95},
+	Move2: {name: "Drill Peck", type: "Flying", category: "Physical", power: 80},
+	Move3: {name: "Mud Slap", type: "Ground", category: "Physical", power: 20},
+	Move4: {name: "Thunder Wave", type: "Electric", category: "Status", power: 0}
+}
+
 const AdamMoltres = {
 	Name: "Moltres", Number: "146", Type1: "Fire", Type2: "Flying", Level: 100, Item: "Sharp Beak",
 	HP: 343, Attack: 274, Defense: 252, SpAtk: 322, SpDef: 242, Speed: 254,
 	Move1: {name: "Fire Blast", type: "Fire", category: "Special", power: 120},
 	Move2: {name: "Steel Wing", type: "Steel", category: "Physical", power: 70},
 	Move3: {name: "Sky Attack", type: "Flying", category: "Physical", power: 140},
+	Move4: {name: "Hyper Beam", type: "Normal", category: "Physical", power: 150}
+}
+
+const AdamDragonite = {
+	Name: "Dragonite", Number: "149", Type1: "Dragon", Type2: "Flying", Level: 100, Item: "MiracleBerry",
+	HP: 355, Attack: 342, Defense: 262, SpAtk: 272, SpDef: 272, Speed: 234,
+	Move1: {name: "ExtremeSpeed", type: "Normal", category: "Physical", power: 80},
+	Move2: {name: "Ice Beam", type: "Ice", category: "Special", power: 95},
+	Move3: {name: "Thunderbolt", type: "Electric", category: "Special", power: 95},
 	Move4: {name: "Hyper Beam", type: "Normal", category: "Physical", power: 150}
 }
 
@@ -311,7 +361,7 @@ const KathyKingdra = {
 	Name: "Kingdra", Number: "230", Type1: "Water", Type2: "Dragon", Level: 100, Item: "Focus Band",
 	HP: 339, Attack: 262, Defense: 270, SpAtk: 270, SpDef: 270, Speed: 256,
 	Move1: {name: "Surf", type: "Water", category: "Special", power: 95},
-	Move2: {name: "Dragonbreath", type: "Dragon", category: "Special", power: 60},
+	Move2: {name: "DragonBreath", type: "Dragon", category: "Special", power: 60},
 	Move3: {name: "Ice Beam", type: "Ice", category: "Special", power: 95},
 	Move4: {name: "Icy Wind", type: "Ice", category: "Special", power: 55}
 }
@@ -583,7 +633,7 @@ function calcMove(attacker,defender,moveslot,resultslot){
 
 	if ((defender.Type1 == "Rock") || (defender.Type2 == "Rock"))
 		{
-			if ((movetype == "Fighting") || (movetype == "Grass") || (movetype == "Water") || (movetype == "Ground")){
+			if ((movetype == "Fighting") || (movetype == "Grass") || (movetype == "Water") || (movetype == "Ground") || (movetype == "Steel")){
 				type = type*2;
 			}
 			if ((movetype == "Fire") || (movetype == "Flying") || (movetype == "Normal") || (movetype == "Poison")){
