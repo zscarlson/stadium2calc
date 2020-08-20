@@ -33,7 +33,7 @@ table, th, td {
 			<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
 			<img src="Ani214MS.png", onclick="setAttacker(Heracross); calcAll(attacker,defender)">
 		</td>
-		<td rowspan="6">
+		<td rowspan="6" style="display:none">
 			Terry Round 1<br>
 			<br>Yang Round 1<br>
 			<br>Adam Round 1<br>
@@ -47,8 +47,17 @@ table, th, td {
 			Terry Round 2<br>
 			<img src="Ani241MS.png", onclick="setDefender(TerryMiltank); calcAll(attacker,defender)">
 			<img src="Ani242MS.png", onclick="setDefender(TerryBlissey); calcAll(attacker,defender)">
+			<img src="Ani182MS.png", onclick="setDefender(TerryBellossom); calcAll(attacker,defender)">
+			<img src="Ani189MS.png", onclick="setDefender(TerryJumpluff); calcAll(attacker,defender)">
+			<img src="Ani208MS.png", onclick="setDefender(TerrySteelix); calcAll(attacker,defender)">
+			<img src="Ani232MS.png", onclick="setDefender(TerryDonphan); calcAll(attacker,defender)">
 			<br>Yang Round 2<br>
+			<img src="Ani062MS.png", onclick="setDefender(YangPoliwrath); calcAll(attacker,defender)">
+			<img src="Ani057MS.png", onclick="setDefender(YangPrimeape); calcAll(attacker,defender)">
 			<img src="Ani009MS.png", onclick="setDefender(YangBlastoise); calcAll(attacker,defender)">
+			<img src="Ani073MS.png", onclick="setDefender(YangTentacruel); calcAll(attacker,defender)">
+			<img src="Ani202MS.png", onclick="setDefender(YangWobbuffet); calcAll(attacker,defender)">
+			<img src="Ani214MS.png", onclick="setDefender(YangHeracross); calcAll(attacker,defender)">
 			<br>Adam Round 2<br>
 			<img src="Ani178MS.png", onclick="setDefender(AdamXatu); calcAll(attacker,defender)">
 			<img src="Ani142MS.png", onclick="setDefender(AdamAerodactyl); calcAll(attacker,defender)">
@@ -58,12 +67,25 @@ table, th, td {
 			<img src="Ani149MS.png", onclick="setDefender(AdamDragonite); calcAll(attacker,defender)">
 			<br>Floria Round 2<br>
 			<img src="Ani078MS.png", onclick="setDefender(FloriaRapidash); calcAll(attacker,defender)">
+			<img src="Ani186MS.png", onclick="setDefender(FloriaPolitoed); calcAll(attacker,defender)">
+			<img src="Ani103MS.png", onclick="setDefender(FloriaExeggutor); calcAll(attacker,defender)">
+			<img src="Ani097MS.png", onclick="setDefender(FloriaHypno); calcAll(attacker,defender)">
+			<img src="Ani196MS.png", onclick="setDefender(FloriaEspeon); calcAll(attacker,defender)">
+			<img src="Ani122MS.png", onclick="setDefender(FloriaMrMime); calcAll(attacker,defender)">
 			<br>Chase Round 2<br>
 			<img src="Ani160MS.png", onclick="setDefender(ChaseFeraligatr); calcAll(attacker,defender)">
 			<img src="Ani171MS.png", onclick="setDefender(ChaseLanturn); calcAll(attacker,defender)">
 			<img src="Ani195MS.png", onclick="setDefender(ChaseQuagsire); calcAll(attacker,defender)">
+			<img src="Ani139MS.png", onclick="setDefender(ChaseOmastar); calcAll(attacker,defender)">
+			<img src="Ani110MS.png", onclick="setDefender(ChaseWeezing); calcAll(attacker,defender)">
+			<img src="Ani080MS.png", onclick="setDefender(ChaseSlowbro); calcAll(attacker,defender)">
 			<br>Craig Round 2<br>
 			<img src="Ani197MS.png", onclick="setDefender(CraigUmbreon); calcAll(attacker,defender)">
+			<img src="Ani121MS.png", onclick="setDefender(CraigStarmie); calcAll(attacker,defender)">
+			<img src="Ani200MS.png", onclick="setDefender(CraigMisdreavus); calcAll(attacker,defender)">
+			<img src="Ani234MS.png", onclick="setDefender(CraigStantler); calcAll(attacker,defender)">
+			<img src="Ani101MS.png", onclick="setDefender(CraigElectrode); calcAll(attacker,defender)">
+			<img src="Ani169MS.png", onclick="setDefender(CraigCrobat); calcAll(attacker,defender)">
 			<br>Kathy Round 2<br>
 			<img src="Ani245MS.png", onclick="setDefender(KathySuicune); calcAll(attacker,defender)">
 			<img src="Ani135MS.png", onclick="setDefender(KathyJolteon); calcAll(attacker,defender)">
@@ -141,14 +163,17 @@ table, th, td {
 
 var attacker = "unselected";
 var defender = "unselected";
-var reversalPower = 20;
-		
+var reversalPower1 = 20;
+var reversalPower2 = 20;
+
+// moves to research: Kathy Snorlax Return, Marty Celebi HP Fighting, Craig Stantler Frustration, Terry Bellossom Return, Terry Donphan HP Flying
+
 const Hitmonlee = {
 	Name: "Hitmonlee", Number: "106", Type1: "Fighting", Type2: "none", Level: 100, Item: "Rental Items",
 	HP: 263, Attack: 300, Defense: 164, SpAtk: 128, SpDef: 278, Speed: 234,
 	Move1: {name: "Hi Jump Kick", type: "Fighting", category: "Physical", power: 85},
 	Move2: {name: "Mega Kick", type: "Normal", category: "Physical", power: 120},
-	Move3: {name: "Reversal", type: "Fighting", category: "Physical", power: reversalPower},
+	Move3: {name: "Reversal (" + reversalPower1 +")", type: "Fighting", category: "Physical", power: reversalPower1},
 	Move4: {name: "Meditate", type: "Psychic", category: "Status", power: 0}
 }
 
@@ -224,6 +249,60 @@ const TerryBlissey = {
 	Move4: {name: "Reflect", type: "Psychic", category: "Status", power: 0}
 }
 
+const TerryBellossom = {
+	Name: "Bellossom", Number: "182", Type1: "Grass", Type2: "none", Level: 100, Item: "Bitter Berry",
+	HP: 320, Attack: 231, Defense: 239, SpAtk: 249, SpDef: 269, Speed: 171,
+	Move1: {name: "Petal Dance", type: "Grass", category: "Special", power: 70},
+	Move2: {name: "Return", type: "Normal", category: "Physical", power: 102},
+	Move3: {name: "Attract", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Mimic", type: "Normal", category: "Status", power: 0}
+}
+
+const TerryJumpluff = {
+	Name: "Jumpluff", Number: "189", Type1: "Grass", Type2: "Flying", Level: 100, Item: "King's Rock",
+	HP: 320, Attack: 179, Defense: 209, SpAtk: 179, SpDef: 239, Speed: 291,
+	Move1: {name: "Giga Drain", type: "Grass", category: "Special", power: 60},
+	Move2: {name: "Headbutt", type: "Normal", category: "Physical", power: 70},
+	Move3: {name: "Attract", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Stun Spore", type: "Grass", category: "Status", power: 0}
+}
+
+const TerrySteelix = {
+	Name: "Steelix", Number: "208", Type1: "Ground", Type2: "Steel", Level: 100, Item: "BrightPowder",
+	HP: 320, Attack: 241, Defense: 469, SpAtk: 179, SpDef: 199, Speed: 131,
+	Move1: {name: "Dig", type: "Ground", category: "Physical", power: 60},
+	Move2: {name: "Strength", type: "Normal", category: "Physical", power: 80},
+	Move3: {name: "Crunch", type: "Dark", category: "Special", power: 80},
+	Move4: {name: "Attract", type: "Normal", category: "Status", power: 0}
+}
+
+const TerryDonphan = {
+	Name: "Donphan", Number: "232", Type1: "Ground", Type2: "none", Level: 100, Item: "Magnet",
+	HP: 340, Attack: 309, Defense: 311, SpAtk: 191, SpDef: 191, Speed: 169,
+	Move1: {name: "Earthquake", type: "Ground", category: "Physical", power: 100},
+	Move2: {name: "Take Down", type: "Normal", category: "Physical", power: 90},
+	Move3: {name: "HP Flying", type: "Flying", category: "Physical", power: 70},
+	Move4: {name: "Attract", type: "Normal", category: "Status", power: 0}
+}
+
+const YangPoliwrath = {
+	Name: "Poliwrath", Number: "062", Type1: "Water", Type2: "Fighting", Level: 100, Item: "Quick Claw",
+	HP: 340, Attack: 239, Defense: 261, SpAtk: 211, SpDef: 251, Speed: 209,
+	Move1: {name: "Surf", type: "Water", category: "Special", power: 95},
+	Move2: {name: "Submission", type: "Fighting", category: "Physical", power: 80},
+	Move3: {name: "Fissure", type: "Ground", category: "Status", power: 0},
+	Move4: {name: "Mind Reader", type: "Normal", category: "Status", power: 0}
+}
+
+const YangPrimeape = {
+	Name: "Primeape", Number: "057", Type1: "Fighting", Type2: "none", Level: 100, Item: "Bitter Berry",
+	HP: 300, Attack: 269, Defense: 189, SpAtk: 189, SpDef: 209, Speed: 261,
+	Move1: {name: "Cross Chop", type: "Fighting", category: "Physical", power: 100},
+	Move2: {name: "Thunder", type: "Electric", category: "Special", power: 120},
+	Move3: {name: "Counter", type: "Fighting", category: "Status", power: 0},
+	Move4: {name: "Screech", type: "Normal", category: "Status", power: 0}
+}
+
 const YangBlastoise = {
 	Name: "Blastoise", Number: "009", Type1: "Water", Type2: "none", Level: 100, Item: "Leftovers",
 	HP: 328, Attack: 237, Defense: 269, SpAtk: 239, SpDef: 279, Speed: 227,
@@ -231,6 +310,33 @@ const YangBlastoise = {
 	Move2: {name: "Strength", type: "Normal", category: "Physical", power: 80},
 	Move3: {name: "Iron Tail", type: "Steel", category: "Physical", power: 100},
 	Move4: {name: "Counter", type: "Fighting", category: "Status", power: 0}
+}
+
+const YangTentacruel = {
+	Name: "Tentacruel", Number: "073", Type1: "Water", Type2: "Poison", Level: 100, Item: "BrightPowder",
+	HP: 320, Attack: 209, Defense: 201, SpAtk: 231, SpDef: 311, Speed: 269,
+	Move1: {name: "Hydro Pump", type: "Water", category: "Special", power: 120},
+	Move2: {name: "Sludge Bomb", type: "Poison", category: "Physical", power: 90},
+	Move3: {name: "Mirror Coat", type: "Psychic", category: "Status", power: 0},
+	Move4: {name: "Barrier", type: "Psychic", category: "Status", power: 0}
+}
+
+const YangWobbuffet = {
+	Name: "Wobbuffet", Number: "202", Type1: "Psychic", Type2: "none", Level: 100, Item: "BlackGlasses",
+	HP: 550, Attack: 125, Defense: 185, SpAtk: 135, SpDef: 185, Speed: 137,
+	Move1: {name: "Counter", type: "Fighting", category: "Status", power: 0},
+	Move2: {name: "Mirror Coat", type: "Psychic", category: "Status", power: 0},
+	Move3: {name: "Safeguard", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Destiny Bond", type: "Ghost", category: "Status", power: 0}
+}
+
+const YangHeracross = {
+	Name: "Heracross", Number: "214", Type1: "Bug", Type2: "Fighting", Level: 100, Item: "Focus Band",
+	HP: 330, Attack: 321, Defense: 219, SpAtk: 149, SpDef: 259, Speed: 241,
+	Move1: {name: "Megahorn", type: "Bug", category: "Physical", power: 120},
+	Move2: {name: "Headbutt", type: "Normal", category: "Physical", power: 70},
+	Move3: {name: "Reversal", type: "Fighting", category: "Physical", power: reversalPower2},
+	Move4: {name: "Endure", type: "Normal", category: "Status", power: 0}
 }
 
 const AdamXatu = {
@@ -296,6 +402,51 @@ const FloriaRapidash = {
 	Move4: {name: "Reflect", type: "Psychic", category: "Status", power: 0}
 }
 
+const FloriaPolitoed = {
+	Name: "Politoed", Number: "186", Type1: "Water", Type2: "none", Level: 100, Item: "Quick Claw",
+	HP: 359, Attack: 224, Defense: 226, SpAtk: 254, SpDef: 274, Speed: 218,
+	Move1: {name: "Hydro Pump", type: "Water", category: "Special", power: 120},
+	Move2: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move3: {name: "Earthquake", type: "Ground", category: "Physical", power: 100},
+	Move4: {name: "Hypnosis", type: "Psychic", category: "Status", power: 0}
+}
+
+const FloriaExeggutor = {
+	Name: "Exeggutor", Number: "103", Type1: "Grass", Type2: "Psychic", Level: 100, Item: "Miracle Seed",
+	HP: 359, Attack: 224, Defense: 226, SpAtk: 254, SpDef: 274, Speed: 218,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "Mega Drain", type: "Grass", category: "Special", power: 40},
+	Move3: {name: "Synthesis", type: "Grass", category: "Status", power: 0},
+	Move4: {name: "Sleep Powder", type: "Grass", category: "Status", power: 0}
+}
+
+const FloriaHypno = {
+	Name: "Hypno", Number: "097", Type1: "Psychic", Type2: "none", Level: 100, Item: "Focus Band",
+	HP: 347, Attack: 212, Defense: 216, SpAtk: 222, SpDef: 316, Speed: 208,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "Seismic Toss", type: "Fighting", category: "Physical", power: "?"},
+	Move3: {name: "Tri Attack", type: "Normal", category: "Physical", power: 80},
+	Move4: {name: "Hypnosis", type: "Psychic", category: "Status", power: 0}
+}
+
+const FloriaEspeon = {
+	Name: "Espeon", Number: "196", Type1: "Psychic", Type2: "none", Level: 100, Item: "TwistedSpoon",
+	HP: 309, Attack: 204, Defense: 196, SpAtk: 334, SpDef: 264, Speed: 298,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "Bite", type: "Dark", category: "Special", power: 60},
+	Move3: {name: "Charm", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Morning Sun", type: "Normal", category: "Status", power: 0}
+}
+
+const FloriaMrMime = {
+	Name: "Mr. Mime", Number: "122", Type1: "Psychic", Type2: "none", Level: 100, Item: "Gold Berry",
+	HP: 259, Attack: 164, Defense: 206, SpAtk: 274, SpDef: 314, Speed: 258,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "Fire Punch", type: "Fire", category: "Special", power: 75},
+	Move3: {name: "Thunderbolt", type: "Electric", category: "Special", power: 95},
+	Move4: {name: "Hypnosis", type: "Psychic", category: "Status", power: 0}
+}
+
 const ChaseFeraligatr = {
 	Name: "Feraligatr", Number: "160", Type1: "Water", Type2: "none", Level: 100, Item: "Focus Band",
 	HP: 352, Attack: 287, Defense: 279, SpAtk: 235, SpDef: 243, Speed: 237,
@@ -323,12 +474,84 @@ const ChaseQuagsire = {
 	Move4: {name: "Rain Dance", type: "Water", category: "Status", power: 0}
 }
 
+const ChaseOmastar = {
+	Name: "Omastar", Number: "139", Type1: "Water", Type2: "Rock", Level: 100, Item: "BrightPowder",
+	HP: 322, Attack: 197, Defense: 329, SpAtk: 307, SpDef: 217, Speed: 191,
+	Move1: {name: "AncientPower", type: "Rock", category: "Physical", power: 60},
+	Move2: {name: "Ice Beam", type: "Ice", category: "Special", power: 95},
+	Move3: {name: "Seismic Toss", type: "Fighting", category: "Physical", power: "?"},
+	Move4: {name: "Rain Dance", type: "Water", category: "Status", power: 0}
+}
+
+const ChaseSlowbro = {
+	Name: "Slowbro", Number: "080", Type1: "Water", Type2: "Psychic", Level: 100, Item: "Mystic Water",
+	HP: 372, Attack: 219, Defense: 299, SpAtk: 281, SpDef: 241, Speed: 137,
+	Move1: {name: "Surf", type: "Water", category: "Special", power: 95},
+	Move2: {name: "Body Slam", type: "Normal", category: "Physical", power: 85},
+	Move3: {name: "Thunder Wave", type: "Electric", category: "Status", power: 0},
+	Move4: {name: "Rain Dance", type: "Water", category: "Status", power: 0}
+}
+
+const ChaseWeezing = {
+	Name: "Weezing", Number: "110", Type1: "Poison", Type2: "none", Level: 100, Item: "Quick Claw",
+	HP: 312, Attack: 257, Defense: 319, SpAtk: 247, SpDef: 217, Speed: 201,
+	Move1: {name: "Sludge Bomb", type: "Poison", category: "Physical", power: 90},
+	Move2: {name: "Thunder", type: "Electric", category: "Special", power: 120},
+	Move3: {name: "Explosion", type: "Normal", category: "Physical", power: 250},
+	Move4: {name: "Destiny Bond", type: "Ghost", category: "Status", power: 0}
+}
+
 const CraigUmbreon = {
 	Name: "Umbreon", Number: "197", Type1: "Dark", Type2: "none", Level: 100, Item: "BrightPowder",
 	HP: 360, Attack: 209, Defense: 301, SpAtk: 197, SpDef: 337, Speed: 209,
 	Move1: {name: "Bite", type: "Dark", category: "Special", power: 60},
 	Move2: {name: "Body Slam", type: "Normal", category: "Physical", power: 85},
 	Move3: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move4: {name: "Confuse Ray", type: "Ghost", category: "Status", power: 0}
+}
+
+const CraigStarmie = {
+	Name: "Starmie", Number: "121", Type1: "Water", Type2: "Psychic", Level: 100, Item: "MiracleBerry",
+	HP: 290, Attack: 229, Defense: 247, SpAtk: 281, SpDef: 251, Speed: 309,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "Ice Beam", type: "Ice", category: "Special", power: 95},
+	Move3: {name: "Thunderbolt", type: "Electric", category: "Special", power: 95},
+	Move4: {name: "Confuse Ray", type: "Ghost", category: "Status", power: 0}
+}
+
+const CraigMisdreavus = {
+	Name: "Misdreavus", Number: "200", Type1: "Ghost", Type2: "none", Level: 100, Item: "Gold Berry",
+	HP: 310, Attack: 189, Defense: 197, SpAtk: 247, SpDef: 247, Speed: 251,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "Mean Look", type: "Normal", category: "Status", power: 0},
+	Move3: {name: "Confuse Ray", type: "Ghost", category: "Status", power: 0},
+	Move4: {name: "Destiny Bond", type: "Ghost", category: "Status", power: 0}
+}
+
+const CraigStantler = {
+	Name: "Stantler", Number: "234", Type1: "Normal", Type2: "none", Level: 100, Item: "Leftovers",
+	HP: 320, Attack: 269, Defense: 205, SpAtk: 251, SpDef: 211, Speed: 247,
+	Move1: {name: "Frustration", type: "Normal", category: "Physical", power: 102},
+	Move2: {name: "Earthquake", type: "Ground", category: "Physical", power: 100},
+	Move3: {name: "Reflect", type: "Psychic", category: "Status", power: 0},
+	Move4: {name: "Confuse Ray", type: "Ghost", category: "Status", power: 0}
+}
+
+const CraigElectrode = {
+	Name: "Electrode", Number: "101", Type1: "Electric", Type2: "none", Level: 100, Item: "King's Rock",
+	HP: 302, Attack: 177, Defense: 219, SpAtk: 241, SpDef: 241, Speed: 357,
+	Move1: {name: "Thunderbolt", type: "Electric", category: "Special", power: 95},
+	Move2: {name: "Explosion", type: "Normal", category: "Physical", power: 250},
+	Move3: {name: "Thunder Wave", type: "Electric", category: "Status", power: 0},
+	Move4: {name: "Swagger", type: "Normal", category: "Status", power: 0}
+}
+
+const CraigCrobat = {
+	Name: "Crobat", Number: "169", Type1: "Poison", Type2: "Flying", Level: 100, Item: "Focus Band",
+	HP: 350, Attack: 257, Defense: 239, SpAtk: 219, SpDef: 239, Speed: 341,
+	Move1: {name: "Bite", type: "Dark", category: "Special", power: 60},
+	Move2: {name: "Mega Drain", type: "Grass", category: "Special", power: 40},
+	Move3: {name: "Screech", type: "Normal", category: "Status", power: 0},
 	Move4: {name: "Confuse Ray", type: "Ghost", category: "Status", power: 0}
 }
 
@@ -381,7 +604,7 @@ const KathyScizor = {
 	Name: "Scizor", Number: "212", Type1: "Bug", Type2: "Steel", Level: 100, Item: "Gold Berry",
 	HP: 313, Attack: 338, Defense: 284, SpAtk: 194, SpDef: 244, Speed: 212,
 	Move1: {name: "Steel Wing", type: "Steel", category: "Physical", power: 70},
-	Move2: {name: "Reversal", type: "Fighting", category: "Physical", power: reversalPower},
+	Move2: {name: "Reversal", type: "Fighting", category: "Physical", power: reversalPower2},
 	Move3: {name: "Swords Dance", type: "Normal", category: "Status", power: 0},
 	Move4: {name: "Agility", type: "Psychic", category: "Status", power: 0}
 }
@@ -409,7 +632,7 @@ const MartyCelebi = {
 	HP: 371, Attack: 284, Defense: 284, SpAtk: 286, SpDef: 286, Speed: 282,
 	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
 	Move2: {name: "Giga Drain", type: "Grass", category: "Special", power: 60},
-	Move3: {name: "Hidden Power", type: "Fighting", category: "Physical", power: 0},
+	Move3: {name: "HP Fighting", type: "Fighting", category: "Physical", power: 70},
 	Move4: {name: "Leech Seed", type: "Grass", category: "Status", power: 0}
 }
 
@@ -759,6 +982,22 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	  {
 	  	bp = Math.floor(bp*1.1);
 	  }
+	  if ((attackerItem == "Miracle Seed") & (movetype == "Grass"))
+	  {
+	  	bp = Math.floor(bp*1.1);
+	  }
+	  if ((attackerItem == "TwistedSpoon") & (movetype == "Psychic"))
+	  {
+	  	bp = Math.floor(bp*1.1);
+	  }
+	  if ((attackerItem == "BlackGlasses") & (movetype == "Dark"))
+	  {
+	  	bp = Math.floor(bp*1.1);
+	  }
+	  if ((attackerItem == "Magnet") & (movetype == "Electric"))
+	  {
+	  	bp = Math.floor(bp*1.1);
+	  }
 
 	  //THIS IS WHERE EXCEPTIONS FOR THINGS LIKE SELFDESTRUCT GO
 
@@ -1084,6 +1323,12 @@ function ToggleRentalItem(){
 
 	calcAll(attacker,defender)
 }
+
+function toggleReversal(){
+			reversalPower1 = 40;
+			setAttacker(attacker);
+			calcAll(attacker,defender);
+		}
 
 </script>
 </body>
