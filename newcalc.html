@@ -28,6 +28,7 @@ table, th, td {
 			<img src="Ani100MS.png", onclick="setAttacker(Voltorb); calcAll(attacker,defender)">
 			<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee); calcAll(attacker,defender)">
 			<img src="Ani144MS.png", onclick="setAttacker(Articuno); calcAll(attacker,defender)">
+			<br>
 			<img src="Ani202MS.png", onclick="setAttacker(Wobbuffet); calcAll(attacker,defender)">
 			<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
 			<img src="Ani214MS.png", onclick="setAttacker(Heracross); calcAll(attacker,defender)">
@@ -1057,9 +1058,30 @@ function ToggleRentalItem(){
 		document.getElementById('Item1Sprite').src = "Berry.png";;
 	}
 	else if (RentalItem == "Berry"){
+		RentalItem = "Bitter Berry";
+		document.getElementById('Item1Sprite').src = "Bitter Berry.png";;
+	}
+	else if (RentalItem == "Bitter Berry"){
+		RentalItem = "PRZCureBerry";
+		document.getElementById('Item1Sprite').src = "PRZCureBerry.png";;
+	}
+	else if (RentalItem == "PRZCureBerry"){
+		RentalItem = "Mint Berry";
+		document.getElementById('Item1Sprite').src = "Mint Berry.png";;
+	}
+	else if (RentalItem == "Mint Berry"){
+		RentalItem = "Ice Berry";
+		document.getElementById('Item1Sprite').src = "Ice Berry.png";;
+	}
+	else if (RentalItem == "Ice Berry"){
+		RentalItem = "Burnt Berry";
+		document.getElementById('Item1Sprite').src = "Burnt Berry.png";;
+	}
+	else if (RentalItem == "Burnt Berry"){
 		RentalItem = "none";
 		document.getElementById('Item1Sprite').src = "Rental Items.png";;
 	}
+
 	calcAll(attacker,defender)
 }
 
