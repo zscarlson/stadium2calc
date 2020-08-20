@@ -27,6 +27,7 @@ table, th, td {
 			<img src="Ani064MS.png", onclick="setAttacker(Kadabra); calcAll(attacker,defender)">
 			<img src="Ani100MS.png", onclick="setAttacker(Voltorb); calcAll(attacker,defender)">
 			<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee); calcAll(attacker,defender)">
+			<img src="Ani144MS.png", onclick="setAttacker(Articuno); calcAll(attacker,defender)">
 			<img src="Ani202MS.png", onclick="setAttacker(Wobbuffet); calcAll(attacker,defender)">
 			<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
 			<img src="Ani214MS.png", onclick="setAttacker(Heracross); calcAll(attacker,defender)">
@@ -125,7 +126,7 @@ table, th, td {
 	<tr>
 		<td>
 			<!-- <p id="Item1"></p> -->
-			<img src="", id="Item1Sprite">
+			<img src="", id="Item1Sprite", onclick="ToggleRentalItem()">
 		</td>
 		<td>
 			<!-- <p id="Item2"></p> -->
@@ -142,7 +143,7 @@ var defender = "unselected";
 var reversalPower = 20;
 		
 const Hitmonlee = {
-	Name: "Hitmonlee", Number: "106", Type1: "Fighting", Type2: "none", Level: 100, Item: "No Item",
+	Name: "Hitmonlee", Number: "106", Type1: "Fighting", Type2: "none", Level: 100, Item: "Rental Items",
 	HP: 263, Attack: 300, Defense: 164, SpAtk: 128, SpDef: 278, Speed: 234,
 	Move1: {name: "Hi Jump Kick", type: "Fighting", category: "Physical", power: 85},
 	Move2: {name: "Mega Kick", type: "Normal", category: "Physical", power: 120},
@@ -151,7 +152,7 @@ const Hitmonlee = {
 }
 
 const Steelix = {
-	Name: "Steelix", Number: "208", Type1: "Ground", Type2: "Steel", Level: 100, Item: "No Item",
+	Name: "Steelix", Number: "208", Type1: "Ground", Type2: "Steel", Level: 100, Item: "Rental Items",
 	HP: 303, Attack: 218, Defense: 448, SpAtk: 158, SpDef: 178, Speed: 106,
 	Move1: {name: "Iron Tail", type: "Steel", category: "Physical", power: 100},
 	Move2: {name: "Mud Slap", type: "Ground", category: "Physical", power: 20},
@@ -160,7 +161,7 @@ const Steelix = {
 }
 
 const Wobbuffet = {
-	Name: "Wobbuffet", Number: "202", Type1: "Psychic", Type2: "none", Level: 100, Item: "No Item",
+	Name: "Wobbuffet", Number: "202", Type1: "Psychic", Type2: "none", Level: 100, Item: "Rental Items",
 	HP: 547, Attack: 130, Defense: 178, SpAtk: 128, SpDef: 178, Speed: 130,
 	Move1: {name: "Counter", type: "Fighting", category: "Status", power: 0},
 	Move2: {name: "Mirror Coat", type: "Psychic", category: "Status", power: 0},
@@ -169,7 +170,7 @@ const Wobbuffet = {
 }
 
 const Voltorb = {
-	Name: "Voltorb", Number: "100", Type1: "Electric", Type2: "none", Level: 100, Item: "No Item",
+	Name: "Voltorb", Number: "100", Type1: "Electric", Type2: "none", Level: 100, Item: "Rental Items",
 	HP: 261, Attack: 136, Defense: 178, SpAtk: 186, SpDef: 186, Speed: 278,
 	Move1: {name: "Thunder", type: "Electric", category: "Special", power: 120},
 	Move2: {name: "Selfdestruct", type: "Normal", category: "Physical", power: 200},
@@ -178,7 +179,7 @@ const Voltorb = {
 }
 
 const Kadabra = {
-	Name: "Kadabra", Number: "064", Type1: "Psychic", Type2: "none", Level: 100, Item: "No Item",
+	Name: "Kadabra", Number: "064", Type1: "Psychic", Type2: "none", Level: 100, Item: "Rental Items",
 	HP: 247, Attack: 134, Defense: 122, SpAtk: 302, SpDef: 202, Speed: 274,
 	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
 	Move2: {name: "ThunderPunch", type: "Electric", category: "Special", power: 75},
@@ -186,8 +187,17 @@ const Kadabra = {
 	Move4: {name: "Kinesis", type: "Psychic", category: "Status", power: 0}
 }
 
+const Articuno = {
+	Name: "Articuno", Number: "144", Type1: "Ice", Type2: "Flying", Level: 100, Item: "Rental Items",
+	HP: 320, Attack: 205, Defense: 235, SpAtk: 225, SpDef: 285, Speed: 205,
+	Move1: {name: "Blizzard", type: "Ice", category: "Special", power: 120},
+	Move2: {name: "Peck", type: "Flying", category: "Physical", power: 35},
+	Move3: {name: "Agility", type: "Psychic", category: "Status", power: 0},
+	Move4: {name: "Haze", type: "Ice", category: "Status", power: 0}
+}
+
 const Heracross = {
-	Name: "Heracross", Number: "214", Type1: "Bug", Type2: "Fighting", Level: 100, Item: "No Item",
+	Name: "Heracross", Number: "214", Type1: "Bug", Type2: "Fighting", Level: 100, Item: "Rental Items",
 	HP: 313, Attack: 298, Defense: 198, SpAtk: 128, SpDef: 238, Speed: 216,
 	Move1: {name: "Megahorn", type: "Bug", category: "Physical", power: 120},
 	Move2: {name: "Rock Smash", type: "Fighting", category: "Physical", power: 20},
@@ -449,6 +459,8 @@ function setAttacker(pkmn){
 	document.getElementById('Speed1').innerHTML = pkmn.Speed + " Speed";
 	// document.getElementById('Item1').innerHTML = pkmn.Item;
 	document.getElementById('Item1Sprite').src = pkmn.Item + ".png";
+	RentalItem = "none";
+	document.getElementById('Item1Sprite').src = "Rental Items.png";;
 
 	if (defender == "unselected"){
 		document.getElementById('calcresult1').innerHTML = pkmn.Move1.name;
@@ -503,6 +515,18 @@ function calcMove(attacker,defender,moveslot,resultslot){
 		bp = attacker.Move4.power;
 		movetype = attacker.Move4.type;
 		category = attacker.Move4.category;
+	}
+
+	defenderItem = defender.Item;
+	if((defender.Item == "Rental Items") & (RentalItem == "Berry"))
+	{
+		defenderItem = "Berry";
+
+	}
+	attackerItem = attacker.Item;
+	if((attacker.Item == "Rental Items") & (RentalItem == "Berry"))
+	{
+		attackerItem = "Berry";
 	}
 
 	//THIS IS WHERE YOU NEED TO PUT IN THE ACTUAL TYPE CHART
@@ -722,19 +746,18 @@ function calcMove(attacker,defender,moveslot,resultslot){
 
 	  //THIS IS WHERE ITEM BOOSTING POWER GOES
 
-	  if ((attacker.Item == "Sharp Beak") & (movetype == "Flying"))
+	  if ((attackerItem == "Sharp Beak") & (movetype == "Flying"))
 	  {
 	  	bp = Math.floor(bp*1.1);
 	  }
-	  if ((attacker.Item == "Pink Bow") & (movetype == "Normal"))
+	  if ((attackerItem == "Pink Bow") & (movetype == "Normal"))
 	  {
 	  	bp = Math.floor(bp*1.1);
 	  }
-	  if ((attacker.Item == "Mystic Water") & (movetype == "Water"))
+	  if ((attackerItem == "Mystic Water") & (movetype == "Water"))
 	  {
 	  	bp = Math.floor(bp*1.1);
 	  }
-
 
 	  //THIS IS WHERE EXCEPTIONS FOR THINGS LIKE SELFDESTRUCT GO
 
@@ -777,19 +800,19 @@ function calcMove(attacker,defender,moveslot,resultslot){
 	}
 
 	if((minroll == maxroll)&(minroll !== 0)){
-		fixedChecker(maxroll,defender.HP,resultslot,defender.Item);
+		fixedChecker(maxroll,defender.HP,resultslot,defenderItem);
 	}
 	else if (maxroll >= defender.HP){
-		OneHitChecker(maxroll,defender.HP,resultslot,defender.Item);	
+		OneHitChecker(maxroll,defender.HP,resultslot,defenderItem);	
 	}
 	else if (maxroll >= defender.HP/2){
-		TwoHitChecker(maxroll,defender.HP,resultslot,defender.Item);	
+		TwoHitChecker(maxroll,defender.HP,resultslot,defenderItem);	
 	}
 	else if (maxroll >= defender.HP/3){
-		ThreeHitChecker(maxroll,defender.HP,resultslot,defender.Item);	
+		ThreeHitChecker(maxroll,defender.HP,resultslot,defenderItem);	
 	}
 	else if (maxroll >= defender.HP/4){
-		FourHitChecker(maxroll,defender.HP,resultslot,defender.Item);	
+		FourHitChecker(maxroll,defender.HP,resultslot,defenderItem);	
 	}
 	else{
 		document.getElementById('KO' + resultslot).innerHTML = ""
@@ -1024,6 +1047,20 @@ function fixedChecker(maxroll,hp,resultslot,item){
 		var hitsToKO = Math.ceil(hp/maxroll);
 	}
 	document.getElementById('KO' + resultslot).innerHTML = "100% " + hitsToKO + "HKO";
+}
+
+var RentalItem = "none";
+
+function ToggleRentalItem(){
+	if (RentalItem == "none"){
+		RentalItem = "Berry";
+		document.getElementById('Item1Sprite').src = "Berry.png";;
+	}
+	else if (RentalItem == "Berry"){
+		RentalItem = "none";
+		document.getElementById('Item1Sprite').src = "Rental Items.png";;
+	}
+	calcAll(attacker,defender)
 }
 
 </script>
