@@ -1120,6 +1120,11 @@ function TwoHitChecker(maxroll,HP,resultslot,item){
 	}
 	var TwoHitChance = Math.round(count * 10000/1521) / 100;
 	document.getElementById('KO' + resultslot).innerHTML = TwoHitChance + "% 2HKO";
+
+	if (TwoHitChance == 0){
+		document.getElementById('KO' + resultslot).innerHTML = "< 0.01% 2HKO";
+	}
+
 	if (count == 0){
 		ThreeHitChecker(maxroll,HP,resultslot,item);
 		}
@@ -1181,6 +1186,11 @@ function ThreeHitChecker(maxroll,HP,resultslot,item){
 	}
 	var ThreeHitChance = Math.round(count * 10000/59319) / 100;
 	document.getElementById('KO' + resultslot).innerHTML = ThreeHitChance + "% 3HKO";
+
+	if (ThreeHitChance == 0){
+		document.getElementById('KO' + resultslot).innerHTML = "< 0.01% 3HKO";
+	}
+
 	if (count == 0){
 		FourHitChecker(maxroll,HP,resultslot,item);
 		}
@@ -1266,6 +1276,11 @@ function FourHitChecker(maxroll,HP,resultslot,item){
 	}
 	var FourHitChance = Math.round(count * 10000/2313441) / 100;
 	document.getElementById('KO' + resultslot).innerHTML = FourHitChance + "% 4HKO";
+
+	if (FourHitChance == 0){
+		document.getElementById('KO' + resultslot).innerHTML = "< 0.01% 4HKO";
+	}
+
 	if (count == 0){
 		document.getElementById('KO' + resultslot).innerHTML = "";
 		}
