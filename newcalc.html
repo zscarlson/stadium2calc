@@ -41,6 +41,10 @@ table, th, td {
 			<img src="Ani202MS.png", onclick="setAttacker(Wobbuffet); calcAll(attacker,defender)">
 			<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
 			<img src="Ani214MS.png", onclick="setAttacker(Heracross); calcAll(attacker,defender)">
+			<br>
+			<img src="Ani145MS.png", onclick="setAttacker(Zapdos); calcAll(attacker,defender)">
+			<img src="Ani041MS.png", onclick="setAttacker(Zubat); calcAll(attacker,defender)">
+
 		</td>
 		<td rowspan="6" style="display:none">
 			Terry Round 1<br>
@@ -248,6 +252,22 @@ const Azumarill = {
 	Move2: {name: "Icy Wind", type: "Ice", category: "Special", power: 55},
 	Move3: {name: "Defense Curl", type: "Normal", category: "Status", power: 0},
 	Move4: {name: "Rain Dance", type: "Water", category: "Status", power: 0}}
+
+const Zapdos = {
+	Name: "Zapdos", Number: "145", Type1: "Electric", Type2: "Flying", Level: 100, Item: "Rental Items",
+	HP: 320, Attack: 215, Defense: 205, SpAtk: 285, SpDef: 215, Speed: 235,
+	Move1: {name: "Thunder", type: "Electric", category: "Special", power: 120},
+	Move2: {name: "Rock Smash", type: "Fighting", category: "Physical", power: 20},
+	Move3: {name: "Flash", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Detect", type: "Fighting", category: "Status", power: 0}}
+
+const Zubat = {
+	Name: "Zubat", Number: "041", Type1: "Poison", Type2: "Flying", Level: 100, Item: "Rental Items",
+	HP: 274, Attack: 179, Defense: 159, SpAtk: 153, SpDef: 173, Speed: 201,
+	Move1: {name: "Wing Attack", type: "Flying", category: "Physical", power: 60},
+	Move2: {name: "Giga Drain", type: "Grass", category: "Special", power: 60},
+	Move3: {name: "Confuse Ray", type: "Ghost", category: "Status", power: 0},
+	Move4: {name: "Toxic", type: "Poison", category: "Status", power: 0}}
 	
 const Hitmonlee = {
 	Name: "Hitmonlee", Number: "106", Type1: "Fighting", Type2: "none", Level: 100, Item: "Rental Items",
