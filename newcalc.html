@@ -24,11 +24,20 @@ table, th, td {
 		</td>
 		<td rowspan="6">
 			Rental Pokemon<br>
+			<img src="Ani063MS.png", onclick="setAttacker(Abra); calcAll(attacker,defender)">
+			<img src="Ani142MS.png", onclick="setAttacker(Aerodactyl); calcAll(attacker,defender)">
+			<img src="Ani190MS.png", onclick="setAttacker(Aipom); calcAll(attacker,defender)">
+			<img src="Ani065MS.png", onclick="setAttacker(Alakazam); calcAll(attacker,defender)">
+			<img src="Ani181MS.png", onclick="setAttacker(Ampharos); calcAll(attacker,defender)">
+			<img src="Ani024MS.png", onclick="setAttacker(Arbok); calcAll(attacker,defender)">
+			<img src="Ani059MS.png", onclick="setAttacker(Arcanine); calcAll(attacker,defender)">
+			<img src="Ani168MS.png", onclick="setAttacker(Ariados); calcAll(attacker,defender)">
+			<br>
+			<img src="Ani144MS.png", onclick="setAttacker(Articuno); calcAll(attacker,defender)">
+			<img src="Ani184MS.png", onclick="setAttacker(Azumarill); calcAll(attacker,defender)">
 			<img src="Ani064MS.png", onclick="setAttacker(Kadabra); calcAll(attacker,defender)">
 			<img src="Ani100MS.png", onclick="setAttacker(Voltorb); calcAll(attacker,defender)">
 			<img src="Ani106MS.png", onclick="setAttacker(Hitmonlee); calcAll(attacker,defender)">
-			<img src="Ani144MS.png", onclick="setAttacker(Articuno); calcAll(attacker,defender)">
-			<br>
 			<img src="Ani202MS.png", onclick="setAttacker(Wobbuffet); calcAll(attacker,defender)">
 			<img src="Ani208MS.png", onclick="setAttacker(Steelix); calcAll(attacker,defender)">
 			<img src="Ani214MS.png", onclick="setAttacker(Heracross); calcAll(attacker,defender)">
@@ -168,6 +177,78 @@ var reversalPower2 = 20;
 
 // moves to research: Kathy Snorlax Return, Marty Celebi HP Fighting, Craig Stantler Frustration, Terry Bellossom Return, Terry Donphan HP Flying
 
+const Abra = {
+	Name: "Abra", Number: "063", Type1: "Psychic", Type2: "none", Level: 100, Item: "Rental Items",
+	HP: 231, Attack: 116, Defense: 108, SpAtk: 286, SpDef: 186, Speed: 258,
+	Move1: {name: "Psychic", type: "Psychic", category: "Special", power: 90},
+	Move2: {name: "Ice Punch", type: "Ice", category: "Special", power: 75},
+	Move3: {name: "Swagger", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Attract", type: "Normal", category: "Status", power: 0}}
+
+const Aerodactyl = {
+	Name: "Aerodactyl", Number: "142", Type1: "Rock", Type2: "Flying", Level: 100, Item: "Rental Items",
+	HP: 309, Attack: 254, Defense: 174, SpAtk: 164, SpDef: 194, Speed: 302,
+	Move1: {name: "AncientPower", type: "Rock", category: "Physical", power: 60},
+	Move2: {name: "Bite", type: "Dark", category: "Special", power: 60},
+	Move3: {name: "Curse", type: "???", category: "Status", power: 0},
+	Move4: {name: "Supersonic", type: "Normal", category: "Status", power: 0}}
+
+const Aipom = {
+	Name: "Aipom", Number: "190", Type1: "Normal", Type2: "none", Level: 100, Item: "Rental Items",
+	HP: 284, Attack: 211, Defense: 179, SpAtk: 149, SpDef: 179, Speed: 239,
+	Move1: {name: "Strength", type: "Normal", category: "Physical", power: 80},
+	Move2: {name: "Double Team", type: "Normal", category: "Special", power: 0},
+	Move3: {name: "Baton Pass", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Agility", type: "Psychic", category: "Status", power: 0}}
+
+const Alakazam = {
+	Name: "Alakazam", Number: "065", Type1: "Psychic", Type2: "none", Level: 100, Item: "Rental Items",
+	HP: 269, Attack: 156, Defense: 146, SpAtk: 324, SpDef: 224, Speed: 294,
+	Move1: {name: "Psybeam", type: "Psychic", category: "Special", power: 65},
+	Move2: {name: "Thief", type: "Ice", category: "Special", power: 40},
+	Move3: {name: "Future Sight", type: "", category: "Special", power: 80},
+	Move4: {name: "Kinesis", type: "Psychic", category: "Status", power: 0}}
+
+const Ampharos = {
+	Name: "Ampharos", Number: "181", Type1: "Electric", Type2: "none", Level: 100, Item: "Rental Items",
+	HP: 335, Attack: 202, Defense: 202, SpAtk: 280, SpDef: 230, Speed: 160,
+	Move1: {name: "Zap Cannon", type: "Electric", category: "Special", power: 100},
+	Move2: {name: "DynamicPunch", type: "Fighting", category: "Physical", power: 100},
+	Move3: {name: "Swift", type: "Normal", category: "Physical", power: 60},
+	Move4: {name: "Flash", type: "Normal", category: "Status", power: 0}}
+
+const Arbok = {
+	Name: "Arbok", Number: "024", Type1: "Poison", Type2: "none", Level: 100, Item: "Rental Items",
+	HP: 287, Attack: 234, Defense: 200, SpAtk: 192, SpDef: 220, Speed: 224,
+	Move1: {name: "Sludge Bomb", type: "Poison", category: "Physical", power: 90},
+	Move2: {name: "Bite", type: "Dark", category: "Special", power: 60},
+	Move3: {name: "Dig", type: "Ground", category: "Physical", power: 60},
+	Move4: {name: "Glare", type: "Normal", category: "Status", power: 0}}
+
+const Arcanine = {
+	Name: "Arcanine", Number: "059", Type1: "Fire", Type2: "none", Level: 100, Item: "Rental Items",
+	HP: 325, Attack: 260, Defense: 200, SpAtk: 240, SpDef: 200, Speed: 230,
+	Move1: {name: "Flame Wheel", type: "Fire", category: "Special", power: 60},
+	Move2: {name: "ExtremeSpeed", type: "Normal", category: "Physical", power: 80},
+	Move3: {name: "Leer", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Roar", type: "Normal", category: "Status", power: 0}}
+
+const Ariados = {
+	Name: "Ariados", Number: "168", Type1: "Bug", Type2: "Poison", Level: 100, Item: "Rental Items",
+	HP: 314, Attack: 251, Defense: 209, SpAtk: 189, SpDef: 189, Speed: 149,
+	Move1: {name: "Sludge Bomb", type: "Poison", category: "Physical", power: 90},
+	Move2: {name: "Protect", type: "Normal", category: "Status", power: 0},
+	Move3: {name: "Toxic", type: "Poison", category: "Status", power: 0},
+	Move4: {name: "Spider Web", type: "Bug", category: "Status", power: 0}}
+
+const Azumarill = {
+	Name: "Azumarill", Number: "184", Type1: "Water", Type2: "none", Level: 100, Item: "Rental Items",
+	HP: 367, Attack: 164, Defense: 222, SpAtk: 162, SpDef: 222, Speed: 164,
+	Move1: {name: "Waterfall", type: "Water", category: "Special", power: 80},
+	Move2: {name: "Icy Wind", type: "Ice", category: "Special", power: 55},
+	Move3: {name: "Defense Curl", type: "Normal", category: "Status", power: 0},
+	Move4: {name: "Rain Dance", type: "Water", category: "Status", power: 0}}
+	
 const Hitmonlee = {
 	Name: "Hitmonlee", Number: "106", Type1: "Fighting", Type2: "none", Level: 100, Item: "Rental Items",
 	HP: 263, Attack: 300, Defense: 164, SpAtk: 128, SpDef: 278, Speed: 234,
